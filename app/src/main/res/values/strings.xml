@@ -18,6 +18,12 @@
     <string name="notif_dialog_body">Required to send reminder alerts so you never miss important tasks.</string>
     <string name="notif_dialog_ok">OK</string>
 
+    <!-- Overlay explainer ("One last step!") -->
+    <string name="overlay_explainer_title">One last step!</string>
+    <string name="overlay_explainer_body">Grant permission to view and set reminders immediately after ending a call.</string>
+    <string name="overlay_go_to_settings">GO TO SETTINGS</string>
+    <string name="continue_action">Continue</string>
+
     <!-- Overlay permission -->
     <string name="overlay_dialog_title">Display Over Other Apps</string>
     <string name="overlay_dialog_body">Allow Remindly to show reminder alerts on top of other apps so you never miss a moment.</string>
@@ -36,6 +42,11 @@
     <string name="home_no_results_title">No reminders found</string>
     <string name="home_no_results_subtitle">Try a different search term</string>
     <string name="home_no_category_reminders">No reminders in this category</string>
+    <string name="home_section_soon">Soon</string>
+    <string name="home_section_completed">Completed</string>
+    <string name="home_no_due_date">No due date</string>
+    <string name="home_completed_label">Completed</string>
+    <string name="home_completed_prefix">Completed %1$s</string>
 
     <!-- New / edit reminder -->
     <string name="new_reminder_title">New reminder</string>
@@ -68,6 +79,7 @@
     <string name="reminder_today">Today</string>
     <string name="reminder_tomorrow">Tomorrow</string>
     <string name="reminder_remove_time">Remove time</string>
+    <string name="reminder_no_notification_warning">You won\'t get notification.</string>
 
     <!-- Categories -->
     <string name="category_my_reminders">My reminders</string>
@@ -79,6 +91,8 @@
     <string name="category_name_hint">Category name</string>
     <string name="category_pick_color">Pick a color</string>
     <string name="category_delete_confirm">Delete this category? Reminders in it will move to My reminders.</string>
+    <string name="select_category_title">Select category</string>
+    <string name="repeat_title">Repeat</string>
 
     <!-- Search -->
     <string name="search_title">Search</string>
