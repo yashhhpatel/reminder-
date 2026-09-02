@@ -36,6 +36,7 @@ fun SearchScreen(
 ) {
     val query by viewModel.query.collectAsState()
     val results by viewModel.results.collectAsState()
+    val categoriesById by viewModel.categoriesById.collectAsState()
     val focusRequester = remember { FocusRequester() }
 
     Column(modifier = modifier.fillMaxSize()) {
@@ -58,7 +59,7 @@ fun SearchScreen(
                     ReminderCard(
                         reminder = reminder,
                         subtitle = reminder.placeName ?: "",
-                        categoryColor = reminder.color ?: 0xFF6A3DE8.toInt(),
+                        categoryColor = categoriesById[reminder.categoryId]?.colorArgb ?: 0xFF6A3DE8.toInt(),
                         onClick = { onOpenReminder(reminder.id) },
                         onToggleComplete = {},
                         modifier = Modifier.padding(bottom = AppSpacing.xs),

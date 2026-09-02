@@ -10,6 +10,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.StandardTestDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.runTest
@@ -122,6 +123,7 @@ class HomeViewModelTest {
 
     @Test
     fun `uiState splits reminders into upcoming and completed`() = runTest(dispatcher) {
+        val collectorJob = backgroundScope.launch(dispatcher) { viewModel.uiState.collect {} }
         viewModel.quickAddWithTime("Task A", System.currentTimeMillis())
         dispatcher.scheduler.advanceUntilIdle()
         val savedId = reminderRepository.saved.first().id

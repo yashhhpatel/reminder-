@@ -89,6 +89,7 @@ fun HomeScreen(
                 ReminderList(
                     upcoming = uiState.upcoming,
                     completed = uiState.completed,
+                    categoriesById = uiState.categoriesById,
                     onOpenReminder = onOpenReminder,
                     onToggleComplete = { reminder, completed -> viewModel.setCompleted(reminder, completed) },
                     modifier = Modifier.weight(1f),
@@ -98,7 +99,7 @@ fun HomeScreen(
 
         BottomQuickAdd(
             onSubmit = { text, dateTime ->
-                if (dateTime != null || uiState.isEmpty) {
+                if (dateTime != null) {
                     viewModel.quickAddWithTime(text, dateTime)
                 } else {
                     viewModel.quickAdd(text)
@@ -112,6 +113,7 @@ fun HomeScreen(
 private fun ReminderList(
     upcoming: List<Reminder>,
     completed: List<Reminder>,
+    categoriesById: Map<Long, com.remindly.app.domain.model.Category>,
     onOpenReminder: (Long) -> Unit,
     onToggleComplete: (Reminder, Boolean) -> Unit,
     modifier: Modifier = Modifier,
@@ -143,7 +145,7 @@ private fun ReminderList(
                     ReminderCard(
                         reminder = reminder,
                         subtitle = reminder.dateTime?.let { formatDueLabel(it) } ?: noDueDate,
-                        categoryColor = reminder.color ?: MaterialTheme.colorScheme.primary.toArgbSafe(),
+                        categoryColor = categoriesById[reminder.categoryId]?.colorArgb ?: MaterialTheme.colorScheme.primary.toArgbSafe(),
                         onClick = { onOpenReminder(reminder.id) },
                         onToggleComplete = { checked -> onToggleComplete(reminder, checked) },
                     )
@@ -164,7 +166,7 @@ private fun ReminderList(
                     ReminderCard(
                         reminder = reminder,
                         subtitle = reminder.completedAt?.let { String.format(completedPrefix, formatDueLabel(it)) } ?: completedLabel,
-                        categoryColor = reminder.color ?: MaterialTheme.colorScheme.primary.toArgbSafe(),
+                        categoryColor = categoriesById[reminder.categoryId]?.colorArgb ?: MaterialTheme.colorScheme.primary.toArgbSafe(),
                         onClick = { onOpenReminder(reminder.id) },
                         onToggleComplete = { checked -> onToggleComplete(reminder, checked) },
                     )

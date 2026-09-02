@@ -2,6 +2,7 @@ package com.remindly.app.ui.screens.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.remindly.app.domain.model.Category
 import com.remindly.app.domain.model.Reminder
 import com.remindly.app.domain.repository.CategoryRepository
 import com.remindly.app.domain.repository.PremiumRepository
@@ -16,6 +17,7 @@ import kotlinx.coroutines.launch
 data class HomeUiState(
     val upcoming: List<Reminder> = emptyList(),
     val completed: List<Reminder> = emptyList(),
+    val categoriesById: Map<Long, Category> = emptyMap(),
     val isPremium: Boolean = false,
     val isLoading: Boolean = true,
 ) {
@@ -30,11 +32,13 @@ class HomeViewModel(
 
     val uiState: StateFlow<HomeUiState> = combine(
         reminderRepository.observeAll(),
+        categoryRepository.observeAll(),
         premiumRepository.isPremium,
-    ) { reminders, isPremium ->
+    ) { reminders, categories, isPremium ->
         HomeUiState(
             upcoming = reminders.filter { !it.isCompleted },
             completed = reminders.filter { it.isCompleted },
+            categoriesById = categories.associateBy { it.id },
             isPremium = isPremium,
             isLoading = false,
         )
