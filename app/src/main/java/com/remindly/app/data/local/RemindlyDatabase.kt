@@ -14,7 +14,7 @@ import com.remindly.app.data.local.entity.ReminderEntity
 @Database(
     entities = [ReminderEntity::class, CategoryEntity::class],
     version = 1,
-    exportSchema = true,
+    exportSchema = false,
 )
 @TypeConverters(Converters::class)
 abstract class RemindlyDatabase : RoomDatabase() {

@@ -8,8 +8,9 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.VolumeUp
+import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Done
 import androidx.compose.material.icons.filled.Edit
@@ -97,7 +98,7 @@ fun ReminderDetailScreen(
                     Spacer(Modifier.padding(top = AppSpacing.xs))
                     DetailIconRow(Icons.Filled.CalendarMonth, formatDateTime(state.dateTime!!))
                     DetailIconRow(Icons.Filled.Repeat, repeatDisplay(state.repeatType))
-                    DetailIconRow(Icons.AutoMirrored.Filled.VolumeUp, soundDisplay(state.soundMode))
+                    DetailIconRow(Icons.Filled.VolumeUp, soundDisplay(state.soundMode))
                 }
             }
 

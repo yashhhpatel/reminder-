@@ -14,7 +14,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.VolumeUp
+import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material.icons.filled.NotificationsOff
@@ -169,7 +169,7 @@ fun NewReminderScreen(
                     )
                     androidx.compose.foundation.layout.Box {
                         RowActionItem(
-                            icon = Icons.AutoMirrored.Filled.VolumeUp,
+                            icon = Icons.Filled.VolumeUp,
                             label = soundLabel(state.soundMode),
                             onClick = { showSoundMenu = true },
                         )

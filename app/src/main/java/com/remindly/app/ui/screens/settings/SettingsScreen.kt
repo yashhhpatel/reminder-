@@ -10,8 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.Feedback
-import androidx.compose.material.icons.automirrored.filled.Share
+import androidx.compose.material.icons.filled.Feedback
+import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Brightness6
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.Lock
@@ -124,7 +124,7 @@ fun SettingsScreen(
             SettingsSectionLabel(stringResource(R.string.settings_section_communicate))
             SettingsRow(
                 title = stringResource(R.string.settings_feedback),
-                icon = Icons.AutoMirrored.Filled.Feedback,
+                icon = Icons.Filled.Feedback,
                 onClick = onOpenFeedback,
             )
             SettingsRow(
@@ -141,7 +141,7 @@ fun SettingsScreen(
             SettingsSectionLabel(stringResource(R.string.settings_section_others))
             SettingsRow(
                 title = stringResource(R.string.settings_share),
-                icon = Icons.AutoMirrored.Filled.Share,
+                icon = Icons.Filled.Share,
                 onClick = onShare,
             )
             SettingsRow(
