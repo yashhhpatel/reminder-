@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Remindly</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_headline">Welcome to a new kind of Reminder</string>
+    <string name="onboarding_feature_alerts_title">Reminder Alerts</string>
+    <string name="onboarding_feature_alerts_desc">Get timely alerts for your scheduled reminders.</string>
+    <string name="onboarding_feature_call_title">After Call Reminders</string>
+    <string name="onboarding_feature_call_desc">Get useful reminder functionality after calls.</string>
+    <string name="onboarding_cta">START NOW</string>
+    <string name="onboarding_legal">By Continuing you agree to our Privacy Policy and Terms &amp; Conditions</string>
+    <string name="onboarding_privacy_policy">Privacy Policy</string>
+    <string name="onboarding_terms">Terms &amp; Conditions</string>
+
+    <!-- Notification permission dialog -->
+    <string name="notif_dialog_title">Notification Required</string>
+    <string name="notif_dialog_body">Required to send reminder alerts so you never miss important tasks.</string>
+    <string name="notif_dialog_ok">OK</string>
+
+    <!-- Overlay permission -->
+    <string name="overlay_dialog_title">Display Over Other Apps</string>
+    <string name="overlay_dialog_body">Allow Remindly to show reminder alerts on top of other apps so you never miss a moment.</string>
+    <string name="overlay_dialog_action">Open Settings</string>
+    <string name="overlay_dialog_skip">Not now</string>
+
+    <!-- Home -->
+    <string name="home_title">My reminder</string>
+    <string name="home_search_hint">Search reminders</string>
+    <string name="home_empty_title">Welcome to Reminders</string>
+    <string name="home_empty_subtitle">Create your first reminder and never forget what matters.</string>
+    <string name="home_add_reminder">Add reminder</string>
+    <string name="home_quick_suggestion_tomorrow_morning">Tomorrow morning</string>
+    <string name="home_quick_suggestion_next_week">Next week</string>
+    <string name="home_quick_add_hint">Add reminder</string>
+    <string name="home_no_results_title">No reminders found</string>
+    <string name="home_no_results_subtitle">Try a different search term</string>
+    <string name="home_no_category_reminders">No reminders in this category</string>
+
+    <!-- New / edit reminder -->
+    <string name="new_reminder_title">New reminder</string>
+    <string name="edit_reminder_title">Edit reminder</string>
+    <string name="reminder_memo_hint">Memo</string>
+    <string name="reminder_add_time">Add time</string>
+    <string name="reminder_add_place">Add place</string>
+    <string name="reminder_add_place_desc">Choose a location that will trigger your reminder</string>
+    <string name="reminder_repeat_none">Don\'t repeat</string>
+    <string name="reminder_repeat_daily">Every day</string>
+    <string name="reminder_repeat_weekday">Every weekday</string>
+    <string name="reminder_repeat_weekly">Every week</string>
+    <string name="reminder_repeat_monthly">Every month</string>
+    <string name="reminder_repeat_yearly">Every year</string>
+    <string name="reminder_repeat_custom">Custom</string>
+    <string name="reminder_sound_once">Ring once</string>
+    <string name="reminder_sound_repeat">Repeat until dismissed</string>
+    <string name="reminder_sound_silent">Silent</string>
+    <string name="reminder_suggestion_1hour">1 hour from now</string>
+    <string name="reminder_suggestion_today_7am">Today 7:00 AM</string>
+    <string name="reminder_suggestion_today_3pm">Today 3:00 PM</string>
+    <string name="reminder_suggestion_today_10pm">Today 10:00 PM</string>
+    <string name="reminder_category_label">Category</string>
+    <string name="reminder_save">Save</string>
+    <string name="reminder_delete">Delete reminder</string>
+    <string name="reminder_delete_confirm_title">Delete this reminder?</string>
+    <string name="reminder_delete_confirm_body">This action cannot be undone.</string>
+    <string name="reminder_mark_complete">Mark complete</string>
+    <string name="reminder_mark_incomplete">Mark incomplete</string>
+    <string name="reminder_today">Today</string>
+    <string name="reminder_tomorrow">Tomorrow</string>
+    <string name="reminder_remove_time">Remove time</string>
+
+    <!-- Categories -->
+    <string name="category_my_reminders">My reminders</string>
+    <string name="category_work">Work</string>
+    <string name="category_personal">Personal</string>
+    <string name="category_health">My health</string>
+    <string name="category_finance">Finance</string>
+    <string name="category_add">Add category</string>
+    <string name="category_name_hint">Category name</string>
+    <string name="category_pick_color">Pick a color</string>
+    <string name="category_delete_confirm">Delete this category? Reminders in it will move to My reminders.</string>
+
+    <!-- Search -->
+    <string name="search_title">Search</string>
+    <string name="search_hint">Search by title, category or place</string>
+    <string name="search_clear">Clear search</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_premium_title">Full access</string>
+    <string name="settings_premium_subtitle">Unlock full functionality.</string>
+    <string name="settings_go_pro">Go Pro</string>
+    <string name="settings_section_general">GENERAL</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_theme">App Theme</string>
+    <string name="settings_theme_auto">Auto Mode</string>
+    <string name="settings_theme_light">Light Mode</string>
+    <string name="settings_theme_dark">Dark Mode</string>
+    <string name="settings_section_presets">PRESETS</string>
+    <string name="settings_add_time">Add time</string>
+    <string name="settings_add_time_desc">Pick a date and time for your reminder</string>
+    <string name="settings_add_place">Add place</string>
+    <string name="settings_add_place_desc">Choose a location that will trigger your reminder</string>
+    <string name="settings_after_call">Reminder after a call</string>
+    <string name="settings_after_call_desc">Display call details and additional information after a call</string>
+    <string name="settings_section_communicate">COMMUNICATE</string>
+    <string name="settings_feedback">Feedback</string>
+    <string name="settings_privacy_policy">Privacy Policy</string>
+    <string name="settings_privacy_settings">Privacy Settings</string>
+    <string name="settings_section_others">OTHERS</string>
+    <string name="settings_share">Share</string>
+    <string name="settings_rate_us">Rate Us</string>
+    <string name="settings_app_version">App version %1$s</string>
+
+    <!-- Language -->
+    <string name="language_title">Language</string>
+    <string name="language_english">English</string>
+
+    <!-- Feedback -->
+    <string name="feedback_subject">Feedback for Remindly</string>
+    <string name="feedback_body">Version: %1$s</string>
+    <string name="feedback_no_email_title">No Email App Found</string>
+    <string name="feedback_no_email_body">Please install an email app to send feedback, or reach out through the app store listing.</string>
+
+    <!-- Share -->
+    <string name="share_text">Try Remindly — a simple, focused reminder app. Never forget what matters.</string>
+    <string name="share_chooser_title">Share Remindly</string>
+
+    <!-- Rate -->
+    <string name="rate_fallback_title">Rate Remindly</string>
+    <string name="rate_fallback_body">Thanks for using Remindly! Ratings aren\'t available in this build.</string>
+
+    <!-- Privacy policy -->
+    <string name="privacy_policy_title">Privacy Policy</string>
+    <string name="privacy_settings_title">Privacy Settings</string>
+    <string name="privacy_notifications">Notifications</string>
+    <string name="privacy_notifications_desc">Allow Remindly to send reminder alerts</string>
+    <string name="privacy_location">Location access</string>
+    <string name="privacy_location_desc">Allow Remindly to use your location for place-based reminders</string>
+    <string name="privacy_analytics">Analytics</string>
+    <string name="privacy_analytics_desc">Remindly does not collect any analytics data</string>
+    <string name="privacy_personalized">Personalized content</string>
+    <string name="privacy_personalized_desc">Not applicable — Remindly shows no personalized content</string>
+
+    <!-- Premium -->
+    <string name="premium_headline">Get Unlimited access to premium features.</string>
+    <string name="premium_feature_places">Unlimited Add Places</string>
+    <string name="premium_feature_ads">Remove ads</string>
+    <string name="premium_feature_advanced">Advanced reminder functionality</string>
+    <string name="premium_feature_support">Priority assistance</string>
+    <string name="premium_continue">Continue</string>
+    <string name="premium_renew_note">Subscription renews automatically unless cancelled</string>
+    <string name="premium_cancel_note">Cancel anytime</string>
+    <string name="premium_terms">Terms &amp; Conditions</string>
+    <string name="premium_privacy">Privacy Policy</string>
+    <string name="premium_restore">Restore</string>
+
+    <!-- Location picker -->
+    <string name="location_picker_title">Choose location</string>
+    <string name="location_search_hint">Search for a place</string>
+    <string name="location_permission_required">Location permission is required to choose a place</string>
+    <string name="location_grant_permission">Grant permission</string>
+    <string name="location_use_current">Use current location</string>
+
+    <!-- Notification channel -->
+    <string name="notification_channel_reminders_name">Reminder Alerts</string>
+    <string name="notification_channel_reminders_desc">Notifications for your scheduled reminders</string>
+    <string name="notification_action_done">DONE</string>
+    <string name="notification_action_snooze">SNOOZE</string>
+    <string name="snooze_10_min">10 minutes</string>
+    <string name="snooze_30_min">30 minutes</string>
+    <string name="snooze_1_hour">1 hour</string>
+
+    <!-- Common -->
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="save">Save</string>
+    <string name="back">Back</string>
+    <string name="close">Close</string>
+    <string name="search">Search</string>
+    <string name="settings">Settings</string>
+    <string name="edit">Edit</string>
+    <string name="ok">OK</string>
+</resources>

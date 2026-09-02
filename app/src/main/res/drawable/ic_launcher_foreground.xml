@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- bell body -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,26 C42.5,26 33,35.5 33,47 L33,58 L25,70 L83,70 L75,58 L75,47 C75,35.5 65.5,26 54,26 Z" />
+    <!-- clapper -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M46,76 C46,80.5 49.5,84 54,84 C58.5,84 62,80.5 62,76 Z" />
+    <!-- check badge -->
+    <path
+        android:fillColor="#2ECC71"
+        android:pathData="M84,58 m-15,0 a15,15 0 1,0 30,0 a15,15 0 1,0 -30,0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M77,58 L82,63 L91,52"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:fillAlpha="0" />
+</vector>
