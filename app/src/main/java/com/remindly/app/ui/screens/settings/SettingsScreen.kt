@@ -14,7 +14,7 @@ import androidx.compose.material.icons.filled.Feedback
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.Brightness6
 import androidx.compose.material.icons.filled.Language
-import androidx.compose.material.icons.filled.Lock
+import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.PrivacyTip
 import androidx.compose.material.icons.filled.Schedule
@@ -85,7 +85,7 @@ fun SettingsScreen(
             SettingsRow(
                 title = stringResource(R.string.settings_language),
                 icon = Icons.Filled.Language,
-                valueText = stringResource(R.string.language_english),
+                valueText = languageDisplayName(uiState.language),
                 onClick = onOpenLanguage,
             )
             SettingsRow(
@@ -106,7 +106,7 @@ fun SettingsScreen(
             SettingsToggleRow(
                 title = stringResource(R.string.settings_add_place),
                 subtitle = stringResource(R.string.settings_add_place_desc),
-                icon = Icons.Filled.Lock,
+                icon = Icons.Filled.LocationOn,
                 premium = !uiState.isPremium,
                 checked = uiState.presetAddPlace && uiState.isPremium,
                 onCheckedChange = { enabled ->

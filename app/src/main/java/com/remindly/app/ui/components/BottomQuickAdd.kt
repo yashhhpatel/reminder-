@@ -18,7 +18,9 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -48,7 +50,32 @@ fun BottomQuickAdd(
     var isFocused by remember { mutableStateOf(false) }
     var selectedChip by remember { mutableStateOf<QuickTimeChip?>(null) }
 
-    val chips = remember { buildQuickTimeChips() }
+    val laterTodayLabel = stringResource(R.string.quick_chip_later_today)
+    val thisEveningLabel = stringResource(R.string.quick_chip_this_evening)
+    val noTimeLabel = stringResource(R.string.quick_chip_no_time)
+    val currentTimeChipFormat = stringResource(R.string.home_current_time_chip)
+    val chips = remember { buildQuickTimeChips(laterTodayLabel, thisEveningLabel, noTimeLabel, currentTimeChipFormat) }
+
+    val exampleRes = listOf(
+        R.string.home_quick_add_example_1,
+        R.string.home_quick_add_example_2,
+        R.string.home_quick_add_example_3,
+        R.string.home_quick_add_example_4,
+    )
+    var exampleIndex by remember { mutableIntStateOf(0) }
+    LaunchedEffect(isFocused) {
+        if (!isFocused) {
+            while (true) {
+                kotlinx.coroutines.delay(3000)
+                exampleIndex = (exampleIndex + 1) % exampleRes.size
+            }
+        }
+    }
+    val placeholderText = if (isFocused || text.isNotEmpty()) {
+        stringResource(R.string.home_quick_add_hint)
+    } else {
+        stringResource(exampleRes[exampleIndex])
+    }
 
     Column(modifier = modifier.fillMaxWidth()) {
         if (isFocused) {
@@ -76,7 +103,7 @@ fun BottomQuickAdd(
                 modifier = Modifier
                     .weight(1f)
                     .onFocusChanged { isFocused = it.isFocused },
-                placeholder = { Text(stringResource(R.string.home_quick_add_hint)) },
+                placeholder = { Text(placeholderText) },
                 singleLine = true,
                 shape = PillShape,
                 keyboardOptions = KeyboardOptions(
@@ -105,7 +132,12 @@ fun BottomQuickAdd(
     }
 }
 
-private fun buildQuickTimeChips(): List<QuickTimeChip> {
+private fun buildQuickTimeChips(
+    laterTodayLabel: String,
+    thisEveningLabel: String,
+    noTimeLabel: String,
+    currentTimeChipFormat: String,
+): List<QuickTimeChip> {
     val now = Calendar.getInstance()
     val laterToday = (now.clone() as Calendar).apply { add(Calendar.HOUR_OF_DAY, 3) }
     val thisEvening = (now.clone() as Calendar).apply {
@@ -114,9 +146,9 @@ private fun buildQuickTimeChips(): List<QuickTimeChip> {
     }
     val timeFormat = SimpleDateFormat("h:mm a", Locale.getDefault())
     return listOf(
-        QuickTimeChip("Later today", laterToday.timeInMillis),
-        QuickTimeChip("This evening", thisEvening.timeInMillis),
-        QuickTimeChip("No time", null),
-        QuickTimeChip("Today ${timeFormat.format(now.time)}", now.timeInMillis),
+        QuickTimeChip(laterTodayLabel, laterToday.timeInMillis),
+        QuickTimeChip(thisEveningLabel, thisEvening.timeInMillis),
+        QuickTimeChip(noTimeLabel, null),
+        QuickTimeChip(String.format(currentTimeChipFormat, timeFormat.format(now.time)), now.timeInMillis),
     )
 }

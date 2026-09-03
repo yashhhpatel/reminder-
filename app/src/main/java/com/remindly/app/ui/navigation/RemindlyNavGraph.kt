@@ -1,5 +1,10 @@
 package com.remindly.app.ui.navigation
 
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -10,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
 import androidx.navigation.navArgument
+import com.remindly.app.ui.theme.AppAnimation
 import com.remindly.app.ui.RemindlyViewModelFactory
 import com.remindly.app.ui.screens.detail.ReminderDetailScreen
 import com.remindly.app.ui.screens.home.HomeScreen
@@ -40,7 +46,22 @@ fun RemindlyNavGraph(
     onRateUs: () -> Unit,
     onOnboardingComplete: () -> Unit,
 ) {
-    NavHost(navController = navController, startDestination = startDestination) {
+    NavHost(
+        navController = navController,
+        startDestination = startDestination,
+        enterTransition = {
+            slideInHorizontally(animationSpec = tween(AppAnimation.NORMAL)) { it / 4 } + fadeIn(tween(AppAnimation.NORMAL))
+        },
+        exitTransition = {
+            fadeOut(tween(AppAnimation.FAST))
+        },
+        popEnterTransition = {
+            fadeIn(tween(AppAnimation.NORMAL))
+        },
+        popExitTransition = {
+            slideOutHorizontally(animationSpec = tween(AppAnimation.NORMAL)) { it / 4 } + fadeOut(tween(AppAnimation.NORMAL))
+        },
+    ) {
         composable(Routes.ONBOARDING) {
             OnboardingScreen(
                 onFinished = {

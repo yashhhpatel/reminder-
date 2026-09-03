@@ -56,6 +56,7 @@ fun SelectCategoryScreen(
     categoryListViewModel: CategoryListViewModel = viewModel(factory = factory),
 ) {
     val categories by categoryListViewModel.categories.collectAsState()
+    val countsByCategory by categoryListViewModel.reminderCountByCategory.collectAsState()
     val editorState by reminderEditorViewModel.state.collectAsState()
     var categoryPendingDelete by remember { mutableStateOf<Category?>(null) }
 
@@ -66,6 +67,7 @@ fun SelectCategoryScreen(
             items(categories, key = { it.id }) { category ->
                 CategoryRow(
                     category = category,
+                    count = countsByCategory[category.id] ?: 0,
                     selected = editorState.categoryId == category.id,
                     onSelect = {
                         reminderEditorViewModel.setCategory(category)
@@ -111,6 +113,7 @@ fun SelectCategoryScreen(
 @Composable
 private fun CategoryRow(
     category: Category,
+    count: Int,
     selected: Boolean,
     onSelect: () -> Unit,
     onDelete: (() -> Unit)?,
@@ -136,6 +139,11 @@ private fun CategoryRow(
             }
             Spacer(Modifier.width(AppSpacing.sm))
             Text(category.name, style = MaterialTheme.typography.titleMedium, modifier = Modifier.weight(1f))
+            Text(
+                count.toString(),
+                style = MaterialTheme.typography.labelLarge,
+                color = AppTheme.extendedColors.textSecondary,
+            )
             if (onDelete != null) {
                 IconButton(onClick = onDelete) {
                     Icon(Icons.Filled.Delete, contentDescription = stringResource(R.string.delete), tint = AppTheme.extendedColors.textSecondary)

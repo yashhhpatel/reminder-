@@ -12,7 +12,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.VolumeUp
 import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material.icons.filled.Done
+import androidx.compose.material.icons.filled.DoneAll
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Repeat
 import androidx.compose.material.icons.filled.Share
@@ -121,7 +121,7 @@ fun ReminderDetailScreen(
             horizontalArrangement = Arrangement.SpaceEvenly,
         ) {
             if (!state.isCompleted) {
-                DetailAction(Icons.Filled.Done, stringResource(R.string.reminder_mark_complete)) {
+                DetailAction(Icons.Filled.DoneAll, stringResource(R.string.reminder_mark_complete)) {
                     viewModel.setCompleted(true)
                 }
             }

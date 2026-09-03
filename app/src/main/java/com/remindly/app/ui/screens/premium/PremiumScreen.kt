@@ -34,6 +34,7 @@ import com.remindly.app.R
 import com.remindly.app.ui.RemindlyViewModelFactory
 import com.remindly.app.ui.components.PrimaryButton
 import com.remindly.app.ui.theme.AppSpacing
+import com.remindly.app.ui.theme.BrandPurpleLight
 import com.remindly.app.ui.theme.PaywallAccentGreen
 import com.remindly.app.ui.theme.PaywallBackground
 
@@ -77,7 +78,7 @@ fun PremiumScreen(
         androidx.compose.foundation.layout.Box(
             modifier = Modifier
                 .size(width = 48.dp, height = 3.dp)
-                .background(PaywallAccentGreen),
+                .background(BrandPurpleLight),
         )
 
         Spacer(Modifier.padding(top = AppSpacing.xl))
@@ -103,13 +104,26 @@ fun PremiumScreen(
             textAlign = TextAlign.Center,
             modifier = Modifier.fillMaxWidth(),
         )
-        Text(
-            stringResource(R.string.premium_cancel_note),
-            style = MaterialTheme.typography.bodySmall,
-            color = Color.White.copy(alpha = 0.7f),
-            textAlign = TextAlign.Center,
-            modifier = Modifier.fillMaxWidth(),
-        )
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 2.dp),
+            horizontalArrangement = Arrangement.Center,
+            verticalAlignment = Alignment.CenterVertically,
+        ) {
+            Icon(
+                Icons.Filled.Shield,
+                contentDescription = null,
+                tint = Color.White.copy(alpha = 0.7f),
+                modifier = Modifier.size(14.dp),
+            )
+            Spacer(Modifier.padding(start = 4.dp))
+            Text(
+                stringResource(R.string.premium_cancel_note),
+                style = MaterialTheme.typography.bodySmall,
+                color = Color.White.copy(alpha = 0.7f),
+            )
+        }
 
         Spacer(Modifier.padding(top = AppSpacing.md))
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceEvenly) {

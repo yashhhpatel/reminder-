@@ -1,5 +1,6 @@
 package com.remindly.app.ui.screens.search
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
@@ -9,22 +10,30 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.remindly.app.R
 import com.remindly.app.ui.RemindlyViewModelFactory
 import com.remindly.app.ui.components.AppSearchBar
 import com.remindly.app.ui.components.AppTopBar
+import com.remindly.app.ui.components.EmptyIllustration
 import com.remindly.app.ui.components.NoSearchResultsState
 import com.remindly.app.ui.components.ReminderCard
 import com.remindly.app.ui.theme.AppSpacing
+import com.remindly.app.ui.theme.AppTheme
 
 @Composable
 fun SearchScreen(
@@ -38,6 +47,12 @@ fun SearchScreen(
     val results by viewModel.results.collectAsState()
     val categoriesById by viewModel.categoriesById.collectAsState()
     val focusRequester = remember { FocusRequester() }
+    val keyboardController = LocalSoftwareKeyboardController.current
+
+    LaunchedEffect(Unit) {
+        focusRequester.requestFocus()
+        keyboardController?.show()
+    }
 
     Column(modifier = modifier.fillMaxSize()) {
         AppTopBar(title = stringResource(R.string.search_title), onBack = onBack)
@@ -51,7 +66,9 @@ fun SearchScreen(
         )
         Spacer(Modifier.height(AppSpacing.sm))
 
-        if (query.isNotBlank() && results.isEmpty()) {
+        if (query.isBlank()) {
+            SearchPromptState(modifier = Modifier.fillMaxSize())
+        } else if (results.isEmpty()) {
             NoSearchResultsState(modifier = Modifier.fillMaxSize())
         } else {
             LazyColumn(contentPadding = PaddingValues(horizontal = AppSpacing.md, vertical = AppSpacing.xs)) {
@@ -66,6 +83,21 @@ fun SearchScreen(
                     )
                 }
             }
+        }
+    }
+}
+
+@Composable
+private fun SearchPromptState(modifier: Modifier = Modifier) {
+    Box(modifier = modifier, contentAlignment = Alignment.Center) {
+        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+            EmptyIllustration(icon = Icons.Filled.Search)
+            Spacer(Modifier.height(AppSpacing.md))
+            Text(
+                stringResource(R.string.search_prompt),
+                style = MaterialTheme.typography.bodyMedium,
+                color = AppTheme.extendedColors.textSecondary,
+            )
         }
     }
 }

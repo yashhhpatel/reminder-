@@ -1,5 +1,7 @@
 package com.remindly.app.ui.screens.home
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -41,6 +43,7 @@ import com.remindly.app.ui.components.BottomQuickAdd
 import com.remindly.app.ui.components.EmptyReminderState
 import com.remindly.app.ui.components.LoadingState
 import com.remindly.app.ui.components.ReminderCard
+import com.remindly.app.ui.theme.AppAnimation
 import com.remindly.app.ui.theme.AppSpacing
 import com.remindly.app.ui.theme.AppTheme
 import java.text.SimpleDateFormat
@@ -109,6 +112,7 @@ fun HomeScreen(
     }
 }
 
+@OptIn(androidx.compose.foundation.ExperimentalFoundationApi::class)
 @Composable
 private fun ReminderList(
     upcoming: List<Reminder>,
@@ -148,6 +152,7 @@ private fun ReminderList(
                         categoryColor = categoriesById[reminder.categoryId]?.colorArgb ?: MaterialTheme.colorScheme.primary.toArgbSafe(),
                         onClick = { onOpenReminder(reminder.id) },
                         onToggleComplete = { checked -> onToggleComplete(reminder, checked) },
+                        modifier = Modifier.animateItemPlacement(),
                     )
                 }
             }
@@ -169,6 +174,7 @@ private fun ReminderList(
                         categoryColor = categoriesById[reminder.categoryId]?.colorArgb ?: MaterialTheme.colorScheme.primary.toArgbSafe(),
                         onClick = { onOpenReminder(reminder.id) },
                         onToggleComplete = { checked -> onToggleComplete(reminder, checked) },
+                        modifier = Modifier.animateItemPlacement(),
                     )
                 }
             }
@@ -191,11 +197,16 @@ private fun SectionHeader(title: String, expanded: Boolean, onToggle: () -> Unit
             color = AppTheme.extendedColors.textSecondary,
             modifier = Modifier.weight(1f),
         )
+        val rotation by animateFloatAsState(
+            targetValue = if (expanded) 0f else 180f,
+            animationSpec = tween(AppAnimation.NORMAL),
+            label = "chevronRotation",
+        )
         IconButton(onClick = onToggle) {
             Icon(
                 Icons.Filled.KeyboardArrowDown,
                 contentDescription = stringResource(if (expanded) R.string.collapse_section else R.string.expand_section),
-                modifier = if (!expanded) Modifier.rotate(180f) else Modifier,
+                modifier = Modifier.rotate(rotation),
             )
         }
     }

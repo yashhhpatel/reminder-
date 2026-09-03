@@ -76,6 +76,7 @@ fun NewReminderScreen(
     modifier: Modifier = Modifier,
     viewModel: ReminderEditorViewModel,
 ) {
+    val context = androidx.compose.ui.platform.LocalContext.current
     LaunchedEffect(reminderId) { viewModel.load(reminderId) }
 
     val state by viewModel.state.collectAsState()
@@ -289,7 +290,7 @@ fun NewReminderScreen(
         AppTimePickerDialog(
             initialHour = cal.get(Calendar.HOUR_OF_DAY),
             initialMinute = cal.get(Calendar.MINUTE),
-            is24Hour = false,
+            is24Hour = android.text.format.DateFormat.is24HourFormat(context),
             onConfirm = { hour, minute ->
                 cal.set(Calendar.HOUR_OF_DAY, hour)
                 cal.set(Calendar.MINUTE, minute)

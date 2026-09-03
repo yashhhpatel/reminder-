@@ -24,7 +24,7 @@ class RemindlyViewModelFactory(private val container: AppContainer) : ViewModelP
                 ReminderEditorViewModel(container.reminderRepository, container.categoryRepository) as T
 
             modelClass.isAssignableFrom(CategoryListViewModel::class.java) ->
-                CategoryListViewModel(container.categoryRepository) as T
+                CategoryListViewModel(container.categoryRepository, container.reminderRepository) as T
 
             modelClass.isAssignableFrom(SearchViewModel::class.java) ->
                 SearchViewModel(container.reminderRepository, container.categoryRepository) as T

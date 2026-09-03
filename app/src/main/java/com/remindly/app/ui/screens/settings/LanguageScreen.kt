@@ -23,12 +23,6 @@ import com.remindly.app.ui.components.AppCard
 import com.remindly.app.ui.components.AppTopBar
 import com.remindly.app.ui.theme.AppSpacing
 
-private data class LanguageOption(val code: String, val labelRes: Int)
-
-private val supportedLanguages = listOf(
-    LanguageOption("en", R.string.language_english),
-)
-
 @Composable
 fun LanguageScreen(
     factory: RemindlyViewModelFactory,
@@ -41,7 +35,7 @@ fun LanguageScreen(
     Column(modifier = modifier.fillMaxSize()) {
         AppTopBar(title = stringResource(R.string.language_title), onBack = onBack)
         AppCard(modifier = Modifier.padding(AppSpacing.md)) {
-            supportedLanguages.forEachIndexed { index, option ->
+            SupportedLanguages.forEachIndexed { index, option ->
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
@@ -49,10 +43,10 @@ fun LanguageScreen(
                         .padding(vertical = AppSpacing.sm),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
-                    Text(stringResource(option.labelRes), style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
+                    Text(option.displayName, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
                     RadioButton(selected = uiState.language == option.code, onClick = { viewModel.setLanguage(option.code); onBack() })
                 }
-                if (index != supportedLanguages.lastIndex) HorizontalDivider()
+                if (index != SupportedLanguages.lastIndex) HorizontalDivider()
             }
         }
     }

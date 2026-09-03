@@ -39,6 +39,14 @@
     <string name="home_quick_suggestion_tomorrow_morning">Tomorrow morning</string>
     <string name="home_quick_suggestion_next_week">Next week</string>
     <string name="home_quick_add_hint">Add reminder</string>
+    <string name="home_quick_add_example_1">Drink water at 7 PM</string>
+    <string name="home_quick_add_example_2">Call mom tomorrow</string>
+    <string name="home_quick_add_example_3">Buy groceries tomorrow morning</string>
+    <string name="home_quick_add_example_4">Meeting at 3 PM</string>
+    <string name="quick_chip_later_today">Later today</string>
+    <string name="quick_chip_this_evening">This evening</string>
+    <string name="quick_chip_no_time">No time</string>
+    <string name="home_current_time_chip">Today %1$s</string>
     <string name="home_no_results_title">No reminders found</string>
     <string name="home_no_results_subtitle">Try a different search term</string>
     <string name="home_no_category_reminders">No reminders in this category</string>
@@ -64,6 +72,7 @@
     <string name="reminder_repeat_monthly">Every month</string>
     <string name="reminder_repeat_yearly">Every year</string>
     <string name="reminder_repeat_custom">Custom</string>
+    <string name="reminder_repeat_custom_days_label">Repeat on</string>
     <string name="reminder_sound_once">Ring once</string>
     <string name="reminder_sound_repeat">Repeat until dismissed</string>
     <string name="reminder_sound_silent">Silent</string>
@@ -102,6 +111,7 @@
     <string name="search_title">Search</string>
     <string name="search_hint">Search by title, category or place</string>
     <string name="search_clear">Clear search</string>
+    <string name="search_prompt">Search your reminders</string>
 
     <!-- Settings -->
     <string name="settings_title">Settings</string>
@@ -168,7 +178,7 @@
     <string name="premium_feature_support">Priority assistance</string>
     <string name="premium_continue">Continue</string>
     <string name="premium_renew_note">Subscription renews automatically unless cancelled</string>
-    <string name="premium_cancel_note">Cancel anytime</string>
+    <string name="premium_cancel_note">Cancel anytime. Secure with Play Store</string>
     <string name="premium_terms">Terms &amp; Conditions</string>
     <string name="premium_privacy">Privacy Policy</string>
     <string name="premium_restore">Restore</string>

@@ -46,6 +46,6 @@ object DefaultCategories {
         CategoryEntity(name = "Work", colorArgb = 0xFF3D7BE8.toInt(), isBuiltIn = true, sortOrder = 1),
         CategoryEntity(name = "Personal", colorArgb = 0xFFE5484D.toInt(), isBuiltIn = true, sortOrder = 2),
         CategoryEntity(name = "My health", colorArgb = 0xFF6BC24A.toInt(), isBuiltIn = true, sortOrder = 3),
-        CategoryEntity(name = "Finance", colorArgb = 0xFF6A3DE8.toInt(), isBuiltIn = true, sortOrder = 4),
+        CategoryEntity(name = "Finance", colorArgb = 0xFF4B3FA8.toInt(), isBuiltIn = true, sortOrder = 4),
     )
 }
