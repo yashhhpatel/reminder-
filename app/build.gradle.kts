@@ -19,10 +19,24 @@ android {
         vectorDrawables { useSupportLibrary = true }
     }
 
+    signingConfigs {
+        // Signed with the standard Android debug key so this "release" build variant is
+        // installable for verification/testing on emulators and physical devices. This is
+        // NOT a production signing key — a real release for Play Store distribution needs its
+        // own upload keystore, which is outside the scope of this verification build.
+        create("releaseTesting") {
+            storeFile = file(System.getProperty("user.home") + "/.android/debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            signingConfig = signingConfigs.getByName("releaseTesting")
         }
         debug {
             isMinifyEnabled = false
