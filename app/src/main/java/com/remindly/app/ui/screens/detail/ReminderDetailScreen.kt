@@ -85,7 +85,7 @@ fun ReminderDetailScreen(
                 )
                 if (state.isCompleted) {
                     Text(
-                        "Completed",
+                        stringResource(R.string.reminder_completed_caption),
                         style = MaterialTheme.typography.bodySmall,
                         color = AppTheme.extendedColors.textSecondary,
                     )
@@ -94,7 +94,7 @@ fun ReminderDetailScreen(
 
             if (state.dateTime != null) {
                 AppCard {
-                    Text("Time", style = MaterialTheme.typography.labelMedium, color = AppTheme.extendedColors.textSecondary)
+                    Text(stringResource(R.string.reminder_time_section), style = MaterialTheme.typography.labelMedium, color = AppTheme.extendedColors.textSecondary)
                     Spacer(Modifier.padding(top = AppSpacing.xs))
                     DetailIconRow(Icons.Filled.CalendarMonth, formatDateTime(state.dateTime!!))
                     DetailIconRow(Icons.Filled.Repeat, repeatDisplay(state.repeatType))

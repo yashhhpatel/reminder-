@@ -194,7 +194,7 @@ private fun SectionHeader(title: String, expanded: Boolean, onToggle: () -> Unit
         IconButton(onClick = onToggle) {
             Icon(
                 Icons.Filled.KeyboardArrowDown,
-                contentDescription = null,
+                contentDescription = stringResource(if (expanded) R.string.collapse_section else R.string.expand_section),
                 modifier = if (!expanded) Modifier.rotate(180f) else Modifier,
             )
         }

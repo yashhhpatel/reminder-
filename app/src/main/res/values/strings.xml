@@ -44,6 +44,8 @@
     <string name="home_no_category_reminders">No reminders in this category</string>
     <string name="home_section_soon">Soon</string>
     <string name="home_section_completed">Completed</string>
+    <string name="expand_section">Expand section</string>
+    <string name="collapse_section">Collapse section</string>
     <string name="home_no_due_date">No due date</string>
     <string name="home_completed_label">Completed</string>
     <string name="home_completed_prefix">Completed %1$s</string>
@@ -77,6 +79,8 @@
     <string name="reminder_mark_complete">Mark complete</string>
     <string name="reminder_mark_incomplete">Mark incomplete</string>
     <string name="reminder_today">Today</string>
+    <string name="reminder_time_section">Time</string>
+    <string name="reminder_completed_caption">Completed</string>
     <string name="reminder_tomorrow">Tomorrow</string>
     <string name="reminder_remove_time">Remove time</string>
     <string name="reminder_no_notification_warning">You won\'t get notification.</string>

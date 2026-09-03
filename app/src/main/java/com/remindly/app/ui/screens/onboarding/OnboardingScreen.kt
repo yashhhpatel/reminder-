@@ -15,7 +15,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.clickable
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.NotificationsActive
-import androidx.compose.material.icons.filled.PhoneForwarded
+import androidx.compose.material.icons.automirrored.filled.PhoneForwarded
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -83,7 +83,7 @@ fun OnboardingScreen(
         )
         Spacer(Modifier.padding(top = AppSpacing.lg))
         OnboardingFeatureRow(
-            icon = Icons.Filled.PhoneForwarded,
+            icon = Icons.AutoMirrored.Filled.PhoneForwarded,
             title = stringResource(R.string.onboarding_feature_call_title),
             description = stringResource(R.string.onboarding_feature_call_desc),
         )
@@ -142,14 +142,18 @@ private fun LegalFooter(onOpenPrivacyPolicy: () -> Unit) {
     val fullText = stringResource(R.string.onboarding_legal)
     val privacyWord = stringResource(R.string.onboarding_privacy_policy)
 
-    Text(
-        text = fullText,
-        style = MaterialTheme.typography.bodySmall,
-        color = AppTheme.extendedColors.textSecondary,
-        textAlign = TextAlign.Center,
+    Column(
         modifier = Modifier.fillMaxWidth(),
-    )
-    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.Center) {
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        Text(
+            text = fullText,
+            style = MaterialTheme.typography.bodySmall,
+            color = AppTheme.extendedColors.textSecondary,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.fillMaxWidth(),
+        )
+        Spacer(Modifier.padding(top = AppSpacing.xxs))
         ClickableTextLink(privacyWord, onOpenPrivacyPolicy)
     }
 }

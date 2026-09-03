@@ -6,12 +6,17 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.safeDrawingPadding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.lifecycleScope
@@ -77,19 +82,26 @@ class MainActivity : ComponentActivity() {
 
                     val isPremium by container.premiumRepository.isPremium.collectAsState(initial = false)
 
-                    RemindlyNavGraph(
-                        navController = navController,
-                        factory = factory,
-                        startDestination = destination,
-                        isPremium = isPremium,
-                        onOpenPrivacyPolicyExternal = { navController.navigate(Routes.PRIVACY_POLICY) },
-                        onOpenFeedback = { openFeedback() },
-                        onShare = { openShareSheet() },
-                        onRateUs = { openRateUs() },
-                        onOnboardingComplete = {
-                            lifecycleScope.launch { container.settingsDataStore.setOnboardingDone(true) }
-                        },
-                    )
+                    Surface(
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .safeDrawingPadding(),
+                        color = MaterialTheme.colorScheme.background,
+                    ) {
+                        RemindlyNavGraph(
+                            navController = navController,
+                            factory = factory,
+                            startDestination = destination,
+                            isPremium = isPremium,
+                            onOpenPrivacyPolicyExternal = { navController.navigate(Routes.PRIVACY_POLICY) },
+                            onOpenFeedback = { openFeedback() },
+                            onShare = { openShareSheet() },
+                            onRateUs = { openRateUs() },
+                            onOnboardingComplete = {
+                                lifecycleScope.launch { container.settingsDataStore.setOnboardingDone(true) }
+                            },
+                        )
+                    }
                 }
             }
         }
