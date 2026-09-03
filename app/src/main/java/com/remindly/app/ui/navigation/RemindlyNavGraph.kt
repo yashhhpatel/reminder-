@@ -172,7 +172,6 @@ private fun NavGraphBuilder.editorGraph(
             val editorViewModel: ReminderEditorViewModel = viewModel(parentEntry, factory = factory)
 
             NewReminderScreen(
-                factory = factory,
                 reminderId = reminderId,
                 isPremium = isPremium,
                 onBack = { navController.popBackStack() },

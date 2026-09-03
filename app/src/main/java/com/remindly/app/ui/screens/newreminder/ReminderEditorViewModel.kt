@@ -46,14 +46,26 @@ class ReminderEditorViewModel(
     private val _state = MutableStateFlow(ReminderEditorState())
     val state: StateFlow<ReminderEditorState> = _state.asStateFlow()
 
-    fun load(reminderId: Long?) {
-        if (reminderId == null || reminderId == 0L) {
+    // This ViewModel is scoped to the "editor" nested nav graph, but Navigation Compose disposes
+    // and rebuilds the New/Edit Reminder screen's own composition every time a sub-screen
+    // (Repeat, Category, Location) is pushed on top and popped back — which re-fires any
+    // LaunchedEffect(reminderId) { load(reminderId) } in that screen even though reminderId
+    // hasn't changed. Without this guard, every trip to a sub-screen and back would silently
+    // wipe the user's in-progress title/time/category edits. load() is idempotent per id instead.
+    private var loadedReminderId: Long? = null
+
+    fun load(reminderId: Long?, forceReload: Boolean = false) {
+        val normalizedId = reminderId ?: 0L
+        if (!forceReload && loadedReminderId == normalizedId) return
+        loadedReminderId = normalizedId
+
+        if (normalizedId == 0L) {
             _state.value = ReminderEditorState(isLoaded = true, isEditMode = false)
             loadCategory(Category.DEFAULT_CATEGORY_ID)
             return
         }
         viewModelScope.launch {
-            val reminder = reminderRepository.getById(reminderId)
+            val reminder = reminderRepository.getById(normalizedId)
             if (reminder != null) {
                 _state.value = reminder.toEditorState()
                 loadCategory(reminder.categoryId)

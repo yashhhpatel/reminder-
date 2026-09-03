@@ -48,7 +48,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.remindly.app.R
 import com.remindly.app.domain.model.SoundMode
-import com.remindly.app.ui.RemindlyViewModelFactory
 import com.remindly.app.ui.components.AppCard
 import com.remindly.app.ui.components.AppDatePickerDialog
 import com.remindly.app.ui.components.AppSwitch
@@ -64,7 +63,6 @@ import java.util.Locale
 
 @Composable
 fun NewReminderScreen(
-    factory: RemindlyViewModelFactory,
     reminderId: Long?,
     isPremium: Boolean,
     onBack: () -> Unit,

@@ -58,7 +58,7 @@ fun ReminderDetailScreen(
     onDeleted: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
-    LaunchedEffect(reminderId) { viewModel.load(reminderId) }
+    LaunchedEffect(reminderId) { viewModel.load(reminderId, forceReload = true) }
     val state by viewModel.state.collectAsState()
     val context = LocalContext.current
     var showDeleteConfirm by remember { mutableStateOf(false) }
