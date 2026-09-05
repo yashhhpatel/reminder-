@@ -102,6 +102,10 @@ fun SelectCategoryScreen(
             confirmLabel = stringResource(R.string.delete),
             isDestructive = true,
             onConfirm = {
+                if (editorState.categoryId == category.id) {
+                    categories.firstOrNull { it.id == Category.DEFAULT_CATEGORY_ID }
+                        ?.let { reminderEditorViewModel.setCategory(it) }
+                }
                 categoryListViewModel.deleteCategory(category)
                 categoryPendingDelete = null
             },

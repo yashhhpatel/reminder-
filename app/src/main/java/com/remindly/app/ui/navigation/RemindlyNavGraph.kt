@@ -78,7 +78,12 @@ fun RemindlyNavGraph(
                 onContinue = {
                     onOnboardingComplete()
                     navController.navigate(Routes.HOME) {
-                        popUpTo(Routes.ONBOARDING) { inclusive = true }
+                        // popUpTo(ONBOARDING) is a no-op here: ONBOARDING was already popped off
+                        // the back stack by the earlier ONBOARDING -> OVERLAY_EXPLAINER transition,
+                        // so it's no longer a valid pop target. That silently left OVERLAY_EXPLAINER
+                        // underneath HOME, so pressing back on Home revealed "One last step!" again
+                        // instead of exiting. Pop up to the screen that's actually on the stack.
+                        popUpTo(Routes.OVERLAY_EXPLAINER) { inclusive = true }
                     }
                 },
             )
