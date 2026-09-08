@@ -20,11 +20,12 @@ import androidx.compose.material.icons.filled.PrivacyTip
 import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material.icons.filled.Shield
 import androidx.compose.material.icons.filled.Star
-import androidx.compose.material3.AlertDialog
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -35,15 +36,18 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.window.Dialog
 import com.remindly.app.BuildConfig
 import com.remindly.app.R
 import com.remindly.app.domain.model.AppThemeMode
 import com.remindly.app.ui.RemindlyViewModelFactory
 import com.remindly.app.ui.components.AppTopBar
 import com.remindly.app.ui.components.GoProBanner
+import com.remindly.app.ui.components.PrimaryButton
 import com.remindly.app.ui.components.SettingsRow
 import com.remindly.app.ui.components.SettingsSectionLabel
 import com.remindly.app.ui.components.SettingsToggleRow
+import com.remindly.app.ui.theme.AppDimens
 import com.remindly.app.ui.theme.AppSpacing
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.foundation.layout.Row
@@ -176,23 +180,25 @@ private fun AppThemeDialog(
     onDismiss: () -> Unit,
 ) {
     var selected by remember { mutableStateOf(current) }
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        title = { Text(stringResource(R.string.settings_theme)) },
-        text = {
-            Column {
+    Dialog(onDismissRequest = onDismiss) {
+        Surface(
+            shape = RoundedCornerShape(AppDimens.cardCornerRadius),
+            color = MaterialTheme.colorScheme.surface,
+        ) {
+            Column(modifier = Modifier.padding(AppSpacing.lg)) {
+                Text(stringResource(R.string.settings_theme), style = MaterialTheme.typography.titleLarge)
+                Spacer(Modifier.padding(top = AppSpacing.md))
                 ThemeOptionRow(stringResource(R.string.settings_theme_auto), selected == AppThemeMode.AUTO) { selected = AppThemeMode.AUTO }
                 ThemeOptionRow(stringResource(R.string.settings_theme_light), selected == AppThemeMode.LIGHT) { selected = AppThemeMode.LIGHT }
                 ThemeOptionRow(stringResource(R.string.settings_theme_dark), selected == AppThemeMode.DARK) { selected = AppThemeMode.DARK }
+                Spacer(Modifier.padding(top = AppSpacing.md))
+                PrimaryButton(
+                    text = stringResource(R.string.save),
+                    onClick = { onSelect(selected); onDismiss() },
+                )
             }
-        },
-        confirmButton = {
-            TextButton(onClick = { onSelect(selected); onDismiss() }) { Text(stringResource(R.string.save)) }
-        },
-        dismissButton = {
-            TextButton(onClick = onDismiss) { Text(stringResource(R.string.cancel)) }
-        },
-    )
+        }
+    }
 }
 
 @Composable
@@ -201,7 +207,7 @@ private fun ThemeOptionRow(label: String, selected: Boolean, onClick: () -> Unit
         modifier = Modifier
             .fillMaxWidth()
             .clickable(onClick = onClick)
-            .padding(vertical = AppSpacing.xs),
+            .padding(vertical = AppSpacing.sm),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         RadioButton(selected = selected, onClick = onClick)

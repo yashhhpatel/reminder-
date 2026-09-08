@@ -174,12 +174,30 @@ fun NewReminderScreen(
                         )
                         DropdownMenu(expanded = showSoundMenu, onDismissRequest = { showSoundMenu = false }) {
                             DropdownMenuItem(
-                                text = { Text(stringResource(R.string.reminder_sound_once)) },
+                                text = {
+                                    Column {
+                                        Text(stringResource(R.string.reminder_sound_once))
+                                        Text(
+                                            stringResource(R.string.reminder_sound_once_desc),
+                                            style = MaterialTheme.typography.bodySmall,
+                                            color = AppTheme.extendedColors.textSecondary,
+                                        )
+                                    }
+                                },
                                 onClick = { viewModel.setSound(SoundMode.RING_ONCE); showSoundMenu = false },
                                 leadingIcon = { RadioButton(selected = state.soundMode == SoundMode.RING_ONCE, onClick = null) },
                             )
                             DropdownMenuItem(
-                                text = { Text(stringResource(R.string.reminder_sound_repeat)) },
+                                text = {
+                                    Column {
+                                        Text(stringResource(R.string.reminder_sound_repeat))
+                                        Text(
+                                            stringResource(R.string.reminder_sound_repeat_desc),
+                                            style = MaterialTheme.typography.bodySmall,
+                                            color = AppTheme.extendedColors.textSecondary,
+                                        )
+                                    }
+                                },
                                 onClick = { viewModel.setSound(SoundMode.REPEAT_UNTIL_DISMISSED); showSoundMenu = false },
                                 leadingIcon = { RadioButton(selected = state.soundMode == SoundMode.REPEAT_UNTIL_DISMISSED, onClick = null) },
                             )

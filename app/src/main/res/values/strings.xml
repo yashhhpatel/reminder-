@@ -91,7 +91,9 @@
     <string name="reminder_repeat_custom">Custom</string>
     <string name="reminder_repeat_custom_days_label">Repeat on</string>
     <string name="reminder_sound_once">Ring once</string>
-    <string name="reminder_sound_repeat">Repeat until dismissed</string>
+    <string name="reminder_sound_once_desc">Notification and short sound</string>
+    <string name="reminder_sound_repeat">Keep ringing</string>
+    <string name="reminder_sound_repeat_desc">Notification and long sound</string>
     <string name="reminder_sound_silent">Silent</string>
     <string name="reminder_suggestion_1hour">1 hour from now</string>
     <string name="reminder_suggestion_today_7am">Today 7:00 AM</string>
@@ -118,8 +120,8 @@
     <string name="category_health">My health</string>
     <string name="category_finance">Finance</string>
     <string name="category_add">Add category</string>
-    <string name="category_name_hint">Category name</string>
-    <string name="category_pick_color">Pick a color</string>
+    <string name="category_name_hint">Enter here</string>
+    <string name="category_pick_color">Colour</string>
     <string name="category_delete_confirm">Delete this category? Reminders in it will move to My reminders.</string>
     <string name="select_category_title">Select category</string>
     <string name="repeat_title">Repeat</string>
@@ -189,10 +191,9 @@
 
     <!-- Premium -->
     <string name="premium_headline">Get Unlimited access to premium features.</string>
-    <string name="premium_feature_places">Unlimited Add Places</string>
-    <string name="premium_feature_ads">Remove ads</string>
-    <string name="premium_feature_advanced">Advanced reminder functionality</string>
-    <string name="premium_feature_support">Priority assistance</string>
+    <string name="premium_feature_places">Unlimited Add Places – Break Barriers!</string>
+    <string name="premium_feature_ads">Remove every single ad – Zero Interruptions!</string>
+    <string name="premium_feature_support">365 Days, 24/7 Assistance – Here for You!</string>
     <string name="premium_continue">Continue</string>
     <string name="premium_renew_note">Subscription renews automatically unless cancelled</string>
     <string name="premium_cancel_note">Cancel anytime. Secure with Play Store</string>

@@ -85,7 +85,6 @@ fun PremiumScreen(
 
         BenefitRow(stringResource(R.string.premium_feature_places))
         BenefitRow(stringResource(R.string.premium_feature_ads))
-        BenefitRow(stringResource(R.string.premium_feature_advanced))
         BenefitRow(stringResource(R.string.premium_feature_support))
 
         Spacer(Modifier.weight(1f))
@@ -142,7 +141,7 @@ private fun BenefitRow(text: String) {
             .padding(vertical = AppSpacing.xs),
         verticalAlignment = Alignment.CenterVertically,
     ) {
-        Icon(Icons.Filled.Check, contentDescription = null, tint = PaywallAccentGreen)
+        Icon(Icons.Filled.Check, contentDescription = null, tint = Color.White)
         Spacer(Modifier.padding(start = AppSpacing.sm))
         Text(text, color = Color.White, style = MaterialTheme.typography.bodyLarge)
     }
