@@ -30,6 +30,23 @@
     <string name="overlay_dialog_action">Open Settings</string>
     <string name="overlay_dialog_skip">Not now</string>
 
+    <!-- Onboarding: language confirm -->
+    <string name="language_confirm_cd">Confirm language</string>
+
+    <!-- Onboarding: privacy/consent -->
+    <string name="privacy_consent_headline">Your comfort comes first!</string>
+    <string name="privacy_consent_subheading">Ensuring your privacy</string>
+    <string name="privacy_consent_body">We are committed to protecting your privacy while providing a personalized experience. This notice explains what information we collect and how it is used.</string>
+    <string name="privacy_consent_collect_heading">We enhance your app experience by collecting:</string>
+    <string name="privacy_consent_bullet_1">Precise location data and Device Identifiers</string>
+    <string name="privacy_consent_bullet_2">Show location details for relevant results</string>
+    <string name="privacy_consent_bullet_3">Deliver tailored ads and improve performance</string>
+    <string name="privacy_consent_bullet_4">Perform Advertising and Location-based analytics</string>
+    <string name="privacy_consent_bullet_5">Improve connectivity and app features on wireless networks</string>
+    <string name="privacy_consent_fine_print">By continuing, you consent to our use of your data as described above and in our</string>
+    <string name="privacy_consent_accept">ACCEPT</string>
+    <string name="privacy_consent_decline">DECLINE</string>
+
     <!-- Home -->
     <string name="home_title">My reminder</string>
     <string name="home_search_hint">Search reminders</string>

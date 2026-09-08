@@ -27,6 +27,7 @@ import com.remindly.app.ui.screens.newreminder.RepeatOptionsScreen
 import com.remindly.app.ui.screens.newreminder.SelectCategoryScreen
 import com.remindly.app.ui.screens.onboarding.OnboardingScreen
 import com.remindly.app.ui.screens.onboarding.OverlayExplainerScreen
+import com.remindly.app.ui.screens.onboarding.PrivacyConsentScreen
 import com.remindly.app.ui.screens.premium.PremiumScreen
 import com.remindly.app.ui.screens.privacy.PrivacyPolicyScreen
 import com.remindly.app.ui.screens.privacy.PrivacySettingsScreen
@@ -75,17 +76,33 @@ fun RemindlyNavGraph(
 
         composable(Routes.OVERLAY_EXPLAINER) {
             OverlayExplainerScreen(
-                onContinue = {
+                onContinue = { navController.navigate(Routes.ONBOARDING_LANGUAGE) },
+            )
+        }
+
+        composable(Routes.ONBOARDING_LANGUAGE) {
+            LanguageScreen(
+                factory = factory,
+                onBack = {},
+                onConfirm = { navController.navigate(Routes.PRIVACY_CONSENT) },
+            )
+        }
+
+        composable(Routes.PRIVACY_CONSENT) {
+            PrivacyConsentScreen(
+                onFinished = {
                     onOnboardingComplete()
                     navController.navigate(Routes.HOME) {
-                        // popUpTo(ONBOARDING) is a no-op here: ONBOARDING was already popped off
-                        // the back stack by the earlier ONBOARDING -> OVERLAY_EXPLAINER transition,
-                        // so it's no longer a valid pop target. That silently left OVERLAY_EXPLAINER
-                        // underneath HOME, so pressing back on Home revealed "One last step!" again
-                        // instead of exiting. Pop up to the screen that's actually on the stack.
+                        // ONBOARDING already popped itself off the back stack during the earlier
+                        // ONBOARDING -> OVERLAY_EXPLAINER transition, so it is NOT a valid pop target
+                        // here (popUpTo a route absent from the stack silently no-ops — the exact bug
+                        // class that once left "One last step!" stuck underneath Home). OVERLAY_EXPLAINER
+                        // is the oldest survivor still on the stack at this point, so popping up through
+                        // it clears OVERLAY_EXPLAINER + ONBOARDING_LANGUAGE + PRIVACY_CONSENT in one shot.
                         popUpTo(Routes.OVERLAY_EXPLAINER) { inclusive = true }
                     }
                 },
+                onOpenPrivacyPolicy = onOpenPrivacyPolicyExternal,
             )
         }
 

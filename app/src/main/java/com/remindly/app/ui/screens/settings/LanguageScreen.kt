@@ -8,7 +8,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
 import androidx.compose.material3.HorizontalDivider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
@@ -30,12 +34,29 @@ fun LanguageScreen(
     factory: RemindlyViewModelFactory,
     onBack: () -> Unit,
     modifier: Modifier = Modifier,
+    onConfirm: (() -> Unit)? = null,
     viewModel: SettingsViewModel = viewModel(factory = factory),
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    val isOnboarding = onConfirm != null
+
+    fun selectLanguage(code: String) {
+        viewModel.setLanguage(code)
+        if (!isOnboarding) onBack()
+    }
 
     Column(modifier = modifier.fillMaxSize()) {
-        AppTopBar(title = stringResource(R.string.language_title), onBack = onBack)
+        AppTopBar(
+            title = stringResource(R.string.language_title),
+            onBack = if (isOnboarding) null else onBack,
+            actions = {
+                if (isOnboarding) {
+                    IconButton(onClick = onConfirm!!) {
+                        Icon(Icons.Filled.Check, contentDescription = stringResource(R.string.language_confirm_cd))
+                    }
+                }
+            },
+        )
         AppCard(
             modifier = Modifier
                 .padding(AppSpacing.md)
@@ -45,12 +66,12 @@ fun LanguageScreen(
                 Row(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .clickable { viewModel.setLanguage(option.code); onBack() }
+                        .clickable { selectLanguage(option.code) }
                         .padding(vertical = AppSpacing.sm),
                     verticalAlignment = Alignment.CenterVertically,
                 ) {
                     Text(option.displayName, style = MaterialTheme.typography.bodyLarge, modifier = Modifier.weight(1f))
-                    RadioButton(selected = uiState.language == option.code, onClick = { viewModel.setLanguage(option.code); onBack() })
+                    RadioButton(selected = uiState.language == option.code, onClick = { selectLanguage(option.code) })
                 }
                 if (index != SupportedLanguages.lastIndex) HorizontalDivider()
             }

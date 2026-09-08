@@ -3,6 +3,8 @@ package com.remindly.app.ui.navigation
 object Routes {
     const val ONBOARDING = "onboarding"
     const val OVERLAY_EXPLAINER = "overlay_explainer"
+    const val ONBOARDING_LANGUAGE = "onboarding_language"
+    const val PRIVACY_CONSENT = "privacy_consent"
     const val HOME = "home"
 
     const val EDITOR_GRAPH = "editor_graph/{reminderId}"
