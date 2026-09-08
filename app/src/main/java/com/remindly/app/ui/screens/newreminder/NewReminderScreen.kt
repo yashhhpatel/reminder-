@@ -15,6 +15,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.VolumeUp
+import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.ChevronRight
 import androidx.compose.material.icons.filled.NotificationsOff
@@ -127,13 +128,23 @@ fun NewReminderScreen(
                     HorizontalDivider()
                     Spacer(Modifier.padding(top = AppSpacing.sm))
 
-                    Row(verticalAlignment = Alignment.CenterVertically, modifier = Modifier.fillMaxWidth()) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickableSimple { showDatePicker = true },
+                    ) {
+                        Icon(
+                            Icons.Filled.CalendarMonth,
+                            contentDescription = null,
+                            tint = AppTheme.extendedColors.textSecondary,
+                            modifier = Modifier.size(20.dp),
+                        )
+                        Spacer(Modifier.padding(start = AppSpacing.sm))
                         Text(
                             formatDateTimeLabel(state.dateTime!!),
                             style = MaterialTheme.typography.bodyLarge,
-                            modifier = Modifier
-                                .weight(1f)
-                                .clickableSimple { showDatePicker = true },
+                            modifier = Modifier.weight(1f),
                         )
                         IconButton(onClick = viewModel::clearDateTime) {
                             Icon(
