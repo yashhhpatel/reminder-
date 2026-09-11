@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Remindly</string>
+
+    <string name="onboarding_headline">Chào mừng bạn đến với một cách nhắc nhở hoàn toàn mới</string>
+    <string name="onboarding_feature_alerts_title">Thông báo nhắc nhở</string>
+    <string name="onboarding_feature_alerts_desc">Nhận thông báo đúng lúc cho các nhắc nhở đã lên lịch.</string>
+    <string name="onboarding_feature_call_title">Nhắc nhở sau cuộc gọi</string>
+    <string name="onboarding_feature_call_desc">Sử dụng các tính năng nhắc nhở hữu ích ngay sau khi kết thúc cuộc gọi.</string>
+    <string name="onboarding_cta">BẮT ĐẦU NGAY</string>
+    <string name="onboarding_legal">Khi tiếp tục, bạn đồng ý với Chính sách quyền riêng tư và Điều khoản &amp; Điều kiện của chúng tôi</string>
+    <string name="onboarding_privacy_policy">Chính sách quyền riêng tư</string>
+    <string name="onboarding_terms">Điều khoản &amp; Điều kiện</string>
+
+    <string name="notif_dialog_title">Cần quyền thông báo</string>
+    <string name="notif_dialog_body">Cần có quyền này để gửi thông báo nhắc nhở, giúp bạn không bỏ lỡ việc quan trọng nào.</string>
+    <string name="notif_dialog_ok">Đồng ý</string>
+
+    <string name="overlay_explainer_title">Chỉ còn một bước nữa thôi!</string>
+    <string name="overlay_explainer_body">Cấp quyền để xem và đặt nhắc nhở ngay sau khi kết thúc cuộc gọi.</string>
+    <string name="overlay_go_to_settings">ĐI ĐẾN CÀI ĐẶT</string>
+    <string name="continue_action">Tiếp tục</string>
+
+    <string name="overlay_dialog_title">Hiển thị trên các ứng dụng khác</string>
+    <string name="overlay_dialog_body">Cho phép Remindly hiển thị thông báo nhắc nhở đè lên các ứng dụng khác để bạn không bỏ lỡ khoảnh khắc nào.</string>
+    <string name="overlay_dialog_action">Mở cài đặt</string>
+    <string name="overlay_dialog_skip">Để sau</string>
+
+    <string name="language_confirm_cd">Xác nhận ngôn ngữ</string>
+
+    <string name="privacy_consent_headline">Sự thoải mái của bạn luôn là ưu tiên hàng đầu!</string>
+    <string name="privacy_consent_subheading">Bảo vệ quyền riêng tư của bạn</string>
+    <string name="privacy_consent_body">Chúng tôi cam kết bảo vệ quyền riêng tư của bạn trong khi mang đến trải nghiệm được cá nhân hóa. Thông báo này giải thích những thông tin chúng tôi thu thập và cách sử dụng chúng.</string>
+    <string name="privacy_consent_collect_heading">Chúng tôi cải thiện trải nghiệm dùng ứng dụng của bạn bằng cách thu thập:</string>
+    <string name="privacy_consent_bullet_1">Dữ liệu vị trí chính xác và mã định danh thiết bị</string>
+    <string name="privacy_consent_bullet_2">Hiển thị thông tin vị trí để cho kết quả phù hợp hơn</string>
+    <string name="privacy_consent_bullet_3">Cung cấp quảng cáo phù hợp và cải thiện hiệu suất</string>
+    <string name="privacy_consent_bullet_4">Phân tích dữ liệu quảng cáo và vị trí</string>
+    <string name="privacy_consent_bullet_5">Cải thiện kết nối và tính năng ứng dụng trên mạng không dây</string>
+    <string name="privacy_consent_fine_print">Khi tiếp tục, bạn đồng ý cho chúng tôi sử dụng dữ liệu của bạn như mô tả ở trên và trong</string>
+    <string name="privacy_consent_accept">ĐỒNG Ý</string>
+    <string name="privacy_consent_decline">TỪ CHỐI</string>
+
+    <string name="home_title">Nhắc nhở của tôi</string>
+    <string name="home_search_hint">Tìm kiếm nhắc nhở</string>
+    <string name="home_empty_title">Chào mừng đến với Reminders</string>
+    <string name="home_empty_subtitle">Tạo nhắc nhở đầu tiên để không bao giờ quên điều quan trọng.</string>
+    <string name="home_add_reminder">Thêm nhắc nhở</string>
+    <string name="home_quick_suggestion_tomorrow_morning">Sáng mai</string>
+    <string name="home_quick_suggestion_next_week">Tuần sau</string>
+    <string name="home_quick_add_hint">Thêm nhắc nhở</string>
+    <string name="home_quick_add_example_1">Uống nước lúc 7 giờ tối</string>
+    <string name="home_quick_add_example_2">Gọi cho mẹ vào ngày mai</string>
+    <string name="home_quick_add_example_3">Mua đồ tạp hóa vào sáng mai</string>
+    <string name="home_quick_add_example_4">Họp lúc 3 giờ chiều</string>
+    <string name="quick_chip_later_today">Muộn hơn hôm nay</string>
+    <string name="quick_chip_this_evening">Tối nay</string>
+    <string name="quick_chip_no_time">Không đặt giờ</string>
+    <string name="home_current_time_chip">Hôm nay %1$s</string>
+    <string name="home_no_results_title">Không tìm thấy nhắc nhở nào</string>
+    <string name="home_no_results_subtitle">Hãy thử một từ khóa khác</string>
+    <string name="home_no_category_reminders">Không có nhắc nhở nào trong danh mục này</string>
+    <string name="home_section_soon">Sắp tới</string>
+    <string name="home_section_completed">Đã hoàn thành</string>
+    <string name="expand_section">Mở rộng mục</string>
+    <string name="collapse_section">Thu gọn mục</string>
+    <string name="home_no_due_date">Không có ngày đến hạn</string>
+    <string name="home_completed_label">Đã hoàn thành</string>
+    <string name="home_completed_prefix">Đã hoàn thành %1$s</string>
+
+    <string name="new_reminder_title">Nhắc nhở mới</string>
+    <string name="edit_reminder_title">Chỉnh sửa nhắc nhở</string>
+    <string name="reminder_memo_hint">Ghi chú</string>
+    <string name="reminder_add_time">Thêm giờ</string>
+    <string name="reminder_add_place">Thêm địa điểm</string>
+    <string name="reminder_add_place_desc">Chọn một địa điểm để kích hoạt nhắc nhở của bạn</string>
+    <string name="reminder_repeat_none">Không lặp lại</string>
+    <string name="reminder_repeat_daily">Mỗi ngày</string>
+    <string name="reminder_repeat_weekday">Mỗi ngày trong tuần</string>
+    <string name="reminder_repeat_weekly">Mỗi tuần</string>
+    <string name="reminder_repeat_monthly">Mỗi tháng</string>
+    <string name="reminder_repeat_yearly">Mỗi năm</string>
+    <string name="reminder_repeat_custom">Tùy chỉnh</string>
+    <string name="reminder_repeat_custom_days_label">Lặp lại vào</string>
+    <string name="reminder_sound_once">Reo một lần</string>
+    <string name="reminder_sound_once_desc">Thông báo kèm âm thanh ngắn</string>
+    <string name="reminder_sound_repeat">Reo liên tục</string>
+    <string name="reminder_sound_repeat_desc">Thông báo kèm âm thanh dài</string>
+    <string name="reminder_sound_silent">Im lặng</string>
+    <string name="reminder_suggestion_1hour">1 giờ nữa</string>
+    <string name="reminder_suggestion_today_7am">Hôm nay, 7:00 sáng</string>
+    <string name="reminder_suggestion_today_3pm">Hôm nay, 3:00 chiều</string>
+    <string name="reminder_suggestion_today_10pm">Hôm nay, 10:00 tối</string>
+    <string name="reminder_category_label">Danh mục</string>
+    <string name="reminder_save">Lưu</string>
+    <string name="reminder_delete">Xóa nhắc nhở</string>
+    <string name="reminder_delete_confirm_title">Xóa nhắc nhở này?</string>
+    <string name="reminder_delete_confirm_body">Hành động này không thể hoàn tác.</string>
+    <string name="reminder_mark_complete">Đánh dấu hoàn thành</string>
+    <string name="reminder_mark_incomplete">Đánh dấu chưa hoàn thành</string>
+    <string name="reminder_today">Hôm nay</string>
+    <string name="reminder_time_section">Thời gian</string>
+    <string name="reminder_completed_caption">Đã hoàn thành</string>
+    <string name="reminder_tomorrow">Ngày mai</string>
+    <string name="reminder_remove_time">Xóa giờ</string>
+    <string name="reminder_no_notification_warning">Bạn sẽ không nhận được thông báo.</string>
+
+    <string name="category_my_reminders">Nhắc nhở của tôi</string>
+    <string name="category_work">Công việc</string>
+    <string name="category_personal">Cá nhân</string>
+    <string name="category_health">Sức khỏe của tôi</string>
+    <string name="category_finance">Tài chính</string>
+    <string name="category_add">Thêm danh mục</string>
+    <string name="category_name_hint">Nhập vào đây</string>
+    <string name="category_pick_color">Màu sắc</string>
+    <string name="category_delete_confirm">Xóa danh mục này? Các nhắc nhở trong đó sẽ được chuyển sang Nhắc nhở của tôi.</string>
+    <string name="select_category_title">Chọn danh mục</string>
+    <string name="repeat_title">Lặp lại</string>
+
+    <string name="search_title">Tìm kiếm</string>
+    <string name="search_hint">Tìm theo tiêu đề, danh mục hoặc địa điểm</string>
+    <string name="search_clear">Xóa tìm kiếm</string>
+    <string name="search_prompt">Tìm kiếm nhắc nhở của bạn</string>
+
+    <string name="settings_title">Cài đặt</string>
+    <string name="settings_premium_title">Toàn quyền truy cập</string>
+    <string name="settings_premium_subtitle">Mở khóa toàn bộ tính năng.</string>
+    <string name="settings_go_pro">Nâng cấp Pro</string>
+    <string name="settings_section_general">CHUNG</string>
+    <string name="settings_language">Ngôn ngữ</string>
+    <string name="settings_theme">Giao diện ứng dụng</string>
+    <string name="settings_theme_auto">Tự động</string>
+    <string name="settings_theme_light">Chế độ sáng</string>
+    <string name="settings_theme_dark">Chế độ tối</string>
+    <string name="settings_section_presets">MẪU CÓ SẴN</string>
+    <string name="settings_add_time">Thêm giờ</string>
+    <string name="settings_add_time_desc">Chọn ngày và giờ cho nhắc nhở của bạn</string>
+    <string name="settings_add_place">Thêm địa điểm</string>
+    <string name="settings_add_place_desc">Chọn một địa điểm để kích hoạt nhắc nhở của bạn</string>
+    <string name="settings_after_call">Nhắc nhở sau cuộc gọi</string>
+    <string name="settings_after_call_desc">Hiển thị chi tiết cuộc gọi và thông tin bổ sung sau khi kết thúc cuộc gọi</string>
+    <string name="settings_section_communicate">LIÊN HỆ</string>
+    <string name="settings_feedback">Góp ý</string>
+    <string name="settings_privacy_policy">Chính sách quyền riêng tư</string>
+    <string name="settings_privacy_settings">Cài đặt quyền riêng tư</string>
+    <string name="settings_section_others">KHÁC</string>
+    <string name="settings_share">Chia sẻ</string>
+    <string name="settings_rate_us">Đánh giá chúng tôi</string>
+    <string name="settings_app_version">Phiên bản ứng dụng %1$s</string>
+
+    <string name="language_title">Ngôn ngữ</string>
+    <string name="language_english">Tiếng Anh</string>
+
+    <string name="feedback_subject">Góp ý cho Remindly</string>
+    <string name="feedback_body">Phiên bản: %1$s</string>
+    <string name="feedback_no_email_title">Không tìm thấy ứng dụng email</string>
+    <string name="feedback_no_email_body">Vui lòng cài đặt một ứng dụng email để gửi góp ý, hoặc liên hệ với chúng tôi qua trang cửa hàng ứng dụng.</string>
+
+    <string name="share_text">Hãy thử Remindly — ứng dụng nhắc nhở đơn giản, tập trung. Không bao giờ quên điều quan trọng.</string>
+    <string name="share_chooser_title">Chia sẻ Remindly</string>
+
+    <string name="rate_fallback_title">Đánh giá Remindly</string>
+    <string name="rate_fallback_body">Cảm ơn bạn đã sử dụng Remindly! Tính năng đánh giá chưa khả dụng trong phiên bản này.</string>
+
+    <string name="privacy_policy_title">Chính sách quyền riêng tư</string>
+    <string name="privacy_settings_title">Cài đặt quyền riêng tư</string>
+    <string name="privacy_notifications">Thông báo</string>
+    <string name="privacy_notifications_desc">Cho phép Remindly gửi thông báo nhắc nhở</string>
+    <string name="privacy_location">Quyền truy cập vị trí</string>
+    <string name="privacy_location_desc">Cho phép Remindly sử dụng vị trí của bạn cho các nhắc nhở theo địa điểm</string>
+    <string name="privacy_analytics">Phân tích dữ liệu</string>
+    <string name="privacy_analytics_desc">Remindly không thu thập bất kỳ dữ liệu phân tích nào</string>
+    <string name="privacy_personalized">Nội dung cá nhân hóa</string>
+    <string name="privacy_personalized_desc">Không áp dụng — Remindly không hiển thị nội dung cá nhân hóa nào</string>
+
+    <string name="premium_headline">Mở khóa quyền truy cập không giới hạn vào các tính năng cao cấp.</string>
+    <string name="premium_feature_places">Thêm địa điểm không giới hạn – Xóa bỏ mọi rào cản!</string>
+    <string name="premium_feature_ads">Loại bỏ mọi quảng cáo – Không còn gián đoạn!</string>
+    <string name="premium_feature_support">Hỗ trợ 24/7, suốt 365 ngày – Luôn đồng hành cùng bạn!</string>
+    <string name="premium_continue">Tiếp tục</string>
+    <string name="premium_renew_note">Gói đăng ký sẽ tự động gia hạn trừ khi bạn hủy</string>
+    <string name="premium_cancel_note">Hủy bất cứ lúc nào. Thanh toán an toàn qua Play Store</string>
+    <string name="premium_terms">Điều khoản &amp; Điều kiện</string>
+    <string name="premium_privacy">Chính sách quyền riêng tư</string>
+    <string name="premium_restore">Khôi phục giao dịch mua</string>
+
+    <string name="location_picker_title">Chọn địa điểm</string>
+    <string name="location_search_hint">Tìm kiếm địa điểm</string>
+    <string name="location_permission_required">Cần có quyền truy cập vị trí để chọn địa điểm</string>
+    <string name="location_grant_permission">Cấp quyền</string>
+    <string name="location_use_current">Dùng vị trí hiện tại</string>
+
+    <string name="notification_channel_reminders_name">Thông báo nhắc nhở</string>
+    <string name="notification_channel_reminders_desc">Thông báo cho các nhắc nhở đã lên lịch của bạn</string>
+    <string name="notification_action_done">XONG</string>
+    <string name="notification_action_snooze">HOÃN</string>
+    <string name="snooze_10_min">10 phút</string>
+    <string name="snooze_30_min">30 phút</string>
+    <string name="snooze_1_hour">1 giờ</string>
+
+    <string name="cancel">Hủy</string>
+    <string name="delete">Xóa</string>
+    <string name="save">Lưu</string>
+    <string name="back">Quay lại</string>
+    <string name="close">Đóng</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="settings">Cài đặt</string>
+    <string name="edit">Chỉnh sửa</string>
+    <string name="ok">Đồng ý</string>
+</resources>

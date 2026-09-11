@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Remindly</string>
+
+    <string name="onboarding_headline">مرحبًا بك في نوع جديد من التذكيرات</string>
+    <string name="onboarding_feature_alerts_title">تنبيهات التذكير</string>
+    <string name="onboarding_feature_alerts_desc">احصل على تنبيهات فورية لتذكيراتك المجدولة.</string>
+    <string name="onboarding_feature_call_title">تذكيرات بعد المكالمات</string>
+    <string name="onboarding_feature_call_desc">استفد من ميزات التذكير المفيدة بعد كل مكالمة.</string>
+    <string name="onboarding_cta">ابدأ الآن</string>
+    <string name="onboarding_legal">بالمتابعة، فإنك توافق على سياسة الخصوصية وشروط الاستخدام الخاصة بنا</string>
+    <string name="onboarding_privacy_policy">سياسة الخصوصية</string>
+    <string name="onboarding_terms">الشروط والأحكام</string>
+
+    <string name="notif_dialog_title">الإشعارات مطلوبة</string>
+    <string name="notif_dialog_body">نحتاج إلى إذن الإشعارات لإرسال تنبيهات التذكير حتى لا تفوتك أي مهمة مهمة.</string>
+    <string name="notif_dialog_ok">حسنًا</string>
+
+    <string name="overlay_explainer_title">خطوة أخيرة فقط!</string>
+    <string name="overlay_explainer_body">امنح الإذن لعرض التذكيرات وضبطها مباشرة بعد إنهاء المكالمة.</string>
+    <string name="overlay_go_to_settings">الانتقال إلى الإعدادات</string>
+    <string name="continue_action">متابعة</string>
+
+    <string name="overlay_dialog_title">الظهور فوق التطبيقات الأخرى</string>
+    <string name="overlay_dialog_body">اسمح لتطبيق Remindly بعرض تنبيهات التذكير فوق التطبيقات الأخرى حتى لا تفوتك أي لحظة.</string>
+    <string name="overlay_dialog_action">فتح الإعدادات</string>
+    <string name="overlay_dialog_skip">ليس الآن</string>
+
+    <string name="language_confirm_cd">تأكيد اللغة</string>
+
+    <string name="privacy_consent_headline">راحتك أولاً!</string>
+    <string name="privacy_consent_subheading">نحرص على خصوصيتك</string>
+    <string name="privacy_consent_body">نحن ملتزمون بحماية خصوصيتك مع تقديم تجربة مخصصة لك. يوضح هذا الإشعار المعلومات التي نجمعها وكيفية استخدامها.</string>
+    <string name="privacy_consent_collect_heading">نُحسّن تجربتك في التطبيق من خلال جمع:</string>
+    <string name="privacy_consent_bullet_1">بيانات الموقع الدقيقة ومعرّفات الجهاز</string>
+    <string name="privacy_consent_bullet_2">عرض تفاصيل الموقع للحصول على نتائج أكثر دقة</string>
+    <string name="privacy_consent_bullet_3">تقديم إعلانات مخصصة وتحسين الأداء</string>
+    <string name="privacy_consent_bullet_4">إجراء تحليلات للإعلانات والموقع الجغرافي</string>
+    <string name="privacy_consent_bullet_5">تحسين الاتصال وميزات التطبيق عبر الشبكات اللاسلكية</string>
+    <string name="privacy_consent_fine_print">بالمتابعة، فإنك توافق على استخدامنا لبياناتك كما هو موضح أعلاه وفي</string>
+    <string name="privacy_consent_accept">موافق</string>
+    <string name="privacy_consent_decline">رفض</string>
+
+    <string name="home_title">تذكيراتي</string>
+    <string name="home_search_hint">ابحث في التذكيرات</string>
+    <string name="home_empty_title">مرحبًا بك في التذكيرات</string>
+    <string name="home_empty_subtitle">أنشئ أول تذكير لك ولن تنسى ما يهم بعد الآن.</string>
+    <string name="home_add_reminder">إضافة تذكير</string>
+    <string name="home_quick_suggestion_tomorrow_morning">غدًا صباحًا</string>
+    <string name="home_quick_suggestion_next_week">الأسبوع القادم</string>
+    <string name="home_quick_add_hint">إضافة تذكير</string>
+    <string name="home_quick_add_example_1">اشرب الماء الساعة 7 مساءً</string>
+    <string name="home_quick_add_example_2">اتصل بأمي غدًا</string>
+    <string name="home_quick_add_example_3">شراء البقالة غدًا صباحًا</string>
+    <string name="home_quick_add_example_4">اجتماع الساعة 3 عصرًا</string>
+    <string name="quick_chip_later_today">لاحقًا اليوم</string>
+    <string name="quick_chip_this_evening">هذا المساء</string>
+    <string name="quick_chip_no_time">بدون وقت</string>
+    <string name="home_current_time_chip">اليوم %1$s</string>
+    <string name="home_no_results_title">لم يتم العثور على تذكيرات</string>
+    <string name="home_no_results_subtitle">جرّب كلمة بحث مختلفة</string>
+    <string name="home_no_category_reminders">لا توجد تذكيرات في هذه الفئة</string>
+    <string name="home_section_soon">قريبًا</string>
+    <string name="home_section_completed">مكتملة</string>
+    <string name="expand_section">توسيع القسم</string>
+    <string name="collapse_section">طي القسم</string>
+    <string name="home_no_due_date">بدون تاريخ استحقاق</string>
+    <string name="home_completed_label">مكتمل</string>
+    <string name="home_completed_prefix">اكتمل %1$s</string>
+
+    <string name="new_reminder_title">تذكير جديد</string>
+    <string name="edit_reminder_title">تعديل التذكير</string>
+    <string name="reminder_memo_hint">ملاحظة</string>
+    <string name="reminder_add_time">إضافة وقت</string>
+    <string name="reminder_add_place">إضافة مكان</string>
+    <string name="reminder_add_place_desc">اختر موقعًا يؤدي إلى تفعيل تذكيرك</string>
+    <string name="reminder_repeat_none">بدون تكرار</string>
+    <string name="reminder_repeat_daily">كل يوم</string>
+    <string name="reminder_repeat_weekday">كل يوم عمل</string>
+    <string name="reminder_repeat_weekly">كل أسبوع</string>
+    <string name="reminder_repeat_monthly">كل شهر</string>
+    <string name="reminder_repeat_yearly">كل سنة</string>
+    <string name="reminder_repeat_custom">مخصص</string>
+    <string name="reminder_repeat_custom_days_label">التكرار في</string>
+    <string name="reminder_sound_once">رنين مرة واحدة</string>
+    <string name="reminder_sound_once_desc">إشعار مع صوت قصير</string>
+    <string name="reminder_sound_repeat">استمرار الرنين</string>
+    <string name="reminder_sound_repeat_desc">إشعار مع صوت طويل</string>
+    <string name="reminder_sound_silent">صامت</string>
+    <string name="reminder_suggestion_1hour">بعد ساعة من الآن</string>
+    <string name="reminder_suggestion_today_7am">اليوم 7:00 صباحًا</string>
+    <string name="reminder_suggestion_today_3pm">اليوم 3:00 عصرًا</string>
+    <string name="reminder_suggestion_today_10pm">اليوم 10:00 مساءً</string>
+    <string name="reminder_category_label">الفئة</string>
+    <string name="reminder_save">حفظ</string>
+    <string name="reminder_delete">حذف التذكير</string>
+    <string name="reminder_delete_confirm_title">هل تريد حذف هذا التذكير؟</string>
+    <string name="reminder_delete_confirm_body">لا يمكن التراجع عن هذا الإجراء.</string>
+    <string name="reminder_mark_complete">تحديد كمكتمل</string>
+    <string name="reminder_mark_incomplete">تحديد كغير مكتمل</string>
+    <string name="reminder_today">اليوم</string>
+    <string name="reminder_time_section">الوقت</string>
+    <string name="reminder_completed_caption">مكتمل</string>
+    <string name="reminder_tomorrow">غدًا</string>
+    <string name="reminder_remove_time">إزالة الوقت</string>
+    <string name="reminder_no_notification_warning">لن تصلك أي إشعارات.</string>
+
+    <string name="category_my_reminders">تذكيراتي</string>
+    <string name="category_work">العمل</string>
+    <string name="category_personal">شخصي</string>
+    <string name="category_health">صحتي</string>
+    <string name="category_finance">المالية</string>
+    <string name="category_add">إضافة فئة</string>
+    <string name="category_name_hint">اكتب هنا</string>
+    <string name="category_pick_color">اللون</string>
+    <string name="category_delete_confirm">هل تريد حذف هذه الفئة؟ ستنتقل التذكيرات الموجودة فيها إلى تذكيراتي.</string>
+    <string name="select_category_title">اختر الفئة</string>
+    <string name="repeat_title">التكرار</string>
+
+    <string name="search_title">بحث</string>
+    <string name="search_hint">ابحث بالعنوان أو الفئة أو المكان</string>
+    <string name="search_clear">مسح البحث</string>
+    <string name="search_prompt">ابحث في تذكيراتك</string>
+
+    <string name="settings_title">الإعدادات</string>
+    <string name="settings_premium_title">الوصول الكامل</string>
+    <string name="settings_premium_subtitle">افتح جميع الميزات.</string>
+    <string name="settings_go_pro">الترقية إلى Pro</string>
+    <string name="settings_section_general">عام</string>
+    <string name="settings_language">اللغة</string>
+    <string name="settings_theme">مظهر التطبيق</string>
+    <string name="settings_theme_auto">تلقائي</string>
+    <string name="settings_theme_light">الوضع الفاتح</string>
+    <string name="settings_theme_dark">الوضع الداكن</string>
+    <string name="settings_section_presets">الإعدادات الجاهزة</string>
+    <string name="settings_add_time">إضافة وقت</string>
+    <string name="settings_add_time_desc">اختر تاريخًا ووقتًا لتذكيرك</string>
+    <string name="settings_add_place">إضافة مكان</string>
+    <string name="settings_add_place_desc">اختر موقعًا يؤدي إلى تفعيل تذكيرك</string>
+    <string name="settings_after_call">تذكير بعد المكالمة</string>
+    <string name="settings_after_call_desc">عرض تفاصيل المكالمة ومعلومات إضافية بعد انتهائها</string>
+    <string name="settings_section_communicate">تواصل معنا</string>
+    <string name="settings_feedback">الملاحظات</string>
+    <string name="settings_privacy_policy">سياسة الخصوصية</string>
+    <string name="settings_privacy_settings">إعدادات الخصوصية</string>
+    <string name="settings_section_others">أخرى</string>
+    <string name="settings_share">مشاركة</string>
+    <string name="settings_rate_us">قيّمنا</string>
+    <string name="settings_app_version">إصدار التطبيق %1$s</string>
+
+    <string name="language_title">اللغة</string>
+    <string name="language_english">الإنجليزية</string>
+
+    <string name="feedback_subject">ملاحظات حول Remindly</string>
+    <string name="feedback_body">الإصدار: %1$s</string>
+    <string name="feedback_no_email_title">لم يتم العثور على تطبيق بريد إلكتروني</string>
+    <string name="feedback_no_email_body">يرجى تثبيت تطبيق بريد إلكتروني لإرسال ملاحظاتك، أو تواصل معنا عبر صفحة المتجر.</string>
+
+    <string name="share_text">جرّب Remindly — تطبيق تذكيرات بسيط ومركّز. لن تنسى ما يهم بعد الآن.</string>
+    <string name="share_chooser_title">مشاركة Remindly</string>
+
+    <string name="rate_fallback_title">قيّم Remindly</string>
+    <string name="rate_fallback_body">شكرًا لاستخدامك Remindly! التقييمات غير متاحة في هذا الإصدار.</string>
+
+    <string name="privacy_policy_title">سياسة الخصوصية</string>
+    <string name="privacy_settings_title">إعدادات الخصوصية</string>
+    <string name="privacy_notifications">الإشعارات</string>
+    <string name="privacy_notifications_desc">السماح لتطبيق Remindly بإرسال تنبيهات التذكير</string>
+    <string name="privacy_location">الوصول إلى الموقع</string>
+    <string name="privacy_location_desc">السماح لتطبيق Remindly باستخدام موقعك لتذكيرات تعتمد على المكان</string>
+    <string name="privacy_analytics">التحليلات</string>
+    <string name="privacy_analytics_desc">لا يجمع Remindly أي بيانات تحليلية</string>
+    <string name="privacy_personalized">المحتوى المخصص</string>
+    <string name="privacy_personalized_desc">غير مطبّق — لا يعرض Remindly أي محتوى مخصص</string>
+
+    <string name="premium_headline">احصل على وصول غير محدود إلى الميزات المميزة.</string>
+    <string name="premium_feature_places">إضافة أماكن بلا حدود – تجاوز كل الحواجز!</string>
+    <string name="premium_feature_ads">إزالة جميع الإعلانات – بلا أي إزعاج!</string>
+    <string name="premium_feature_support">دعم على مدار الساعة طوال أيام السنة – نحن هنا من أجلك!</string>
+    <string name="premium_continue">متابعة</string>
+    <string name="premium_renew_note">يتجدد الاشتراك تلقائيًا ما لم يتم إلغاؤه</string>
+    <string name="premium_cancel_note">يمكنك الإلغاء في أي وقت. الدفع آمن عبر متجر Play</string>
+    <string name="premium_terms">الشروط والأحكام</string>
+    <string name="premium_privacy">سياسة الخصوصية</string>
+    <string name="premium_restore">استعادة الشراء</string>
+
+    <string name="location_picker_title">اختر الموقع</string>
+    <string name="location_search_hint">ابحث عن مكان</string>
+    <string name="location_permission_required">يلزم إذن الموقع لاختيار مكان</string>
+    <string name="location_grant_permission">منح الإذن</string>
+    <string name="location_use_current">استخدام الموقع الحالي</string>
+
+    <string name="notification_channel_reminders_name">تنبيهات التذكير</string>
+    <string name="notification_channel_reminders_desc">إشعارات لتذكيراتك المجدولة</string>
+    <string name="notification_action_done">تم</string>
+    <string name="notification_action_snooze">تأجيل</string>
+    <string name="snooze_10_min">10 دقائق</string>
+    <string name="snooze_30_min">30 دقيقة</string>
+    <string name="snooze_1_hour">ساعة واحدة</string>
+
+    <string name="cancel">إلغاء</string>
+    <string name="delete">حذف</string>
+    <string name="save">حفظ</string>
+    <string name="back">رجوع</string>
+    <string name="close">إغلاق</string>
+    <string name="search">بحث</string>
+    <string name="settings">الإعدادات</string>
+    <string name="edit">تعديل</string>
+    <string name="ok">حسنًا</string>
+</resources>

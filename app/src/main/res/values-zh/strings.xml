@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Remindly</string>
+
+    <string name="onboarding_headline">欢迎体验全新提醒方式</string>
+    <string name="onboarding_feature_alerts_title">提醒通知</string>
+    <string name="onboarding_feature_alerts_desc">及时收到已安排提醒的通知。</string>
+    <string name="onboarding_feature_call_title">通话后提醒</string>
+    <string name="onboarding_feature_call_desc">通话结束后即可设置实用提醒。</string>
+    <string name="onboarding_cta">立即开始</string>
+    <string name="onboarding_legal">继续即表示您同意我们的隐私政策和服务条款</string>
+    <string name="onboarding_privacy_policy">隐私政策</string>
+    <string name="onboarding_terms">服务条款</string>
+
+    <string name="notif_dialog_title">需要通知权限</string>
+    <string name="notif_dialog_body">开启通知权限，才能发送提醒，确保您不错过重要事项。</string>
+    <string name="notif_dialog_ok">好的</string>
+
+    <string name="overlay_explainer_title">最后一步！</string>
+    <string name="overlay_explainer_body">授予权限后，通话结束即可立即查看和设置提醒。</string>
+    <string name="overlay_go_to_settings">前往设置</string>
+    <string name="continue_action">继续</string>
+
+    <string name="overlay_dialog_title">显示在其他应用上层</string>
+    <string name="overlay_dialog_body">允许 Remindly 在其他应用上层显示提醒通知，让您不错过任何重要时刻。</string>
+    <string name="overlay_dialog_action">打开设置</string>
+    <string name="overlay_dialog_skip">暂不设置</string>
+
+    <string name="language_confirm_cd">确认语言</string>
+
+    <string name="privacy_consent_headline">您的体验，我们的首要考量！</string>
+    <string name="privacy_consent_subheading">保护您的隐私</string>
+    <string name="privacy_consent_body">我们致力于在提供个性化体验的同时保护您的隐私。本声明将说明我们收集哪些信息以及如何使用这些信息。</string>
+    <string name="privacy_consent_collect_heading">我们通过收集以下信息来提升您的使用体验：</string>
+    <string name="privacy_consent_bullet_1">精确位置信息和设备标识符</string>
+    <string name="privacy_consent_bullet_2">展示与位置相关的详细结果</string>
+    <string name="privacy_consent_bullet_3">提供个性化广告并优化性能</string>
+    <string name="privacy_consent_bullet_4">开展广告及基于位置的数据分析</string>
+    <string name="privacy_consent_bullet_5">优化无线网络连接及应用功能</string>
+    <string name="privacy_consent_fine_print">继续使用即表示您同意我们按照上述及以下说明使用您的数据：</string>
+    <string name="privacy_consent_accept">同意</string>
+    <string name="privacy_consent_decline">拒绝</string>
+
+    <string name="home_title">我的提醒</string>
+    <string name="home_search_hint">搜索提醒</string>
+    <string name="home_empty_title">欢迎使用提醒事项</string>
+    <string name="home_empty_subtitle">创建您的第一条提醒，重要事项不再遗漏。</string>
+    <string name="home_add_reminder">添加提醒</string>
+    <string name="home_quick_suggestion_tomorrow_morning">明天早上</string>
+    <string name="home_quick_suggestion_next_week">下周</string>
+    <string name="home_quick_add_hint">添加提醒</string>
+    <string name="home_quick_add_example_1">晚上7点喝水</string>
+    <string name="home_quick_add_example_2">明天给妈妈打电话</string>
+    <string name="home_quick_add_example_3">明天早上买菜</string>
+    <string name="home_quick_add_example_4">下午3点开会</string>
+    <string name="quick_chip_later_today">今天稍晚</string>
+    <string name="quick_chip_this_evening">今天晚上</string>
+    <string name="quick_chip_no_time">不设时间</string>
+    <string name="home_current_time_chip">今天 %1$s</string>
+    <string name="home_no_results_title">未找到相关提醒</string>
+    <string name="home_no_results_subtitle">请尝试其他搜索关键词</string>
+    <string name="home_no_category_reminders">该分类下暂无提醒</string>
+    <string name="home_section_soon">即将到来</string>
+    <string name="home_section_completed">已完成</string>
+    <string name="expand_section">展开该部分</string>
+    <string name="collapse_section">收起该部分</string>
+    <string name="home_no_due_date">无截止日期</string>
+    <string name="home_completed_label">已完成</string>
+    <string name="home_completed_prefix">完成于 %1$s</string>
+
+    <string name="new_reminder_title">新建提醒</string>
+    <string name="edit_reminder_title">编辑提醒</string>
+    <string name="reminder_memo_hint">备注</string>
+    <string name="reminder_add_time">添加时间</string>
+    <string name="reminder_add_place">添加地点</string>
+    <string name="reminder_add_place_desc">选择一个位置，作为提醒的触发条件</string>
+    <string name="reminder_repeat_none">不重复</string>
+    <string name="reminder_repeat_daily">每天</string>
+    <string name="reminder_repeat_weekday">每个工作日</string>
+    <string name="reminder_repeat_weekly">每周</string>
+    <string name="reminder_repeat_monthly">每月</string>
+    <string name="reminder_repeat_yearly">每年</string>
+    <string name="reminder_repeat_custom">自定义</string>
+    <string name="reminder_repeat_custom_days_label">重复日期</string>
+    <string name="reminder_sound_once">响铃一次</string>
+    <string name="reminder_sound_once_desc">通知提示并播放短促铃声</string>
+    <string name="reminder_sound_repeat">持续响铃</string>
+    <string name="reminder_sound_repeat_desc">通知提示并持续播放铃声</string>
+    <string name="reminder_sound_silent">静音</string>
+    <string name="reminder_suggestion_1hour">1小时后</string>
+    <string name="reminder_suggestion_today_7am">今天上午7:00</string>
+    <string name="reminder_suggestion_today_3pm">今天下午3:00</string>
+    <string name="reminder_suggestion_today_10pm">今天晚上10:00</string>
+    <string name="reminder_category_label">分类</string>
+    <string name="reminder_save">保存</string>
+    <string name="reminder_delete">删除提醒</string>
+    <string name="reminder_delete_confirm_title">删除这条提醒？</string>
+    <string name="reminder_delete_confirm_body">此操作无法撤销。</string>
+    <string name="reminder_mark_complete">标记为已完成</string>
+    <string name="reminder_mark_incomplete">标记为未完成</string>
+    <string name="reminder_today">今天</string>
+    <string name="reminder_time_section">时间</string>
+    <string name="reminder_completed_caption">已完成</string>
+    <string name="reminder_tomorrow">明天</string>
+    <string name="reminder_remove_time">移除时间</string>
+    <string name="reminder_no_notification_warning">您将不会收到通知。</string>
+
+    <string name="category_my_reminders">我的提醒</string>
+    <string name="category_work">工作</string>
+    <string name="category_personal">个人</string>
+    <string name="category_health">我的健康</string>
+    <string name="category_finance">财务</string>
+    <string name="category_add">添加分类</string>
+    <string name="category_name_hint">请输入</string>
+    <string name="category_pick_color">颜色</string>
+    <string name="category_delete_confirm">删除该分类？其中的提醒将移至“我的提醒”。</string>
+    <string name="select_category_title">选择分类</string>
+    <string name="repeat_title">重复</string>
+
+    <string name="search_title">搜索</string>
+    <string name="search_hint">按标题、分类或地点搜索</string>
+    <string name="search_clear">清除搜索内容</string>
+    <string name="search_prompt">搜索您的提醒</string>
+
+    <string name="settings_title">设置</string>
+    <string name="settings_premium_title">完整版</string>
+    <string name="settings_premium_subtitle">解锁全部功能。</string>
+    <string name="settings_go_pro">升级专业版</string>
+    <string name="settings_section_general">通用</string>
+    <string name="settings_language">语言</string>
+    <string name="settings_theme">应用主题</string>
+    <string name="settings_theme_auto">自动模式</string>
+    <string name="settings_theme_light">浅色模式</string>
+    <string name="settings_theme_dark">深色模式</string>
+    <string name="settings_section_presets">预设</string>
+    <string name="settings_add_time">添加时间</string>
+    <string name="settings_add_time_desc">为提醒选择日期和时间</string>
+    <string name="settings_add_place">添加地点</string>
+    <string name="settings_add_place_desc">选择一个位置，作为提醒的触发条件</string>
+    <string name="settings_after_call">通话后提醒</string>
+    <string name="settings_after_call_desc">通话结束后显示通话详情及其他信息</string>
+    <string name="settings_section_communicate">联系我们</string>
+    <string name="settings_feedback">意见反馈</string>
+    <string name="settings_privacy_policy">隐私政策</string>
+    <string name="settings_privacy_settings">隐私设置</string>
+    <string name="settings_section_others">其他</string>
+    <string name="settings_share">分享</string>
+    <string name="settings_rate_us">评价我们</string>
+    <string name="settings_app_version">应用版本 %1$s</string>
+
+    <string name="language_title">语言</string>
+    <string name="language_english">英语</string>
+
+    <string name="feedback_subject">Remindly 意见反馈</string>
+    <string name="feedback_body">版本：%1$s</string>
+    <string name="feedback_no_email_title">未找到邮件应用</string>
+    <string name="feedback_no_email_body">请安装邮件应用以发送反馈，或通过应用商店页面与我们联系。</string>
+
+    <string name="share_text">试试 Remindly——一款简洁专注的提醒应用，重要事项不再遗漏。</string>
+    <string name="share_chooser_title">分享 Remindly</string>
+
+    <string name="rate_fallback_title">评价 Remindly</string>
+    <string name="rate_fallback_body">感谢您使用 Remindly！此版本暂不支持评分功能。</string>
+
+    <string name="privacy_policy_title">隐私政策</string>
+    <string name="privacy_settings_title">隐私设置</string>
+    <string name="privacy_notifications">通知</string>
+    <string name="privacy_notifications_desc">允许 Remindly 发送提醒通知</string>
+    <string name="privacy_location">位置权限</string>
+    <string name="privacy_location_desc">允许 Remindly 使用您的位置信息以支持基于地点的提醒</string>
+    <string name="privacy_analytics">数据分析</string>
+    <string name="privacy_analytics_desc">Remindly 不会收集任何分析数据</string>
+    <string name="privacy_personalized">个性化内容</string>
+    <string name="privacy_personalized_desc">不适用——Remindly 不展示任何个性化内容</string>
+
+    <string name="premium_headline">解锁高级功能，畅享无限使用。</string>
+    <string name="premium_feature_places">无限添加地点——突破限制！</string>
+    <string name="premium_feature_ads">去除全部广告——畅享零打扰！</string>
+    <string name="premium_feature_support">全年365天24小时支持——随时为您服务！</string>
+    <string name="premium_continue">继续</string>
+    <string name="premium_renew_note">订阅将自动续订，除非您取消</string>
+    <string name="premium_cancel_note">随时可取消，由 Play 商店提供安全保障</string>
+    <string name="premium_terms">服务条款</string>
+    <string name="premium_privacy">隐私政策</string>
+    <string name="premium_restore">恢复购买</string>
+
+    <string name="location_picker_title">选择位置</string>
+    <string name="location_search_hint">搜索地点</string>
+    <string name="location_permission_required">选择地点需要获取位置权限</string>
+    <string name="location_grant_permission">授予权限</string>
+    <string name="location_use_current">使用当前位置</string>
+
+    <string name="notification_channel_reminders_name">提醒通知</string>
+    <string name="notification_channel_reminders_desc">用于推送已安排提醒的通知</string>
+    <string name="notification_action_done">完成</string>
+    <string name="notification_action_snooze">稍后提醒</string>
+    <string name="snooze_10_min">10分钟</string>
+    <string name="snooze_30_min">30分钟</string>
+    <string name="snooze_1_hour">1小时</string>
+
+    <string name="cancel">取消</string>
+    <string name="delete">删除</string>
+    <string name="save">保存</string>
+    <string name="back">返回</string>
+    <string name="close">关闭</string>
+    <string name="search">搜索</string>
+    <string name="settings">设置</string>
+    <string name="edit">编辑</string>
+    <string name="ok">好的</string>
+</resources>

@@ -1,5 +1,6 @@
 package com.remindly.app
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -28,10 +29,15 @@ import com.remindly.app.ui.RemindlyViewModelFactory
 import com.remindly.app.ui.navigation.RemindlyNavGraph
 import com.remindly.app.ui.navigation.Routes
 import com.remindly.app.ui.theme.RemindlyTheme
+import com.remindly.app.util.AppLocale
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
+
+    override fun attachBaseContext(newBase: Context) {
+        super.attachBaseContext(AppLocale.wrap(newBase))
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val splashScreen = installSplashScreen()
@@ -93,7 +99,7 @@ class MainActivity : ComponentActivity() {
                             factory = factory,
                             startDestination = destination,
                             isPremium = isPremium,
-                            onOpenPrivacyPolicyExternal = { navController.navigate(Routes.PRIVACY_POLICY) },
+                            onOpenPrivacyPolicyExternal = { openPrivacyPolicy() },
                             onOpenFeedback = { openFeedback() },
                             onShare = { openShareSheet() },
                             onRateUs = { openRateUs() },
@@ -111,6 +117,13 @@ class MainActivity : ComponentActivity() {
         super.onNewIntent(intent)
         setIntent(intent)
         recreate()
+    }
+
+    private fun openPrivacyPolicy() {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.privacy_policy_url)))
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }
     }
 
     private fun openFeedback() {

@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Remindly</string>
+
+    <string name="onboarding_headline">Selamat datang di cara baru mengingat</string>
+    <string name="onboarding_feature_alerts_title">Notifikasi Pengingat</string>
+    <string name="onboarding_feature_alerts_desc">Dapatkan notifikasi tepat waktu untuk pengingat yang telah dijadwalkan.</string>
+    <string name="onboarding_feature_call_title">Pengingat Setelah Telepon</string>
+    <string name="onboarding_feature_call_desc">Nikmati fitur pengingat yang berguna setelah panggilan telepon berakhir.</string>
+    <string name="onboarding_cta">MULAI SEKARANG</string>
+    <string name="onboarding_legal">Dengan melanjutkan, Anda menyetujui Kebijakan Privasi dan Syarat &amp; Ketentuan kami</string>
+    <string name="onboarding_privacy_policy">Kebijakan Privasi</string>
+    <string name="onboarding_terms">Syarat &amp; Ketentuan</string>
+
+    <string name="notif_dialog_title">Notifikasi Diperlukan</string>
+    <string name="notif_dialog_body">Diperlukan untuk mengirim notifikasi pengingat agar Anda tidak melewatkan tugas penting.</string>
+    <string name="notif_dialog_ok">OK</string>
+
+    <string name="overlay_explainer_title">Satu langkah lagi!</string>
+    <string name="overlay_explainer_body">Berikan izin untuk melihat dan mengatur pengingat segera setelah panggilan berakhir.</string>
+    <string name="overlay_go_to_settings">BUKA PENGATURAN</string>
+    <string name="continue_action">Lanjutkan</string>
+
+    <string name="overlay_dialog_title">Tampilkan di Atas Aplikasi Lain</string>
+    <string name="overlay_dialog_body">Izinkan Remindly menampilkan notifikasi pengingat di atas aplikasi lain agar Anda tidak melewatkan momen penting.</string>
+    <string name="overlay_dialog_action">Buka Pengaturan</string>
+    <string name="overlay_dialog_skip">Nanti saja</string>
+
+    <string name="language_confirm_cd">Konfirmasi bahasa</string>
+
+    <string name="privacy_consent_headline">Kenyamanan Anda adalah prioritas kami!</string>
+    <string name="privacy_consent_subheading">Menjaga privasi Anda</string>
+    <string name="privacy_consent_body">Kami berkomitmen melindungi privasi Anda sambil memberikan pengalaman yang dipersonalisasi. Pemberitahuan ini menjelaskan informasi apa yang kami kumpulkan dan bagaimana informasi tersebut digunakan.</string>
+    <string name="privacy_consent_collect_heading">Kami meningkatkan pengalaman aplikasi Anda dengan mengumpulkan:</string>
+    <string name="privacy_consent_bullet_1">Data lokasi yang akurat dan pengenal perangkat</string>
+    <string name="privacy_consent_bullet_2">Menampilkan detail lokasi untuk hasil yang lebih relevan</string>
+    <string name="privacy_consent_bullet_3">Menyajikan iklan yang lebih sesuai dan meningkatkan performa</string>
+    <string name="privacy_consent_bullet_4">Melakukan analisis terkait iklan dan lokasi</string>
+    <string name="privacy_consent_bullet_5">Meningkatkan konektivitas dan fitur aplikasi pada jaringan nirkabel</string>
+    <string name="privacy_consent_fine_print">Dengan melanjutkan, Anda menyetujui penggunaan data Anda seperti dijelaskan di atas dan dalam</string>
+    <string name="privacy_consent_accept">TERIMA</string>
+    <string name="privacy_consent_decline">TOLAK</string>
+
+    <string name="home_title">Pengingat saya</string>
+    <string name="home_search_hint">Cari pengingat</string>
+    <string name="home_empty_title">Selamat Datang di Reminders</string>
+    <string name="home_empty_subtitle">Buat pengingat pertama Anda dan jangan pernah lupa hal yang penting lagi.</string>
+    <string name="home_add_reminder">Tambah pengingat</string>
+    <string name="home_quick_suggestion_tomorrow_morning">Besok pagi</string>
+    <string name="home_quick_suggestion_next_week">Minggu depan</string>
+    <string name="home_quick_add_hint">Tambah pengingat</string>
+    <string name="home_quick_add_example_1">Minum air jam 7 malam</string>
+    <string name="home_quick_add_example_2">Telepon ibu besok</string>
+    <string name="home_quick_add_example_3">Beli belanjaan besok pagi</string>
+    <string name="home_quick_add_example_4">Rapat jam 3 sore</string>
+    <string name="quick_chip_later_today">Nanti hari ini</string>
+    <string name="quick_chip_this_evening">Nanti malam</string>
+    <string name="quick_chip_no_time">Tanpa waktu</string>
+    <string name="home_current_time_chip">Hari ini %1$s</string>
+    <string name="home_no_results_title">Pengingat tidak ditemukan</string>
+    <string name="home_no_results_subtitle">Coba kata kunci pencarian lain</string>
+    <string name="home_no_category_reminders">Tidak ada pengingat di kategori ini</string>
+    <string name="home_section_soon">Segera</string>
+    <string name="home_section_completed">Selesai</string>
+    <string name="expand_section">Perluas bagian</string>
+    <string name="collapse_section">Ciutkan bagian</string>
+    <string name="home_no_due_date">Tanpa tanggal jatuh tempo</string>
+    <string name="home_completed_label">Selesai</string>
+    <string name="home_completed_prefix">Selesai %1$s</string>
+
+    <string name="new_reminder_title">Pengingat baru</string>
+    <string name="edit_reminder_title">Edit pengingat</string>
+    <string name="reminder_memo_hint">Catatan</string>
+    <string name="reminder_add_time">Tambah waktu</string>
+    <string name="reminder_add_place">Tambah lokasi</string>
+    <string name="reminder_add_place_desc">Pilih lokasi yang akan memicu pengingat Anda</string>
+    <string name="reminder_repeat_none">Jangan ulangi</string>
+    <string name="reminder_repeat_daily">Setiap hari</string>
+    <string name="reminder_repeat_weekday">Setiap hari kerja</string>
+    <string name="reminder_repeat_weekly">Setiap minggu</string>
+    <string name="reminder_repeat_monthly">Setiap bulan</string>
+    <string name="reminder_repeat_yearly">Setiap tahun</string>
+    <string name="reminder_repeat_custom">Kustom</string>
+    <string name="reminder_repeat_custom_days_label">Ulangi pada</string>
+    <string name="reminder_sound_once">Bunyi sekali</string>
+    <string name="reminder_sound_once_desc">Notifikasi dengan suara pendek</string>
+    <string name="reminder_sound_repeat">Bunyi terus-menerus</string>
+    <string name="reminder_sound_repeat_desc">Notifikasi dengan suara panjang</string>
+    <string name="reminder_sound_silent">Senyap</string>
+    <string name="reminder_suggestion_1hour">1 jam dari sekarang</string>
+    <string name="reminder_suggestion_today_7am">Hari ini 07.00</string>
+    <string name="reminder_suggestion_today_3pm">Hari ini 15.00</string>
+    <string name="reminder_suggestion_today_10pm">Hari ini 22.00</string>
+    <string name="reminder_category_label">Kategori</string>
+    <string name="reminder_save">Simpan</string>
+    <string name="reminder_delete">Hapus pengingat</string>
+    <string name="reminder_delete_confirm_title">Hapus pengingat ini?</string>
+    <string name="reminder_delete_confirm_body">Tindakan ini tidak dapat dibatalkan.</string>
+    <string name="reminder_mark_complete">Tandai selesai</string>
+    <string name="reminder_mark_incomplete">Tandai belum selesai</string>
+    <string name="reminder_today">Hari ini</string>
+    <string name="reminder_time_section">Waktu</string>
+    <string name="reminder_completed_caption">Selesai</string>
+    <string name="reminder_tomorrow">Besok</string>
+    <string name="reminder_remove_time">Hapus waktu</string>
+    <string name="reminder_no_notification_warning">Anda tidak akan menerima notifikasi.</string>
+
+    <string name="category_my_reminders">Pengingat saya</string>
+    <string name="category_work">Pekerjaan</string>
+    <string name="category_personal">Pribadi</string>
+    <string name="category_health">Kesehatan saya</string>
+    <string name="category_finance">Keuangan</string>
+    <string name="category_add">Tambah kategori</string>
+    <string name="category_name_hint">Ketik di sini</string>
+    <string name="category_pick_color">Warna</string>
+    <string name="category_delete_confirm">Hapus kategori ini? Pengingat di dalamnya akan dipindahkan ke Pengingat saya.</string>
+    <string name="select_category_title">Pilih kategori</string>
+    <string name="repeat_title">Ulangi</string>
+
+    <string name="search_title">Cari</string>
+    <string name="search_hint">Cari berdasarkan judul, kategori, atau lokasi</string>
+    <string name="search_clear">Hapus pencarian</string>
+    <string name="search_prompt">Cari pengingat Anda</string>
+
+    <string name="settings_title">Pengaturan</string>
+    <string name="settings_premium_title">Akses penuh</string>
+    <string name="settings_premium_subtitle">Buka semua fitur.</string>
+    <string name="settings_go_pro">Upgrade ke Pro</string>
+    <string name="settings_section_general">UMUM</string>
+    <string name="settings_language">Bahasa</string>
+    <string name="settings_theme">Tema Aplikasi</string>
+    <string name="settings_theme_auto">Mode Otomatis</string>
+    <string name="settings_theme_light">Mode Terang</string>
+    <string name="settings_theme_dark">Mode Gelap</string>
+    <string name="settings_section_presets">PRESET</string>
+    <string name="settings_add_time">Tambah waktu</string>
+    <string name="settings_add_time_desc">Pilih tanggal dan waktu untuk pengingat Anda</string>
+    <string name="settings_add_place">Tambah lokasi</string>
+    <string name="settings_add_place_desc">Pilih lokasi yang akan memicu pengingat Anda</string>
+    <string name="settings_after_call">Pengingat setelah telepon</string>
+    <string name="settings_after_call_desc">Tampilkan detail panggilan dan informasi tambahan setelah panggilan berakhir</string>
+    <string name="settings_section_communicate">HUBUNGI KAMI</string>
+    <string name="settings_feedback">Masukan</string>
+    <string name="settings_privacy_policy">Kebijakan Privasi</string>
+    <string name="settings_privacy_settings">Pengaturan Privasi</string>
+    <string name="settings_section_others">LAINNYA</string>
+    <string name="settings_share">Bagikan</string>
+    <string name="settings_rate_us">Beri Nilai</string>
+    <string name="settings_app_version">Versi aplikasi %1$s</string>
+
+    <string name="language_title">Bahasa</string>
+    <string name="language_english">Inggris</string>
+
+    <string name="feedback_subject">Masukan untuk Remindly</string>
+    <string name="feedback_body">Versi: %1$s</string>
+    <string name="feedback_no_email_title">Aplikasi Email Tidak Ditemukan</string>
+    <string name="feedback_no_email_body">Silakan instal aplikasi email untuk mengirim masukan, atau hubungi kami melalui halaman toko aplikasi.</string>
+
+    <string name="share_text">Coba Remindly — aplikasi pengingat yang simpel dan fokus. Jangan pernah lupa hal yang penting lagi.</string>
+    <string name="share_chooser_title">Bagikan Remindly</string>
+
+    <string name="rate_fallback_title">Beri Nilai Remindly</string>
+    <string name="rate_fallback_body">Terima kasih telah menggunakan Remindly! Fitur penilaian belum tersedia di versi ini.</string>
+
+    <string name="privacy_policy_title">Kebijakan Privasi</string>
+    <string name="privacy_settings_title">Pengaturan Privasi</string>
+    <string name="privacy_notifications">Notifikasi</string>
+    <string name="privacy_notifications_desc">Izinkan Remindly mengirim notifikasi pengingat</string>
+    <string name="privacy_location">Akses lokasi</string>
+    <string name="privacy_location_desc">Izinkan Remindly menggunakan lokasi Anda untuk pengingat berbasis tempat</string>
+    <string name="privacy_analytics">Analitik</string>
+    <string name="privacy_analytics_desc">Remindly tidak mengumpulkan data analitik apa pun</string>
+    <string name="privacy_personalized">Konten yang dipersonalisasi</string>
+    <string name="privacy_personalized_desc">Tidak berlaku — Remindly tidak menampilkan konten yang dipersonalisasi</string>
+
+    <string name="premium_headline">Dapatkan akses tak terbatas ke fitur premium.</string>
+    <string name="premium_feature_places">Tambah Lokasi Tanpa Batas – Tembus Semua Batasan!</string>
+    <string name="premium_feature_ads">Hilangkan Semua Iklan – Tanpa Gangguan!</string>
+    <string name="premium_feature_support">Bantuan 24/7 Sepanjang Tahun – Selalu Siap untuk Anda!</string>
+    <string name="premium_continue">Lanjutkan</string>
+    <string name="premium_renew_note">Langganan diperpanjang otomatis kecuali dibatalkan</string>
+    <string name="premium_cancel_note">Batalkan kapan saja. Aman melalui Play Store</string>
+    <string name="premium_terms">Syarat &amp; Ketentuan</string>
+    <string name="premium_privacy">Kebijakan Privasi</string>
+    <string name="premium_restore">Pulihkan</string>
+
+    <string name="location_picker_title">Pilih lokasi</string>
+    <string name="location_search_hint">Cari lokasi</string>
+    <string name="location_permission_required">Izin lokasi diperlukan untuk memilih tempat</string>
+    <string name="location_grant_permission">Berikan izin</string>
+    <string name="location_use_current">Gunakan lokasi saat ini</string>
+
+    <string name="notification_channel_reminders_name">Notifikasi Pengingat</string>
+    <string name="notification_channel_reminders_desc">Notifikasi untuk pengingat yang telah dijadwalkan</string>
+    <string name="notification_action_done">SELESAI</string>
+    <string name="notification_action_snooze">TUNDA</string>
+    <string name="snooze_10_min">10 menit</string>
+    <string name="snooze_30_min">30 menit</string>
+    <string name="snooze_1_hour">1 jam</string>
+
+    <string name="cancel">Batal</string>
+    <string name="delete">Hapus</string>
+    <string name="save">Simpan</string>
+    <string name="back">Kembali</string>
+    <string name="close">Tutup</string>
+    <string name="search">Cari</string>
+    <string name="settings">Pengaturan</string>
+    <string name="edit">Edit</string>
+    <string name="ok">OK</string>
+</resources>

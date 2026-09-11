@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Remindly</string>
+
+    <string name="onboarding_headline">ยินดีต้อนรับสู่การเตือนความจำรูปแบบใหม่</string>
+    <string name="onboarding_feature_alerts_title">การแจ้งเตือน</string>
+    <string name="onboarding_feature_alerts_desc">รับการแจ้งเตือนตรงเวลาสำหรับรายการที่คุณตั้งไว้</string>
+    <string name="onboarding_feature_call_title">เตือนความจำหลังวางสาย</string>
+    <string name="onboarding_feature_call_desc">ใช้ฟีเจอร์เตือนความจำที่มีประโยชน์ทันทีหลังวางสาย</string>
+    <string name="onboarding_cta">เริ่มเลย</string>
+    <string name="onboarding_legal">การดำเนินการต่อถือว่าคุณยอมรับนโยบายความเป็นส่วนตัวและข้อกำหนดการใช้งานของเรา</string>
+    <string name="onboarding_privacy_policy">นโยบายความเป็นส่วนตัว</string>
+    <string name="onboarding_terms">ข้อกำหนดและเงื่อนไข</string>
+
+    <string name="notif_dialog_title">ต้องเปิดการแจ้งเตือน</string>
+    <string name="notif_dialog_body">จำเป็นต้องใช้เพื่อส่งการแจ้งเตือน จะได้ไม่พลาดงานสำคัญ</string>
+    <string name="notif_dialog_ok">ตกลง</string>
+
+    <string name="overlay_explainer_title">อีกขั้นตอนเดียวเท่านั้น!</string>
+    <string name="overlay_explainer_body">อนุญาตให้แสดงและตั้งเตือนความจำได้ทันทีหลังวางสาย</string>
+    <string name="overlay_go_to_settings">ไปที่การตั้งค่า</string>
+    <string name="continue_action">ดำเนินการต่อ</string>
+
+    <string name="overlay_dialog_title">แสดงทับแอปอื่น</string>
+    <string name="overlay_dialog_body">อนุญาตให้ Remindly แสดงการแจ้งเตือนทับแอปอื่นได้ เพื่อไม่ให้พลาดทุกช่วงเวลาสำคัญ</string>
+    <string name="overlay_dialog_action">เปิดการตั้งค่า</string>
+    <string name="overlay_dialog_skip">ไว้ทีหลัง</string>
+
+    <string name="language_confirm_cd">ยืนยันภาษา</string>
+
+    <string name="privacy_consent_headline">ความสบายใจของคุณต้องมาก่อน!</string>
+    <string name="privacy_consent_subheading">เราใส่ใจความเป็นส่วนตัวของคุณ</string>
+    <string name="privacy_consent_body">เรามุ่งมั่นปกป้องความเป็นส่วนตัวของคุณ พร้อมมอบประสบการณ์ที่เหมาะกับคุณโดยเฉพาะ ประกาศนี้อธิบายว่าเราเก็บข้อมูลอะไรบ้างและนำไปใช้อย่างไร</string>
+    <string name="privacy_consent_collect_heading">เราพัฒนาประสบการณ์การใช้แอปของคุณโดยเก็บข้อมูลต่อไปนี้:</string>
+    <string name="privacy_consent_bullet_1">ข้อมูลตำแหน่งที่ตั้งที่แม่นยำและรหัสประจำอุปกรณ์</string>
+    <string name="privacy_consent_bullet_2">แสดงรายละเอียดตำแหน่งเพื่อผลลัพธ์ที่เกี่ยวข้องมากขึ้น</string>
+    <string name="privacy_consent_bullet_3">นำเสนอโฆษณาที่ตรงใจและปรับปรุงประสิทธิภาพการทำงาน</string>
+    <string name="privacy_consent_bullet_4">วิเคราะห์ข้อมูลด้านโฆษณาและตำแหน่งที่ตั้ง</string>
+    <string name="privacy_consent_bullet_5">ปรับปรุงการเชื่อมต่อและฟีเจอร์ต่าง ๆ บนเครือข่ายไร้สาย</string>
+    <string name="privacy_consent_fine_print">การดำเนินการต่อถือว่าคุณยินยอมให้เราใช้ข้อมูลของคุณตามที่อธิบายไว้ข้างต้นและใน</string>
+    <string name="privacy_consent_accept">ยอมรับ</string>
+    <string name="privacy_consent_decline">ปฏิเสธ</string>
+
+    <string name="home_title">รายการเตือนความจำของฉัน</string>
+    <string name="home_search_hint">ค้นหาการเตือนความจำ</string>
+    <string name="home_empty_title">ยินดีต้อนรับสู่ Reminders</string>
+    <string name="home_empty_subtitle">สร้างรายการเตือนความจำแรกของคุณ แล้วจะไม่พลาดเรื่องสำคัญอีกต่อไป</string>
+    <string name="home_add_reminder">เพิ่มรายการเตือน</string>
+    <string name="home_quick_suggestion_tomorrow_morning">พรุ่งนี้เช้า</string>
+    <string name="home_quick_suggestion_next_week">สัปดาห์หน้า</string>
+    <string name="home_quick_add_hint">เพิ่มรายการเตือน</string>
+    <string name="home_quick_add_example_1">ดื่มน้ำตอน 1 ทุ่ม</string>
+    <string name="home_quick_add_example_2">โทรหาแม่พรุ่งนี้</string>
+    <string name="home_quick_add_example_3">ซื้อของเข้าบ้านพรุ่งนี้เช้า</string>
+    <string name="home_quick_add_example_4">ประชุมบ่าย 3 โมง</string>
+    <string name="quick_chip_later_today">ภายหลังวันนี้</string>
+    <string name="quick_chip_this_evening">เย็นนี้</string>
+    <string name="quick_chip_no_time">ไม่ระบุเวลา</string>
+    <string name="home_current_time_chip">วันนี้ %1$s</string>
+    <string name="home_no_results_title">ไม่พบรายการเตือนความจำ</string>
+    <string name="home_no_results_subtitle">ลองค้นหาด้วยคำอื่น</string>
+    <string name="home_no_category_reminders">ไม่มีรายการเตือนความจำในหมวดหมู่นี้</string>
+    <string name="home_section_soon">เร็ว ๆ นี้</string>
+    <string name="home_section_completed">เสร็จสิ้นแล้ว</string>
+    <string name="expand_section">ขยายส่วนนี้</string>
+    <string name="collapse_section">ย่อส่วนนี้</string>
+    <string name="home_no_due_date">ไม่มีกำหนดวัน</string>
+    <string name="home_completed_label">เสร็จสิ้นแล้ว</string>
+    <string name="home_completed_prefix">เสร็จสิ้นเมื่อ %1$s</string>
+
+    <string name="new_reminder_title">เตือนความจำใหม่</string>
+    <string name="edit_reminder_title">แก้ไขรายการเตือน</string>
+    <string name="reminder_memo_hint">บันทึกช่วยจำ</string>
+    <string name="reminder_add_time">เพิ่มเวลา</string>
+    <string name="reminder_add_place">เพิ่มสถานที่</string>
+    <string name="reminder_add_place_desc">เลือกสถานที่ที่จะใช้เป็นตัวกระตุ้นการแจ้งเตือน</string>
+    <string name="reminder_repeat_none">ไม่ทำซ้ำ</string>
+    <string name="reminder_repeat_daily">ทุกวัน</string>
+    <string name="reminder_repeat_weekday">ทุกวันทำงาน</string>
+    <string name="reminder_repeat_weekly">ทุกสัปดาห์</string>
+    <string name="reminder_repeat_monthly">ทุกเดือน</string>
+    <string name="reminder_repeat_yearly">ทุกปี</string>
+    <string name="reminder_repeat_custom">กำหนดเอง</string>
+    <string name="reminder_repeat_custom_days_label">ทำซ้ำในวัน</string>
+    <string name="reminder_sound_once">เสียงเตือนครั้งเดียว</string>
+    <string name="reminder_sound_once_desc">แจ้งเตือนพร้อมเสียงสั้น</string>
+    <string name="reminder_sound_repeat">เสียงเตือนต่อเนื่อง</string>
+    <string name="reminder_sound_repeat_desc">แจ้งเตือนพร้อมเสียงยาว</string>
+    <string name="reminder_sound_silent">ปิดเสียง</string>
+    <string name="reminder_suggestion_1hour">อีก 1 ชั่วโมงจากนี้</string>
+    <string name="reminder_suggestion_today_7am">วันนี้ 7:00 น.</string>
+    <string name="reminder_suggestion_today_3pm">วันนี้ 15:00 น.</string>
+    <string name="reminder_suggestion_today_10pm">วันนี้ 22:00 น.</string>
+    <string name="reminder_category_label">หมวดหมู่</string>
+    <string name="reminder_save">บันทึก</string>
+    <string name="reminder_delete">ลบรายการเตือน</string>
+    <string name="reminder_delete_confirm_title">ลบรายการเตือนนี้หรือไม่?</string>
+    <string name="reminder_delete_confirm_body">ไม่สามารถย้อนกลับการดำเนินการนี้ได้</string>
+    <string name="reminder_mark_complete">ทำเครื่องหมายว่าเสร็จสิ้น</string>
+    <string name="reminder_mark_incomplete">ทำเครื่องหมายว่ายังไม่เสร็จ</string>
+    <string name="reminder_today">วันนี้</string>
+    <string name="reminder_time_section">เวลา</string>
+    <string name="reminder_completed_caption">เสร็จสิ้นแล้ว</string>
+    <string name="reminder_tomorrow">พรุ่งนี้</string>
+    <string name="reminder_remove_time">ลบเวลาออก</string>
+    <string name="reminder_no_notification_warning">คุณจะไม่ได้รับการแจ้งเตือน</string>
+
+    <string name="category_my_reminders">รายการเตือนของฉัน</string>
+    <string name="category_work">งาน</string>
+    <string name="category_personal">ส่วนตัว</string>
+    <string name="category_health">สุขภาพของฉัน</string>
+    <string name="category_finance">การเงิน</string>
+    <string name="category_add">เพิ่มหมวดหมู่</string>
+    <string name="category_name_hint">พิมพ์ที่นี่</string>
+    <string name="category_pick_color">สี</string>
+    <string name="category_delete_confirm">ลบหมวดหมู่นี้หรือไม่? รายการเตือนในหมวดนี้จะถูกย้ายไปยังรายการเตือนของฉัน</string>
+    <string name="select_category_title">เลือกหมวดหมู่</string>
+    <string name="repeat_title">ทำซ้ำ</string>
+
+    <string name="search_title">ค้นหา</string>
+    <string name="search_hint">ค้นหาด้วยชื่อ หมวดหมู่ หรือสถานที่</string>
+    <string name="search_clear">ล้างการค้นหา</string>
+    <string name="search_prompt">ค้นหารายการเตือนของคุณ</string>
+
+    <string name="settings_title">การตั้งค่า</string>
+    <string name="settings_premium_title">ใช้งานได้เต็มรูปแบบ</string>
+    <string name="settings_premium_subtitle">ปลดล็อกฟีเจอร์ทั้งหมด</string>
+    <string name="settings_go_pro">อัปเกรดเป็น Pro</string>
+    <string name="settings_section_general">ทั่วไป</string>
+    <string name="settings_language">ภาษา</string>
+    <string name="settings_theme">ธีมแอป</string>
+    <string name="settings_theme_auto">อัตโนมัติ</string>
+    <string name="settings_theme_light">โหมดสว่าง</string>
+    <string name="settings_theme_dark">โหมดมืด</string>
+    <string name="settings_section_presets">ค่าเริ่มต้น</string>
+    <string name="settings_add_time">เพิ่มเวลา</string>
+    <string name="settings_add_time_desc">เลือกวันที่และเวลาสำหรับรายการเตือนของคุณ</string>
+    <string name="settings_add_place">เพิ่มสถานที่</string>
+    <string name="settings_add_place_desc">เลือกสถานที่ที่จะใช้เป็นตัวกระตุ้นการแจ้งเตือน</string>
+    <string name="settings_after_call">เตือนความจำหลังวางสาย</string>
+    <string name="settings_after_call_desc">แสดงรายละเอียดการโทรและข้อมูลเพิ่มเติมหลังวางสาย</string>
+    <string name="settings_section_communicate">ติดต่อเรา</string>
+    <string name="settings_feedback">ส่งความคิดเห็น</string>
+    <string name="settings_privacy_policy">นโยบายความเป็นส่วนตัว</string>
+    <string name="settings_privacy_settings">การตั้งค่าความเป็นส่วนตัว</string>
+    <string name="settings_section_others">อื่น ๆ</string>
+    <string name="settings_share">แชร์</string>
+    <string name="settings_rate_us">ให้คะแนนเรา</string>
+    <string name="settings_app_version">เวอร์ชันแอป %1$s</string>
+
+    <string name="language_title">ภาษา</string>
+    <string name="language_english">อังกฤษ</string>
+
+    <string name="feedback_subject">ความคิดเห็นเกี่ยวกับ Remindly</string>
+    <string name="feedback_body">เวอร์ชัน: %1$s</string>
+    <string name="feedback_no_email_title">ไม่พบแอปอีเมล</string>
+    <string name="feedback_no_email_body">โปรดติดตั้งแอปอีเมลเพื่อส่งความคิดเห็น หรือติดต่อเราผ่านหน้าร้านค้าแอป</string>
+
+    <string name="share_text">ลองใช้ Remindly แอปเตือนความจำที่เรียบง่ายและตรงจุด จะไม่พลาดเรื่องสำคัญอีกต่อไป</string>
+    <string name="share_chooser_title">แชร์ Remindly</string>
+
+    <string name="rate_fallback_title">ให้คะแนน Remindly</string>
+    <string name="rate_fallback_body">ขอบคุณที่ใช้ Remindly! เวอร์ชันนี้ยังไม่รองรับการให้คะแนน</string>
+
+    <string name="privacy_policy_title">นโยบายความเป็นส่วนตัว</string>
+    <string name="privacy_settings_title">การตั้งค่าความเป็นส่วนตัว</string>
+    <string name="privacy_notifications">การแจ้งเตือน</string>
+    <string name="privacy_notifications_desc">อนุญาตให้ Remindly ส่งการแจ้งเตือน</string>
+    <string name="privacy_location">การเข้าถึงตำแหน่งที่ตั้ง</string>
+    <string name="privacy_location_desc">อนุญาตให้ Remindly ใช้ตำแหน่งที่ตั้งของคุณสำหรับการเตือนความจำตามสถานที่</string>
+    <string name="privacy_analytics">การวิเคราะห์ข้อมูล</string>
+    <string name="privacy_analytics_desc">Remindly ไม่เก็บข้อมูลการวิเคราะห์ใด ๆ</string>
+    <string name="privacy_personalized">เนื้อหาส่วนบุคคล</string>
+    <string name="privacy_personalized_desc">ไม่เกี่ยวข้อง — Remindly ไม่แสดงเนื้อหาส่วนบุคคลใด ๆ</string>
+
+    <string name="premium_headline">ปลดล็อกการใช้งานฟีเจอร์พรีเมียมได้ไม่จำกัด</string>
+    <string name="premium_feature_places">เพิ่มสถานที่ได้ไม่จำกัด – ทลายทุกข้อจำกัด!</string>
+    <string name="premium_feature_ads">ลบโฆษณาทุกรายการ – ไม่มีสิ่งรบกวนอีกต่อไป!</string>
+    <string name="premium_feature_support">ดูแลคุณตลอด 24 ชั่วโมง ทุกวันตลอดปี!</string>
+    <string name="premium_continue">ดำเนินการต่อ</string>
+    <string name="premium_renew_note">ระบบจะต่ออายุแพ็กเกจโดยอัตโนมัติ เว้นแต่คุณจะยกเลิก</string>
+    <string name="premium_cancel_note">ยกเลิกได้ทุกเมื่อ ชำระเงินอย่างปลอดภัยผ่าน Play Store</string>
+    <string name="premium_terms">ข้อกำหนดและเงื่อนไข</string>
+    <string name="premium_privacy">นโยบายความเป็นส่วนตัว</string>
+    <string name="premium_restore">เรียกคืนการซื้อ</string>
+
+    <string name="location_picker_title">เลือกสถานที่</string>
+    <string name="location_search_hint">ค้นหาสถานที่</string>
+    <string name="location_permission_required">ต้องได้รับอนุญาตให้เข้าถึงตำแหน่งที่ตั้งเพื่อเลือกสถานที่</string>
+    <string name="location_grant_permission">อนุญาต</string>
+    <string name="location_use_current">ใช้ตำแหน่งปัจจุบัน</string>
+
+    <string name="notification_channel_reminders_name">การแจ้งเตือน</string>
+    <string name="notification_channel_reminders_desc">การแจ้งเตือนสำหรับรายการที่คุณตั้งไว้</string>
+    <string name="notification_action_done">เสร็จสิ้น</string>
+    <string name="notification_action_snooze">เลื่อนเตือน</string>
+    <string name="snooze_10_min">10 นาที</string>
+    <string name="snooze_30_min">30 นาที</string>
+    <string name="snooze_1_hour">1 ชั่วโมง</string>
+
+    <string name="cancel">ยกเลิก</string>
+    <string name="delete">ลบ</string>
+    <string name="save">บันทึก</string>
+    <string name="back">ย้อนกลับ</string>
+    <string name="close">ปิด</string>
+    <string name="search">ค้นหา</string>
+    <string name="settings">การตั้งค่า</string>
+    <string name="edit">แก้ไข</string>
+    <string name="ok">ตกลง</string>
+</resources>

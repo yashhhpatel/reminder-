@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Remindly</string>
+
+    <string name="onboarding_headline">新しいリマインダー体験へようこそ</string>
+    <string name="onboarding_feature_alerts_title">リマインダー通知</string>
+    <string name="onboarding_feature_alerts_desc">設定したリマインダーを、タイミングよくお知らせします。</string>
+    <string name="onboarding_feature_call_title">通話後リマインダー</string>
+    <string name="onboarding_feature_call_desc">通話が終わった直後に、便利なリマインダー機能を使えます。</string>
+    <string name="onboarding_cta">今すぐ始める</string>
+    <string name="onboarding_legal">続行すると、プライバシーポリシーおよび利用規約に同意したことになります</string>
+    <string name="onboarding_privacy_policy">プライバシーポリシー</string>
+    <string name="onboarding_terms">利用規約</string>
+
+    <string name="notif_dialog_title">通知の許可が必要です</string>
+    <string name="notif_dialog_body">大切な予定を見逃さないよう、リマインダー通知の送信には許可が必要です。</string>
+    <string name="notif_dialog_ok">OK</string>
+
+    <string name="overlay_explainer_title">あと一歩です！</string>
+    <string name="overlay_explainer_body">権限を許可すると、通話終了後すぐにリマインダーの確認・設定ができます。</string>
+    <string name="overlay_go_to_settings">設定を開く</string>
+    <string name="continue_action">続ける</string>
+
+    <string name="overlay_dialog_title">他のアプリの上に重ねて表示</string>
+    <string name="overlay_dialog_body">Remindlyが他のアプリの上にリマインダー通知を表示できるようにすると、大切な瞬間を逃しません。</string>
+    <string name="overlay_dialog_action">設定を開く</string>
+    <string name="overlay_dialog_skip">今はしない</string>
+
+    <string name="language_confirm_cd">言語を確認</string>
+
+    <string name="privacy_consent_headline">何よりも安心を大切に</string>
+    <string name="privacy_consent_subheading">プライバシーを守るために</string>
+    <string name="privacy_consent_body">パーソナライズされた体験を提供しつつ、お客様のプライバシー保護に努めています。ここでは、収集する情報とその利用方法についてご説明します。</string>
+    <string name="privacy_consent_collect_heading">より良い体験のために、以下の情報を収集しています。</string>
+    <string name="privacy_consent_bullet_1">正確な位置情報および端末識別子</string>
+    <string name="privacy_consent_bullet_2">関連性の高い結果を位置情報とともに表示</string>
+    <string name="privacy_consent_bullet_3">パーソナライズ広告の配信とパフォーマンスの向上</string>
+    <string name="privacy_consent_bullet_4">広告および位置情報に基づく分析の実施</string>
+    <string name="privacy_consent_bullet_5">無線ネットワークでの接続性とアプリ機能の向上</string>
+    <string name="privacy_consent_fine_print">続行すると、上記および以下に記載の方法でお客様のデータを利用することに同意したものとみなされます：</string>
+    <string name="privacy_consent_accept">同意する</string>
+    <string name="privacy_consent_decline">同意しない</string>
+
+    <string name="home_title">マイリマインダー</string>
+    <string name="home_search_hint">リマインダーを検索</string>
+    <string name="home_empty_title">リマインダーへようこそ</string>
+    <string name="home_empty_subtitle">最初のリマインダーを作成して、大切な予定を忘れないようにしましょう。</string>
+    <string name="home_add_reminder">リマインダーを追加</string>
+    <string name="home_quick_suggestion_tomorrow_morning">明日の朝</string>
+    <string name="home_quick_suggestion_next_week">来週</string>
+    <string name="home_quick_add_hint">リマインダーを追加</string>
+    <string name="home_quick_add_example_1">19時に水を飲む</string>
+    <string name="home_quick_add_example_2">明日、母に電話する</string>
+    <string name="home_quick_add_example_3">明日の朝、買い物に行く</string>
+    <string name="home_quick_add_example_4">15時に会議</string>
+    <string name="quick_chip_later_today">今日の後で</string>
+    <string name="quick_chip_this_evening">今日の夜</string>
+    <string name="quick_chip_no_time">時刻を設定しない</string>
+    <string name="home_current_time_chip">今日 %1$s</string>
+    <string name="home_no_results_title">リマインダーが見つかりません</string>
+    <string name="home_no_results_subtitle">別のキーワードで検索してみてください</string>
+    <string name="home_no_category_reminders">このカテゴリにはリマインダーがありません</string>
+    <string name="home_section_soon">まもなく</string>
+    <string name="home_section_completed">完了済み</string>
+    <string name="expand_section">セクションを展開</string>
+    <string name="collapse_section">セクションを折りたたむ</string>
+    <string name="home_no_due_date">期限なし</string>
+    <string name="home_completed_label">完了済み</string>
+    <string name="home_completed_prefix">%1$s に完了</string>
+
+    <string name="new_reminder_title">新しいリマインダー</string>
+    <string name="edit_reminder_title">リマインダーを編集</string>
+    <string name="reminder_memo_hint">メモ</string>
+    <string name="reminder_add_time">時刻を追加</string>
+    <string name="reminder_add_place">場所を追加</string>
+    <string name="reminder_add_place_desc">リマインダーのきっかけとなる場所を選択</string>
+    <string name="reminder_repeat_none">繰り返さない</string>
+    <string name="reminder_repeat_daily">毎日</string>
+    <string name="reminder_repeat_weekday">平日ごと</string>
+    <string name="reminder_repeat_weekly">毎週</string>
+    <string name="reminder_repeat_monthly">毎月</string>
+    <string name="reminder_repeat_yearly">毎年</string>
+    <string name="reminder_repeat_custom">カスタム</string>
+    <string name="reminder_repeat_custom_days_label">繰り返す曜日</string>
+    <string name="reminder_sound_once">一度だけ鳴らす</string>
+    <string name="reminder_sound_once_desc">通知と短い音</string>
+    <string name="reminder_sound_repeat">鳴らし続ける</string>
+    <string name="reminder_sound_repeat_desc">通知と長い音</string>
+    <string name="reminder_sound_silent">サイレント</string>
+    <string name="reminder_suggestion_1hour">1時間後</string>
+    <string name="reminder_suggestion_today_7am">今日の午前7:00</string>
+    <string name="reminder_suggestion_today_3pm">今日の午後3:00</string>
+    <string name="reminder_suggestion_today_10pm">今日の午後10:00</string>
+    <string name="reminder_category_label">カテゴリ</string>
+    <string name="reminder_save">保存</string>
+    <string name="reminder_delete">リマインダーを削除</string>
+    <string name="reminder_delete_confirm_title">このリマインダーを削除しますか？</string>
+    <string name="reminder_delete_confirm_body">この操作は取り消せません。</string>
+    <string name="reminder_mark_complete">完了にする</string>
+    <string name="reminder_mark_incomplete">未完了に戻す</string>
+    <string name="reminder_today">今日</string>
+    <string name="reminder_time_section">時刻</string>
+    <string name="reminder_completed_caption">完了済み</string>
+    <string name="reminder_tomorrow">明日</string>
+    <string name="reminder_remove_time">時刻を削除</string>
+    <string name="reminder_no_notification_warning">通知は届きません。</string>
+
+    <string name="category_my_reminders">マイリマインダー</string>
+    <string name="category_work">仕事</string>
+    <string name="category_personal">プライベート</string>
+    <string name="category_health">健康管理</string>
+    <string name="category_finance">家計</string>
+    <string name="category_add">カテゴリを追加</string>
+    <string name="category_name_hint">ここに入力</string>
+    <string name="category_pick_color">カラー</string>
+    <string name="category_delete_confirm">このカテゴリを削除しますか？含まれるリマインダーは「マイリマインダー」に移動します。</string>
+    <string name="select_category_title">カテゴリを選択</string>
+    <string name="repeat_title">繰り返し</string>
+
+    <string name="search_title">検索</string>
+    <string name="search_hint">タイトル、カテゴリ、場所で検索</string>
+    <string name="search_clear">検索をクリア</string>
+    <string name="search_prompt">リマインダーを検索</string>
+
+    <string name="settings_title">設定</string>
+    <string name="settings_premium_title">フルアクセス</string>
+    <string name="settings_premium_subtitle">すべての機能を解放しましょう。</string>
+    <string name="settings_go_pro">Proにアップグレード</string>
+    <string name="settings_section_general">一般</string>
+    <string name="settings_language">言語</string>
+    <string name="settings_theme">アプリのテーマ</string>
+    <string name="settings_theme_auto">自動</string>
+    <string name="settings_theme_light">ライトモード</string>
+    <string name="settings_theme_dark">ダークモード</string>
+    <string name="settings_section_presets">プリセット</string>
+    <string name="settings_add_time">時刻を追加</string>
+    <string name="settings_add_time_desc">リマインダーの日時を設定</string>
+    <string name="settings_add_place">場所を追加</string>
+    <string name="settings_add_place_desc">リマインダーのきっかけとなる場所を選択</string>
+    <string name="settings_after_call">通話後リマインダー</string>
+    <string name="settings_after_call_desc">通話終了後に通話の詳細と追加情報を表示</string>
+    <string name="settings_section_communicate">お問い合わせ</string>
+    <string name="settings_feedback">フィードバック</string>
+    <string name="settings_privacy_policy">プライバシーポリシー</string>
+    <string name="settings_privacy_settings">プライバシー設定</string>
+    <string name="settings_section_others">その他</string>
+    <string name="settings_share">共有</string>
+    <string name="settings_rate_us">アプリを評価</string>
+    <string name="settings_app_version">アプリバージョン %1$s</string>
+
+    <string name="language_title">言語</string>
+    <string name="language_english">英語</string>
+
+    <string name="feedback_subject">Remindlyへのフィードバック</string>
+    <string name="feedback_body">バージョン: %1$s</string>
+    <string name="feedback_no_email_title">メールアプリが見つかりません</string>
+    <string name="feedback_no_email_body">フィードバックを送るにはメールアプリをインストールするか、ストアの掲載ページからご連絡ください。</string>
+
+    <string name="share_text">シンプルで使いやすいリマインダーアプリ「Remindly」を試してみませんか。大切なことを忘れずに。</string>
+    <string name="share_chooser_title">Remindlyを共有</string>
+
+    <string name="rate_fallback_title">Remindlyを評価</string>
+    <string name="rate_fallback_body">ご利用ありがとうございます！このビルドでは評価機能を利用できません。</string>
+
+    <string name="privacy_policy_title">プライバシーポリシー</string>
+    <string name="privacy_settings_title">プライバシー設定</string>
+    <string name="privacy_notifications">通知</string>
+    <string name="privacy_notifications_desc">Remindlyによるリマインダー通知の送信を許可</string>
+    <string name="privacy_location">位置情報へのアクセス</string>
+    <string name="privacy_location_desc">場所に基づくリマインダーのため、Remindlyによる位置情報の利用を許可</string>
+    <string name="privacy_analytics">解析データ</string>
+    <string name="privacy_analytics_desc">Remindlyは解析データを収集しません</string>
+    <string name="privacy_personalized">パーソナライズされたコンテンツ</string>
+    <string name="privacy_personalized_desc">該当なし — Remindlyはパーソナライズされたコンテンツを表示しません</string>
+
+    <string name="premium_headline">プレミアム機能に無制限でアクセス。</string>
+    <string name="premium_feature_places">場所の追加が無制限 — 制限を突破！</string>
+    <string name="premium_feature_ads">広告を完全に非表示 — 集中を妨げません！</string>
+    <string name="premium_feature_support">365日24時間サポート — いつでも寄り添います！</string>
+    <string name="premium_continue">続ける</string>
+    <string name="premium_renew_note">解約しない限り、サブスクリプションは自動更新されます</string>
+    <string name="premium_cancel_note">いつでも解約可能。Playストアが安全に管理します</string>
+    <string name="premium_terms">利用規約</string>
+    <string name="premium_privacy">プライバシーポリシー</string>
+    <string name="premium_restore">購入を復元</string>
+
+    <string name="location_picker_title">場所を選択</string>
+    <string name="location_search_hint">場所を検索</string>
+    <string name="location_permission_required">場所を選ぶには位置情報の権限が必要です</string>
+    <string name="location_grant_permission">権限を許可</string>
+    <string name="location_use_current">現在地を使用</string>
+
+    <string name="notification_channel_reminders_name">リマインダー通知</string>
+    <string name="notification_channel_reminders_desc">設定したリマインダーの通知</string>
+    <string name="notification_action_done">完了</string>
+    <string name="notification_action_snooze">スヌーズ</string>
+    <string name="snooze_10_min">10分</string>
+    <string name="snooze_30_min">30分</string>
+    <string name="snooze_1_hour">1時間</string>
+
+    <string name="cancel">キャンセル</string>
+    <string name="delete">削除</string>
+    <string name="save">保存</string>
+    <string name="back">戻る</string>
+    <string name="close">閉じる</string>
+    <string name="search">検索</string>
+    <string name="settings">設定</string>
+    <string name="edit">編集</string>
+    <string name="ok">OK</string>
+</resources>

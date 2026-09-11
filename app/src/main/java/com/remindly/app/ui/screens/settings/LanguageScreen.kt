@@ -21,6 +21,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.remindly.app.R
@@ -28,6 +29,8 @@ import com.remindly.app.ui.RemindlyViewModelFactory
 import com.remindly.app.ui.components.AppCard
 import com.remindly.app.ui.components.AppTopBar
 import com.remindly.app.ui.theme.AppSpacing
+import com.remindly.app.util.AppLocale
+import com.remindly.app.util.findActivity
 
 @Composable
 fun LanguageScreen(
@@ -39,10 +42,19 @@ fun LanguageScreen(
 ) {
     val uiState by viewModel.uiState.collectAsState()
     val isOnboarding = onConfirm != null
+    val context = LocalContext.current
 
     fun selectLanguage(code: String) {
+        if (code == uiState.language) {
+            if (!isOnboarding) onBack()
+            return
+        }
         viewModel.setLanguage(code)
-        if (!isOnboarding) onBack()
+        AppLocale.apply(context, code)
+        // Navigation Compose's back stack survives recreate() the same way it survives a
+        // rotation (rememberSaveable), so this lands back on this exact screen — mid-onboarding
+        // or mid-Settings — now rendered in the new language, instead of losing the user's place.
+        context.findActivity()?.recreate()
     }
 
     Column(modifier = modifier.fillMaxSize()) {
