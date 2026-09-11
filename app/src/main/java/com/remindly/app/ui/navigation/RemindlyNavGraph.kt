@@ -146,7 +146,7 @@ fun RemindlyNavGraph(
                 factory = factory,
                 onBack = { navController.popBackStack() },
                 onOpenLanguage = { navController.navigate(Routes.LANGUAGE) },
-                onOpenPrivacyPolicy = { navController.navigate(Routes.PRIVACY_POLICY) },
+                onOpenPrivacyPolicy = onOpenPrivacyPolicyExternal,
                 onOpenPrivacySettings = { navController.navigate(Routes.PRIVACY_SETTINGS) },
                 onOpenPremium = { navController.navigate(Routes.PREMIUM) },
                 onOpenFeedback = onOpenFeedback,
@@ -172,7 +172,7 @@ fun RemindlyNavGraph(
                 factory = factory,
                 onClose = { navController.popBackStack() },
                 onOpenTerms = { navController.navigate(Routes.PRIVACY_POLICY) },
-                onOpenPrivacy = { navController.navigate(Routes.PRIVACY_POLICY) },
+                onOpenPrivacy = onOpenPrivacyPolicyExternal,
             )
         }
     }

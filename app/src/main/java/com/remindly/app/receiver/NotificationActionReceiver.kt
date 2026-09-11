@@ -33,6 +33,7 @@ class NotificationActionReceiver : BroadcastReceiver() {
                     NotificationHelper.ACTION_SNOOZE_10 -> snooze(repository, reminderId, 10, context)
                     NotificationHelper.ACTION_SNOOZE_30 -> snooze(repository, reminderId, 30, context)
                     NotificationHelper.ACTION_SNOOZE_60 -> snooze(repository, reminderId, 60, context)
+                    NotificationHelper.ACTION_DISMISSED -> NotificationHelper.dismiss(context, reminderId)
                 }
             } finally {
                 pendingResult.finish()

@@ -5,6 +5,8 @@ import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.media.AudioAttributes
+import android.media.RingtoneManager
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -15,18 +17,34 @@ import com.remindly.app.domain.model.SoundMode
 import com.remindly.app.receiver.NotificationActionReceiver
 
 object NotificationHelper {
-    const val CHANNEL_ID_REMINDERS = "reminder_alerts"
+    // Bumped from "reminder_alerts"/"reminder_alerts_v2": notification channels are immutable
+    // once created, so any install that already created one of those (with no sound, or with a
+    // notification-stream sound instead of the alarm-stream one below) would never pick up a
+    // fix no matter what this code does now. A new id forces a fresh channel.
+    const val CHANNEL_ID_REMINDERS = "reminder_alerts_v3"
     const val EXTRA_REMINDER_ID = "extra_reminder_id"
     const val ACTION_DONE = "com.remindly.app.action.DONE"
     const val ACTION_SNOOZE_MENU = "com.remindly.app.action.SNOOZE_MENU"
     const val ACTION_SNOOZE_10 = "com.remindly.app.action.SNOOZE_10"
     const val ACTION_SNOOZE_30 = "com.remindly.app.action.SNOOZE_30"
     const val ACTION_SNOOZE_60 = "com.remindly.app.action.SNOOZE_60"
+    const val ACTION_DISMISSED = "com.remindly.app.action.DISMISSED"
 
     fun ensureChannel(context: Context) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) return
         val manager = context.getSystemService(NotificationManager::class.java) ?: return
         if (manager.getNotificationChannel(CHANNEL_ID_REMINDERS) != null) return
+        // Uses the alarm stream (not the notification/ringtone stream) so a due reminder is
+        // still heard when the device is in silent mode or a "priority/alarms only" Do Not
+        // Disturb state — matching how dedicated reminder/alarm apps behave, and required for
+        // the reminder to be reliably noticed rather than silently swallowed by ringer state.
+        val soundUri = RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.TYPE_ALARM)
+            ?: RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.TYPE_NOTIFICATION)
+            ?: RingtoneManager.getValidRingtoneUri(context)
+        val audioAttributes = AudioAttributes.Builder()
+            .setUsage(AudioAttributes.USAGE_ALARM)
+            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+            .build()
         val channel = NotificationChannel(
             CHANNEL_ID_REMINDERS,
             context.getString(R.string.notification_channel_reminders_name),
@@ -34,6 +52,7 @@ object NotificationHelper {
         ).apply {
             description = context.getString(R.string.notification_channel_reminders_desc)
             enableVibration(true)
+            if (soundUri != null) setSound(soundUri, audioAttributes)
         }
         manager.createNotificationChannel(channel)
     }
@@ -53,6 +72,7 @@ object NotificationHelper {
 
         val donePendingIntent = actionPendingIntent(context, reminder.id, ACTION_DONE, 1)
         val snoozePendingIntent = actionPendingIntent(context, reminder.id, ACTION_SNOOZE_MENU, 2)
+        val dismissedPendingIntent = actionPendingIntent(context, reminder.id, ACTION_DISMISSED, 6)
 
         val builder = NotificationCompat.Builder(context, CHANNEL_ID_REMINDERS)
             .setSmallIcon(R.drawable.ic_notification)
@@ -62,20 +82,29 @@ object NotificationHelper {
             .setCategory(NotificationCompat.CATEGORY_REMINDER)
             .setAutoCancel(true)
             .setContentIntent(contentPendingIntent)
+            .setDeleteIntent(dismissedPendingIntent)
             .addAction(0, context.getString(R.string.notification_action_done), donePendingIntent)
             .addAction(0, context.getString(R.string.notification_action_snooze), snoozePendingIntent)
 
-        if (reminder.soundMode == SoundMode.SILENT) {
+        // RING_ONCE relies on the channel's own sound (plays once when the notification posts).
+        // REPEAT_UNTIL_DISMISSED silences the channel's one-shot sound and rings a looping
+        // MediaPlayer instead, stopped from dismiss()/NotificationActionReceiver.
+        if (reminder.soundMode == SoundMode.SILENT || reminder.soundMode == SoundMode.REPEAT_UNTIL_DISMISSED) {
             builder.setSilent(true)
         }
 
         runCatching {
             NotificationManagerCompat.from(context).notify(reminder.id.toInt(), builder.build())
         }
+
+        if (reminder.soundMode == SoundMode.REPEAT_UNTIL_DISMISSED) {
+            ReminderSoundPlayer.startLooping(context, reminder.id)
+        }
     }
 
     /** Replaces the firing notification with one offering the three snooze durations. */
     fun showSnoozeOptions(context: Context, reminderId: Long, title: String) {
+        ReminderSoundPlayer.stop(reminderId)
         ensureChannel(context)
         val snooze10 = actionPendingIntent(context, reminderId, ACTION_SNOOZE_10, 3)
         val snooze30 = actionPendingIntent(context, reminderId, ACTION_SNOOZE_30, 4)
@@ -98,6 +127,7 @@ object NotificationHelper {
     }
 
     fun dismiss(context: Context, reminderId: Long) {
+        ReminderSoundPlayer.stop(reminderId)
         runCatching { NotificationManagerCompat.from(context).cancel(reminderId.toInt()) }
     }
 

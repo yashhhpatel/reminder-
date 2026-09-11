@@ -163,6 +163,9 @@
     <string name="language_title">Language</string>
     <string name="language_english">English</string>
 
+    <!-- Privacy -->
+    <string name="privacy_policy_url" translatable="false">https://api.buildprivacypolicy.com/policy/3b6b38fe-b311-4299-b3b7-97fad849ab84</string>
+
     <!-- Feedback -->
     <string name="feedback_subject">Feedback for Remindly</string>
     <string name="feedback_body">Version: %1$s</string>
