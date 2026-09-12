@@ -128,7 +128,7 @@ class MainActivity : ComponentActivity() {
 
     private fun openFeedback() {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = Uri.parse("mailto:")
+            data = Uri.parse("mailto:" + Uri.encode(getString(R.string.feedback_email)))
             putExtra(Intent.EXTRA_SUBJECT, getString(R.string.feedback_subject))
             putExtra(Intent.EXTRA_TEXT, getString(R.string.feedback_body, BuildConfig.VERSION_NAME))
         }

@@ -13,7 +13,9 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Block
 import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Settings
@@ -33,6 +35,9 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.remindly.app.ui.theme.DestructiveRed
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.remindly.app.R
 import com.remindly.app.domain.model.Category
@@ -57,6 +62,7 @@ fun HomeScreen(
     onOpenSearch: () -> Unit,
     onOpenSettings: () -> Unit,
     onOpenReminder: (Long) -> Unit,
+    onOpenPremium: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: HomeViewModel = viewModel(factory = factory),
 ) {
@@ -78,6 +84,19 @@ fun HomeScreen(
             if (!uiState.isEmpty) {
                 IconButton(onClick = onOpenSearch) {
                     Icon(Icons.Filled.Search, contentDescription = stringResource(R.string.search))
+                }
+            }
+            if (!uiState.isPremium) {
+                IconButton(onClick = onOpenPremium) {
+                    Box(contentAlignment = Alignment.Center, modifier = Modifier.size(26.dp)) {
+                        Icon(
+                            Icons.Filled.Block,
+                            contentDescription = stringResource(R.string.home_remove_ads_cd),
+                            tint = DestructiveRed,
+                            modifier = Modifier.size(26.dp),
+                        )
+                        Text("AD", fontSize = 8.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+                    }
                 }
             }
             IconButton(onClick = onOpenSettings) {

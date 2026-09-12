@@ -37,7 +37,6 @@
     <string name="home_title">मेरे रिमाइंडर</string>
     <string name="home_search_hint">रिमाइंडर खोजें</string>
     <string name="home_empty_title">रिमाइंडर में आपका स्वागत है</string>
-    <string name="home_empty_subtitle">अपना पहला रिमाइंडर बनाएं और ज़रूरी बातें कभी न भूलें।</string>
     <string name="home_add_reminder">रिमाइंडर जोड़ें</string>
     <string name="home_quick_suggestion_tomorrow_morning">कल सुबह</string>
     <string name="home_quick_suggestion_next_week">अगले हफ्ते</string>

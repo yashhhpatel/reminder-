@@ -37,7 +37,6 @@
     <string name="home_title">Mis recordatorios</string>
     <string name="home_search_hint">Buscar recordatorios</string>
     <string name="home_empty_title">Bienvenido a Recordatorios</string>
-    <string name="home_empty_subtitle">Crea tu primer recordatorio y no olvides lo que importa.</string>
     <string name="home_add_reminder">Añadir recordatorio</string>
     <string name="home_quick_suggestion_tomorrow_morning">Mañana por la mañana</string>
     <string name="home_quick_suggestion_next_week">La próxima semana</string>

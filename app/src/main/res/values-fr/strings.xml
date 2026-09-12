@@ -37,7 +37,6 @@
     <string name="home_title">Mes rappels</string>
     <string name="home_search_hint">Rechercher des rappels</string>
     <string name="home_empty_title">Bienvenue dans Rappels</string>
-    <string name="home_empty_subtitle">Créez votre premier rappel et n\'oubliez plus jamais l\'essentiel.</string>
     <string name="home_add_reminder">Ajouter un rappel</string>
     <string name="home_quick_suggestion_tomorrow_morning">Demain matin</string>
     <string name="home_quick_suggestion_next_week">La semaine prochaine</string>

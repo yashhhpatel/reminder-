@@ -44,7 +44,6 @@
     <string name="home_title">マイリマインダー</string>
     <string name="home_search_hint">リマインダーを検索</string>
     <string name="home_empty_title">リマインダーへようこそ</string>
-    <string name="home_empty_subtitle">最初のリマインダーを作成して、大切な予定を忘れないようにしましょう。</string>
     <string name="home_add_reminder">リマインダーを追加</string>
     <string name="home_quick_suggestion_tomorrow_morning">明日の朝</string>
     <string name="home_quick_suggestion_next_week">来週</string>

@@ -22,7 +22,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import com.remindly.app.R
 import com.remindly.app.ui.theme.AppSpacing
@@ -57,7 +61,7 @@ fun EmptyReminderState(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
     ) {
-        EmptyIllustration(Icons.Filled.Notifications)
+        WelcomeIllustration()
         androidx.compose.foundation.layout.Spacer(Modifier.padding(top = AppSpacing.lg))
         Text(
             stringResource(R.string.home_empty_title),
@@ -65,8 +69,21 @@ fun EmptyReminderState(
             textAlign = TextAlign.Center,
         )
         androidx.compose.foundation.layout.Spacer(Modifier.padding(top = AppSpacing.xs))
+        val addReminderLabel = stringResource(R.string.home_add_reminder)
+        val subtitle = buildAnnotatedString {
+            // Android's aapt trims leading/trailing whitespace from plain <string> resources,
+            // so the surrounding spaces are added here in code rather than relying on the
+            // resource strings themselves to carry them.
+            append(stringResource(R.string.home_empty_subtitle_prefix).trimEnd())
+            append(' ')
+            withStyle(SpanStyle(color = MaterialTheme.colorScheme.primary, fontWeight = FontWeight.SemiBold)) {
+                append(addReminderLabel)
+            }
+            append(' ')
+            append(stringResource(R.string.home_empty_subtitle_suffix).trimStart())
+        }
         Text(
-            stringResource(R.string.home_empty_subtitle),
+            subtitle,
             style = MaterialTheme.typography.bodyMedium,
             color = AppTheme.extendedColors.textSecondary,
             textAlign = TextAlign.Center,

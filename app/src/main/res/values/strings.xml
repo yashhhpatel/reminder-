@@ -51,8 +51,10 @@
     <string name="home_title">My reminder</string>
     <string name="home_search_hint">Search reminders</string>
     <string name="home_empty_title">Welcome to Reminders</string>
-    <string name="home_empty_subtitle">Create your first reminder and never forget what matters.</string>
+    <string name="home_empty_subtitle_prefix">Tap the </string>
+    <string name="home_empty_subtitle_suffix"> to add your first reminder</string>
     <string name="home_add_reminder">Add reminder</string>
+    <string name="home_remove_ads_cd">Remove ads</string>
     <string name="home_quick_suggestion_tomorrow_morning">Tomorrow morning</string>
     <string name="home_quick_suggestion_next_week">Next week</string>
     <string name="home_quick_add_hint">Add reminder</string>
@@ -167,6 +169,7 @@
     <string name="privacy_policy_url" translatable="false">https://api.buildprivacypolicy.com/policy/3b6b38fe-b311-4299-b3b7-97fad849ab84</string>
 
     <!-- Feedback -->
+    <string name="feedback_email" translatable="false">aakashmangukiya10@gmail.com</string>
     <string name="feedback_subject">Feedback for Remindly</string>
     <string name="feedback_body">Version: %1$s</string>
     <string name="feedback_no_email_title">No Email App Found</string>
@@ -203,6 +206,31 @@
     <string name="premium_terms">Terms &amp; Conditions</string>
     <string name="premium_privacy">Privacy Policy</string>
     <string name="premium_restore">Restore</string>
+    <string name="premium_plan_badge">Reminder Premium</string>
+    <string name="premium_plan_yearly_title">PRO –12 Months</string>
+    <string name="premium_plan_yearly_amount">₹3450.00</string>
+    <string name="premium_plan_yearly_period">year</string>
+    <string name="premium_plan_monthly_title">1 Month</string>
+    <string name="premium_plan_monthly_amount">₹520.00</string>
+    <string name="premium_plan_monthly_period">month</string>
+    <string name="premium_plan_weekly_title">1 Week</string>
+    <string name="premium_plan_weekly_amount">₹170.00</string>
+    <string name="premium_plan_weekly_period">week</string>
+    <string name="premium_plan_price_per">%1$s per %2$s</string>
+
+    <!-- Premium free-trial offer (shown if the user tries to close the paywall) -->
+    <string name="trial_headline">Special Offer</string>
+    <string name="trial_subheadline">Free for %1$d days.</string>
+    <string name="trial_how_it_works">How your free trial works:</string>
+    <string name="trial_step_start_title">Today – Free trial starts</string>
+    <string name="trial_step_start_body">Enjoy the entire library free for %1$d days</string>
+    <string name="trial_step_notify_title">%1$s – Reminder notification</string>
+    <string name="trial_step_notify_body">We\'ll let you know when your trial is ending</string>
+    <string name="trial_step_member_title">%1$s – Become a member</string>
+    <string name="trial_step_member_body">Your trial ends unless cancelled. Enjoy!</string>
+    <string name="trial_price_line">%1$d days free trial, then %2$s / %3$s</string>
+    <string name="trial_cta">Start your free %1$d-days trial</string>
+    <string name="trial_no_thanks">No thanks</string>
 
     <!-- Location picker -->
     <string name="location_picker_title">Choose location</string>

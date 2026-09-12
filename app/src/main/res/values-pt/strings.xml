@@ -37,7 +37,6 @@
     <string name="home_title">Meus lembretes</string>
     <string name="home_search_hint">Buscar lembretes</string>
     <string name="home_empty_title">Bem-vindo aos Lembretes</string>
-    <string name="home_empty_subtitle">Crie seu primeiro lembrete e nunca mais esqueça o que importa.</string>
     <string name="home_add_reminder">Adicionar lembrete</string>
     <string name="home_quick_suggestion_tomorrow_morning">Amanhã de manhã</string>
     <string name="home_quick_suggestion_next_week">Semana que vem</string>

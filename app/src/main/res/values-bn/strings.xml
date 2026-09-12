@@ -37,7 +37,6 @@
     <string name="home_title">আমার রিমাইন্ডার</string>
     <string name="home_search_hint">রিমাইন্ডার খুঁজুন</string>
     <string name="home_empty_title">রিমাইন্ডারে স্বাগতম</string>
-    <string name="home_empty_subtitle">আপনার প্রথম রিমাইন্ডার তৈরি করুন এবং গুরুত্বপূর্ণ বিষয় কখনো ভুলবেন না।</string>
     <string name="home_add_reminder">রিমাইন্ডার যোগ করুন</string>
     <string name="home_quick_suggestion_tomorrow_morning">আগামীকাল সকালে</string>
     <string name="home_quick_suggestion_next_week">আগামী সপ্তাহে</string>

@@ -44,7 +44,6 @@
     <string name="home_title">รายการเตือนความจำของฉัน</string>
     <string name="home_search_hint">ค้นหาการเตือนความจำ</string>
     <string name="home_empty_title">ยินดีต้อนรับสู่ Reminders</string>
-    <string name="home_empty_subtitle">สร้างรายการเตือนความจำแรกของคุณ แล้วจะไม่พลาดเรื่องสำคัญอีกต่อไป</string>
     <string name="home_add_reminder">เพิ่มรายการเตือน</string>
     <string name="home_quick_suggestion_tomorrow_morning">พรุ่งนี้เช้า</string>
     <string name="home_quick_suggestion_next_week">สัปดาห์หน้า</string>

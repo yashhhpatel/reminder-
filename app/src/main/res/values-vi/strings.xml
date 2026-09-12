@@ -44,7 +44,6 @@
     <string name="home_title">Nhắc nhở của tôi</string>
     <string name="home_search_hint">Tìm kiếm nhắc nhở</string>
     <string name="home_empty_title">Chào mừng đến với Reminders</string>
-    <string name="home_empty_subtitle">Tạo nhắc nhở đầu tiên để không bao giờ quên điều quan trọng.</string>
     <string name="home_add_reminder">Thêm nhắc nhở</string>
     <string name="home_quick_suggestion_tomorrow_morning">Sáng mai</string>
     <string name="home_quick_suggestion_next_week">Tuần sau</string>

@@ -37,7 +37,6 @@
     <string name="home_title">Мои напоминания</string>
     <string name="home_search_hint">Поиск напоминаний</string>
     <string name="home_empty_title">Добро пожаловать в Напоминания</string>
-    <string name="home_empty_subtitle">Создайте своё первое напоминание и никогда не забывайте о важном.</string>
     <string name="home_add_reminder">Добавить напоминание</string>
     <string name="home_quick_suggestion_tomorrow_morning">Завтра утром</string>
     <string name="home_quick_suggestion_next_week">На следующей неделе</string>

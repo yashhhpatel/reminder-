@@ -37,7 +37,6 @@
     <string name="home_title">Meine Erinnerungen</string>
     <string name="home_search_hint">Erinnerungen durchsuchen</string>
     <string name="home_empty_title">Willkommen bei Erinnerungen</string>
-    <string name="home_empty_subtitle">Erstelle deine erste Erinnerung und vergiss nie wieder, was wichtig ist.</string>
     <string name="home_add_reminder">Erinnerung hinzufügen</string>
     <string name="home_quick_suggestion_tomorrow_morning">Morgen früh</string>
     <string name="home_quick_suggestion_next_week">Nächste Woche</string>

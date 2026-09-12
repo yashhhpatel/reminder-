@@ -9,11 +9,9 @@ import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Star
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,6 +23,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.remindly.app.R
 import com.remindly.app.ui.theme.AppDimens
 import com.remindly.app.ui.theme.AppSpacing
@@ -61,19 +60,11 @@ fun AppCard(
 
 @Composable
 fun PremiumBadge(modifier: Modifier = Modifier, size: Dp = AppDimens.premiumBadgeSize) {
-    val extended = AppTheme.extendedColors
     Box(
-        modifier = modifier
-            .clip(CircleShape)
-            .background(extended.premiumGold)
-            .padding(2.dp),
+        modifier = modifier.size(size),
+        contentAlignment = Alignment.Center,
     ) {
-        Icon(
-            imageVector = Icons.Filled.Star,
-            contentDescription = null,
-            tint = Color.White,
-            modifier = Modifier.padding(1.dp),
-        )
+        Text("👑", fontSize = (size.value * 0.9f).sp)
     }
 }
 

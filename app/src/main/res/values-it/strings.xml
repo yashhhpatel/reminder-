@@ -37,7 +37,6 @@
     <string name="home_title">I miei promemoria</string>
     <string name="home_search_hint">Cerca promemoria</string>
     <string name="home_empty_title">Benvenuto in Promemoria</string>
-    <string name="home_empty_subtitle">Crea il tuo primo promemoria e non dimenticare mai ciò che conta.</string>
     <string name="home_add_reminder">Aggiungi promemoria</string>
     <string name="home_quick_suggestion_tomorrow_morning">Domani mattina</string>
     <string name="home_quick_suggestion_next_week">La prossima settimana</string>

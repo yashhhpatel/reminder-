@@ -44,7 +44,6 @@
     <string name="home_title">Pengingat saya</string>
     <string name="home_search_hint">Cari pengingat</string>
     <string name="home_empty_title">Selamat Datang di Reminders</string>
-    <string name="home_empty_subtitle">Buat pengingat pertama Anda dan jangan pernah lupa hal yang penting lagi.</string>
     <string name="home_add_reminder">Tambah pengingat</string>
     <string name="home_quick_suggestion_tomorrow_morning">Besok pagi</string>
     <string name="home_quick_suggestion_next_week">Minggu depan</string>

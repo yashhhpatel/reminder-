@@ -44,7 +44,6 @@
     <string name="home_title">تذكيراتي</string>
     <string name="home_search_hint">ابحث في التذكيرات</string>
     <string name="home_empty_title">مرحبًا بك في التذكيرات</string>
-    <string name="home_empty_subtitle">أنشئ أول تذكير لك ولن تنسى ما يهم بعد الآن.</string>
     <string name="home_add_reminder">إضافة تذكير</string>
     <string name="home_quick_suggestion_tomorrow_morning">غدًا صباحًا</string>
     <string name="home_quick_suggestion_next_week">الأسبوع القادم</string>

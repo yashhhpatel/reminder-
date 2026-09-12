@@ -113,6 +113,7 @@ fun RemindlyNavGraph(
                 onOpenSearch = { navController.navigate(Routes.SEARCH) },
                 onOpenSettings = { navController.navigate(Routes.SETTINGS) },
                 onOpenReminder = { id -> navController.navigate(Routes.reminderDetail(id)) },
+                onOpenPremium = { navController.navigate(Routes.PREMIUM) },
             )
         }
 
