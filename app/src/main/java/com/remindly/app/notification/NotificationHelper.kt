@@ -38,9 +38,15 @@ object NotificationHelper {
         // still heard when the device is in silent mode or a "priority/alarms only" Do Not
         // Disturb state — matching how dedicated reminder/alarm apps behave, and required for
         // the reminder to be reliably noticed rather than silently swallowed by ringer state.
-        val soundUri = RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.TYPE_ALARM)
-            ?: RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.TYPE_NOTIFICATION)
-            ?: RingtoneManager.getValidRingtoneUri(context)
+        // Resolving the URI is wrapped in runCatching: this runs on every app launch (called
+        // from RemindlyApp.onCreate()), and RingtoneManager can throw on devices with a
+        // restricted/misbehaving media provider (e.g. some managed-profile or minimal-ROM
+        // configurations) — that must never crash app startup.
+        val soundUri = runCatching {
+            RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.TYPE_ALARM)
+                ?: RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.TYPE_NOTIFICATION)
+                ?: RingtoneManager.getValidRingtoneUri(context)
+        }.getOrNull()
         val audioAttributes = AudioAttributes.Builder()
             .setUsage(AudioAttributes.USAGE_ALARM)
             .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)

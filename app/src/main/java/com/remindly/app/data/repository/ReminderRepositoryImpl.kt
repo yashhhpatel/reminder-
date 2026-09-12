@@ -1,17 +1,20 @@
 package com.remindly.app.data.repository
 
+import android.content.Context
 import com.remindly.app.data.local.dao.ReminderDao
 import com.remindly.app.data.local.entity.toDomain
 import com.remindly.app.data.local.entity.toEntity
 import com.remindly.app.domain.model.Reminder
 import com.remindly.app.domain.repository.ReminderRepository
 import com.remindly.app.domain.repository.ReminderScheduler
+import com.remindly.app.notification.NotificationHelper
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class ReminderRepositoryImpl(
     private val dao: ReminderDao,
     private val scheduler: ReminderScheduler,
+    private val context: Context,
 ) : ReminderRepository {
 
     override fun observeAll(): Flow<List<Reminder>> =
@@ -46,6 +49,10 @@ class ReminderRepositoryImpl(
     override suspend fun delete(reminder: Reminder) {
         dao.delete(reminder.toEntity())
         scheduler.cancel(reminder.id)
+        // Cancels a currently-showing notification and stops a "keep ringing" sound in progress —
+        // without this, deleting a reminder while its alarm is firing leaves it ringing forever
+        // with no notification left to dismiss it from.
+        NotificationHelper.dismiss(context, reminder.id)
     }
 
     override suspend fun setCompleted(id: Long, completed: Boolean) {
@@ -57,7 +64,12 @@ class ReminderRepositoryImpl(
             updatedAt = now,
         )
         dao.update(updated)
-        if (completed) scheduler.cancel(id) else if (updated.dateTime != null) scheduler.schedule(updated.toDomain())
+        if (completed) {
+            scheduler.cancel(id)
+            NotificationHelper.dismiss(context, id)
+        } else if (updated.dateTime != null) {
+            scheduler.schedule(updated.toDomain())
+        }
     }
 
     override suspend fun snooze(id: Long, untilEpochMillis: Long) {

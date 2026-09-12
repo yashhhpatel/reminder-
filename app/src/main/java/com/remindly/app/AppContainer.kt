@@ -23,7 +23,7 @@ class AppContainer(context: Context) {
     val reminderScheduler: ReminderScheduler = AlarmScheduler(context)
 
     val reminderRepository: ReminderRepository =
-        ReminderRepositoryImpl(database.reminderDao(), reminderScheduler)
+        ReminderRepositoryImpl(database.reminderDao(), reminderScheduler, context)
 
     val categoryRepository: CategoryRepository =
         CategoryRepositoryImpl(database.categoryDao(), database.reminderDao())

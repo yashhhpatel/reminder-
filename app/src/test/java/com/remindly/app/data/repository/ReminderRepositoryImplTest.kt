@@ -50,7 +50,7 @@ class ReminderRepositoryImplTest {
             RemindlyDatabase::class.java,
         ).allowMainThreadQueries().build()
         scheduler = FakeScheduler()
-        repository = ReminderRepositoryImpl(database.reminderDao(), scheduler)
+        repository = ReminderRepositoryImpl(database.reminderDao(), scheduler, ApplicationProvider.getApplicationContext())
     }
 
     @After

@@ -15,12 +15,20 @@ object ReminderSoundPlayer {
     private const val TAG = "ReminderSoundPlayer"
     private var mediaPlayer: MediaPlayer? = null
     private var activeReminderId: Long = -1L
+    private var hasRetriedAfterError = false
 
     fun startLooping(context: Context, reminderId: Long) {
         stop()
-        val uri = RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.TYPE_ALARM)
-            ?: RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.TYPE_NOTIFICATION)
-            ?: RingtoneManager.getValidRingtoneUri(context)
+        hasRetriedAfterError = false
+        startInternal(context.applicationContext, reminderId)
+    }
+
+    private fun startInternal(context: Context, reminderId: Long) {
+        val uri = runCatching {
+            RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.TYPE_ALARM)
+                ?: RingtoneManager.getActualDefaultRingtoneUri(context, RingtoneManager.TYPE_NOTIFICATION)
+                ?: RingtoneManager.getValidRingtoneUri(context)
+        }.getOrNull()
         if (uri == null) {
             Log.w(TAG, "No ringtone URI available on this device; reminder $reminderId will ring silently")
             return
@@ -37,7 +45,28 @@ object ReminderSoundPlayer {
                 )
                 setDataSource(context, uri)
                 isLooping = true
-                prepare()
+                // Without these, a mid-playback decoder/output error (seen on some devices and
+                // emulators) leaves MediaPlayer silently dead — no crash, no callback, nothing —
+                // so a "keep ringing" reminder can go silent with zero trace. One retry gives it
+                // a real chance to recover from a transient glitch instead of ringing once ever.
+                setOnErrorListener { _, what, extra ->
+                    Log.e(TAG, "MediaPlayer error for reminder $reminderId: what=$what extra=$extra")
+                    if (reminderId == activeReminderId && !hasRetriedAfterError) {
+                        hasRetriedAfterError = true
+                        runCatching { mediaPlayer?.release() }
+                        mediaPlayer = null
+                        startInternal(context, reminderId)
+                    } else {
+                        mediaPlayer = null
+                        activeReminderId = -1L
+                    }
+                    true
+                }
+                setOnCompletionListener {
+                    // Should not fire while isLooping is true; log in case it ever does so a
+                    // silently-ended "keep ringing" reminder is diagnosable from logcat.
+                    Log.w(TAG, "MediaPlayer completed unexpectedly for reminder $reminderId despite looping")
+                }
                 start()
             }
             activeReminderId = reminderId
