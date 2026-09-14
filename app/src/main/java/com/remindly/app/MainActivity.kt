@@ -123,6 +123,12 @@ class MainActivity : ComponentActivity() {
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.privacy_policy_url)))
         if (intent.resolveActivity(packageManager) != null) {
             startActivity(intent)
+        } else {
+            android.app.AlertDialog.Builder(this)
+                .setTitle(R.string.privacy_policy_no_browser_title)
+                .setMessage(R.string.privacy_policy_no_browser_body)
+                .setPositiveButton(R.string.ok, null)
+                .show()
         }
     }
 

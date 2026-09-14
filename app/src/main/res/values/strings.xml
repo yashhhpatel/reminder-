@@ -177,6 +177,8 @@
     <string name="feedback_body">Version: %1$s</string>
     <string name="feedback_no_email_title">No Email App Found</string>
     <string name="feedback_no_email_body">Please install an email app to send feedback, or reach out through the app store listing.</string>
+    <string name="privacy_policy_no_browser_title">No Browser Found</string>
+    <string name="privacy_policy_no_browser_body">Please install a browser app to view the Privacy Policy.</string>
 
     <!-- Share -->
     <string name="share_text">Try Remindly — a simple, focused reminder app. Never forget what matters.</string>
