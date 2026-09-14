@@ -1,15 +1,11 @@
 package com.remindly.app.ui.components
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
@@ -39,11 +35,7 @@ import androidx.compose.ui.text.input.KeyboardCapitalization
 import com.remindly.app.R
 import com.remindly.app.ui.theme.AppSpacing
 import com.remindly.app.ui.theme.PillShape
-import java.text.SimpleDateFormat
 import java.util.Calendar
-import java.util.Locale
-
-data class QuickTimeChip(val label: String, val dateTimeMillis: Long?)
 
 @Composable
 fun BottomQuickAdd(
@@ -52,7 +44,6 @@ fun BottomQuickAdd(
 ) {
     var text by remember { mutableStateOf("") }
     var isFocused by remember { mutableStateOf(false) }
-    var selectedChip by remember { mutableStateOf<QuickTimeChip?>(null) }
     var showDatePicker by remember { mutableStateOf(false) }
     var showTimePicker by remember { mutableStateOf(false) }
     var pendingDateTime by remember { mutableStateOf(0L) }
@@ -64,7 +55,6 @@ fun BottomQuickAdd(
         if (text.isNotBlank()) {
             onSubmit(text.trim(), dateTimeMillis)
             text = ""
-            selectedChip = null
         }
     }
 
@@ -72,20 +62,9 @@ fun BottomQuickAdd(
         if (text.isBlank()) return
         keyboardController?.hide()
         focusManager.clearFocus()
-        val chip = selectedChip
-        if (chip != null) {
-            submit(chip.dateTimeMillis)
-        } else {
-            pendingDateTime = Calendar.getInstance().apply { add(Calendar.HOUR_OF_DAY, 1) }.timeInMillis
-            showDatePicker = true
-        }
+        pendingDateTime = Calendar.getInstance().apply { add(Calendar.HOUR_OF_DAY, 1) }.timeInMillis
+        showDatePicker = true
     }
-
-    val laterTodayLabel = stringResource(R.string.quick_chip_later_today)
-    val thisEveningLabel = stringResource(R.string.quick_chip_this_evening)
-    val noTimeLabel = stringResource(R.string.quick_chip_no_time)
-    val currentTimeChipFormat = stringResource(R.string.home_current_time_chip)
-    val chips = remember { buildQuickTimeChips(laterTodayLabel, thisEveningLabel, noTimeLabel, currentTimeChipFormat) }
 
     val exampleRes = listOf(
         R.string.home_quick_add_example_1,
@@ -109,19 +88,6 @@ fun BottomQuickAdd(
     }
 
     Column(modifier = modifier.fillMaxWidth()) {
-        if (isFocused) {
-            LazyRow(
-                horizontalArrangement = Arrangement.spacedBy(AppSpacing.xs),
-                contentPadding = PaddingValues(horizontal = AppSpacing.md, vertical = AppSpacing.xs),
-            ) {
-                items(chips) { chip ->
-                    QuickSuggestionChip(
-                        label = chip.label,
-                        onClick = { selectedChip = chip },
-                    )
-                }
-            }
-        }
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -191,25 +157,4 @@ private fun mergeDateKeepTime(newDateMillis: Long, oldMillis: Long): Long {
     newCal.set(Calendar.HOUR_OF_DAY, oldCal.get(Calendar.HOUR_OF_DAY))
     newCal.set(Calendar.MINUTE, oldCal.get(Calendar.MINUTE))
     return newCal.timeInMillis
-}
-
-private fun buildQuickTimeChips(
-    laterTodayLabel: String,
-    thisEveningLabel: String,
-    noTimeLabel: String,
-    currentTimeChipFormat: String,
-): List<QuickTimeChip> {
-    val now = Calendar.getInstance()
-    val laterToday = (now.clone() as Calendar).apply { add(Calendar.HOUR_OF_DAY, 3) }
-    val thisEvening = (now.clone() as Calendar).apply {
-        set(Calendar.HOUR_OF_DAY, 19)
-        set(Calendar.MINUTE, 0)
-    }
-    val timeFormat = SimpleDateFormat("h:mm a", Locale.getDefault())
-    return listOf(
-        QuickTimeChip(laterTodayLabel, laterToday.timeInMillis),
-        QuickTimeChip(thisEveningLabel, thisEvening.timeInMillis),
-        QuickTimeChip(noTimeLabel, null),
-        QuickTimeChip(String.format(currentTimeChipFormat, timeFormat.format(now.time)), now.timeInMillis),
-    )
 }

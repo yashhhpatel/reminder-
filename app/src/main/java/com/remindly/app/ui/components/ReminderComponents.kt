@@ -15,7 +15,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
-import androidx.compose.material.icons.filled.NotificationsActive
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -29,7 +28,6 @@ import androidx.compose.ui.unit.dp
 import com.remindly.app.domain.model.Reminder
 import com.remindly.app.ui.theme.AppSpacing
 import com.remindly.app.ui.theme.AppTheme
-import com.remindly.app.ui.theme.PillShape
 
 @Composable
 fun CategoryDot(colorArgb: Int, modifier: Modifier = Modifier, size: androidx.compose.ui.unit.Dp = 12.dp) {
@@ -78,26 +76,5 @@ fun ReminderCard(
             Spacer(Modifier.width(AppSpacing.xs))
             CategoryDot(categoryColor)
         }
-    }
-}
-
-@Composable
-fun QuickSuggestionChip(
-    label: String,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier,
-    icon: androidx.compose.ui.graphics.vector.ImageVector = Icons.Filled.NotificationsActive,
-) {
-    Row(
-        modifier = modifier
-            .clip(PillShape)
-            .background(MaterialTheme.colorScheme.surfaceVariant)
-            .clickable(onClick = onClick)
-            .padding(horizontal = AppSpacing.md, vertical = AppSpacing.sm),
-        verticalAlignment = Alignment.CenterVertically,
-    ) {
-        Icon(icon, contentDescription = null, modifier = Modifier.size(16.dp), tint = MaterialTheme.colorScheme.primary)
-        Spacer(Modifier.width(AppSpacing.xxs))
-        Text(label, style = MaterialTheme.typography.labelMedium)
     }
 }
