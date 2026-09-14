@@ -1,5 +1,6 @@
 package com.remindly.app.ui.screens.newreminder
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -343,11 +344,16 @@ fun NewReminderScreen(
             onConfirm = { hour, minute ->
                 cal.set(Calendar.HOUR_OF_DAY, hour)
                 cal.set(Calendar.MINUTE, minute)
-                viewModel.setDateTime(cal.timeInMillis)
-                showTimePicker = false
-                if (autoSaveAfterTimePicked) {
-                    autoSaveAfterTimePicked = false
-                    viewModel.save()
+                cal.set(Calendar.SECOND, 0)
+                if (cal.timeInMillis <= System.currentTimeMillis()) {
+                    Toast.makeText(context, R.string.reminder_time_in_past, Toast.LENGTH_SHORT).show()
+                } else {
+                    viewModel.setDateTime(cal.timeInMillis)
+                    showTimePicker = false
+                    if (autoSaveAfterTimePicked) {
+                        autoSaveAfterTimePicked = false
+                        viewModel.save()
+                    }
                 }
             },
             onDismiss = {

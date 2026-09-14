@@ -1,5 +1,6 @@
 package com.remindly.app.ui.components
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -143,8 +144,13 @@ fun BottomQuickAdd(
             onConfirm = { hour, minute ->
                 cal.set(Calendar.HOUR_OF_DAY, hour)
                 cal.set(Calendar.MINUTE, minute)
-                showTimePicker = false
-                submit(cal.timeInMillis)
+                cal.set(Calendar.SECOND, 0)
+                if (cal.timeInMillis <= System.currentTimeMillis()) {
+                    Toast.makeText(context, R.string.reminder_time_in_past, Toast.LENGTH_SHORT).show()
+                } else {
+                    showTimePicker = false
+                    submit(cal.timeInMillis)
+                }
             },
             onDismiss = { showTimePicker = false },
         )

@@ -113,6 +113,7 @@
     <string name="reminder_completed_caption">Completed</string>
     <string name="reminder_tomorrow">Tomorrow</string>
     <string name="reminder_remove_time">Remove time</string>
+    <string name="reminder_time_in_past">Please select a future time</string>
     <string name="reminder_no_notification_warning">You won\'t get notification.</string>
 
     <!-- Categories -->
