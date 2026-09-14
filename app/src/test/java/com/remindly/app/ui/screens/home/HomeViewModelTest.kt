@@ -1,7 +1,9 @@
 package com.remindly.app.ui.screens.home
 
+import android.app.Activity
 import com.remindly.app.domain.model.Category
 import com.remindly.app.domain.model.Reminder
+import com.remindly.app.domain.model.SubscriptionProduct
 import com.remindly.app.domain.repository.CategoryRepository
 import com.remindly.app.domain.repository.PremiumRepository
 import com.remindly.app.domain.repository.ReminderRepository
@@ -64,7 +66,8 @@ private class FakeCategoryRepository : CategoryRepository {
 
 private class FakePremiumRepository : PremiumRepository {
     override val isPremium: Flow<Boolean> = MutableStateFlow(false)
-    override suspend fun setPremium(value: Boolean) {}
+    override val products: Flow<List<SubscriptionProduct>> = MutableStateFlow(emptyList())
+    override fun launchPurchaseFlow(activity: Activity, productId: String) {}
     override suspend fun restorePurchases(): Boolean = false
 }
 

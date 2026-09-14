@@ -1,5 +1,6 @@
 package com.remindly.app.ui.screens.premium
 
+import android.app.Activity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -33,12 +34,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.remindly.app.R
+import com.remindly.app.domain.model.PremiumProductIds
+import com.remindly.app.domain.model.SubscriptionProduct
 import com.remindly.app.ui.RemindlyViewModelFactory
 import com.remindly.app.ui.components.PrimaryButton
 import com.remindly.app.ui.theme.AppDimens
@@ -57,11 +61,21 @@ private enum class PremiumPlan(
     val amountRes: Int,
     val periodRes: Int,
     val trialDays: Int,
+    val productId: String,
 ) {
-    YEARLY(R.string.premium_plan_yearly_title, R.string.premium_plan_yearly_amount, R.string.premium_plan_yearly_period, 7),
-    MONTHLY(R.string.premium_plan_monthly_title, R.string.premium_plan_monthly_amount, R.string.premium_plan_monthly_period, 5),
-    WEEKLY(R.string.premium_plan_weekly_title, R.string.premium_plan_weekly_amount, R.string.premium_plan_weekly_period, 3),
+    YEARLY(R.string.premium_plan_yearly_title, R.string.premium_plan_yearly_amount, R.string.premium_plan_yearly_period, 7, PremiumProductIds.YEARLY),
+    MONTHLY(R.string.premium_plan_monthly_title, R.string.premium_plan_monthly_amount, R.string.premium_plan_monthly_period, 5, PremiumProductIds.MONTHLY),
+    WEEKLY(R.string.premium_plan_weekly_title, R.string.premium_plan_weekly_amount, R.string.premium_plan_weekly_period, 3, PremiumProductIds.WEEKLY),
 }
+
+/** Falls back to the bundled placeholder string when Play hasn't returned live pricing yet. */
+@Composable
+private fun PremiumPlan.priceText(product: SubscriptionProduct?): String =
+    if (product != null) {
+        stringResource(R.string.premium_plan_price_per, product.formattedPrice, product.billingPeriod)
+    } else {
+        stringResource(R.string.premium_plan_price_per, stringResource(amountRes), stringResource(periodRes))
+    }
 
 @Composable
 fun PremiumScreen(
@@ -72,19 +86,22 @@ fun PremiumScreen(
     modifier: Modifier = Modifier,
     viewModel: PremiumViewModel = viewModel(factory = factory),
 ) {
-    val purchaseCompleted by viewModel.purchaseCompleted.collectAsState()
+    val context = LocalContext.current
+    val isPremium by viewModel.isPremium.collectAsState()
+    val products by viewModel.products.collectAsState()
     var selectedPlan by remember { mutableStateOf(PremiumPlan.YEARLY) }
     var showTrialOffer by remember { mutableStateOf(false) }
 
-    LaunchedEffect(purchaseCompleted) {
-        if (purchaseCompleted) onClose()
+    LaunchedEffect(isPremium) {
+        if (isPremium) onClose()
     }
 
     if (showTrialOffer) {
         TrialOfferScreen(
             plan = selectedPlan,
+            product = products.find { it.productId == selectedPlan.productId },
             onClose = onClose,
-            onStartTrial = { viewModel.continuePurchase() },
+            onStartTrial = { (context as? Activity)?.let { viewModel.purchase(it, selectedPlan.productId) } },
             onOpenTerms = onOpenTerms,
             onOpenPrivacy = onOpenPrivacy,
             onRestore = { viewModel.restore() },
@@ -133,6 +150,7 @@ fun PremiumScreen(
                 PremiumPlan.entries.forEach { plan ->
                     PlanCard(
                         plan = plan,
+                        product = products.find { it.productId == plan.productId },
                         selected = plan == selectedPlan,
                         onClick = { selectedPlan = plan },
                     )
@@ -160,7 +178,7 @@ fun PremiumScreen(
 
         PrimaryButton(
             text = stringResource(R.string.premium_continue),
-            onClick = { viewModel.continuePurchase() },
+            onClick = { (context as? Activity)?.let { viewModel.purchase(it, selectedPlan.productId) } },
             containerColor = PaywallAccentGreen,
         )
 
@@ -205,12 +223,14 @@ fun PremiumScreen(
 /**
  * Shown when the user tries to close the main paywall instead of subscribing — a one-time
  * downsell offering a free trial sized to whichever plan they had selected (matches the
- * reference app's exit-intent flow). Since there is no real billing wired up, "starting" the
- * trial just grants the mocked premium flag the same way the main paywall's Continue does.
+ * reference app's exit-intent flow). The free trial itself is configured on the base plan's
+ * offer in Play Console; "Start trial" just launches the normal purchase flow for that plan and
+ * Play applies the trial pricing automatically.
  */
 @Composable
 private fun TrialOfferScreen(
     plan: PremiumPlan,
+    product: SubscriptionProduct?,
     onClose: () -> Unit,
     onStartTrial: () -> Unit,
     onOpenTerms: () -> Unit,
@@ -225,8 +245,8 @@ private fun TrialOfferScreen(
     val memberDate = remember(plan) {
         dayFormat.format((Calendar.getInstance().apply { add(Calendar.DAY_OF_YEAR, plan.trialDays) }).time)
     }
-    val amount = stringResource(plan.amountRes)
-    val period = stringResource(plan.periodRes)
+    val amount = product?.formattedPrice ?: stringResource(plan.amountRes)
+    val period = product?.billingPeriod ?: stringResource(plan.periodRes)
 
     Column(
         modifier = modifier
@@ -358,7 +378,7 @@ private fun TrialStep(emoji: String, title: String, body: String, showConnector:
 }
 
 @Composable
-private fun PlanCard(plan: PremiumPlan, selected: Boolean, onClick: () -> Unit) {
+private fun PlanCard(plan: PremiumPlan, product: SubscriptionProduct?, selected: Boolean, onClick: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -376,7 +396,7 @@ private fun PlanCard(plan: PremiumPlan, selected: Boolean, onClick: () -> Unit) 
             Text(stringResource(plan.titleRes), color = Color.White, style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
         }
         Text(
-            stringResource(R.string.premium_plan_price_per, stringResource(plan.amountRes), stringResource(plan.periodRes)),
+            plan.priceText(product),
             color = BrandPurpleLight,
             style = MaterialTheme.typography.bodyMedium,
             fontWeight = FontWeight.Bold,

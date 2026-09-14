@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.remindly.app.data.datastore.SettingsDataStore
 import com.remindly.app.domain.model.AppThemeMode
 import com.remindly.app.domain.repository.PremiumRepository
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.combine
@@ -22,8 +23,13 @@ data class SettingsUiState(
 
 class SettingsViewModel(
     private val settingsDataStore: SettingsDataStore,
-    premiumRepository: PremiumRepository,
+    private val premiumRepository: PremiumRepository,
 ) : ViewModel() {
+
+    private val _restoreResult = MutableStateFlow<Boolean?>(null)
+
+    /** Null until a restore attempt completes; true/false is the outcome. See [consumeRestoreResult]. */
+    val restoreResult: StateFlow<Boolean?> = _restoreResult
 
     val uiState: StateFlow<SettingsUiState> = combine(
         settingsDataStore.themeMode,
@@ -61,5 +67,13 @@ class SettingsViewModel(
 
     fun setPresetAfterCall(enabled: Boolean) {
         viewModelScope.launch { settingsDataStore.setPresetAfterCall(enabled) }
+    }
+
+    fun restorePurchase() {
+        viewModelScope.launch { _restoreResult.value = premiumRepository.restorePurchases() }
+    }
+
+    fun consumeRestoreResult() {
+        _restoreResult.value = null
     }
 }

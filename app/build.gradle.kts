@@ -124,6 +124,9 @@ dependencies {
     // Play Store in-app review (Rate Us)
     implementation("com.google.android.play:review-ktx:2.0.2")
 
+    // Google Play Billing (Premium subscriptions)
+    implementation("com.android.billingclient:billing-ktx:7.1.1")
+
     // Permissions helper compose accompanist (permissions)
     implementation("com.google.accompanist:accompanist-permissions:0.34.0")
 

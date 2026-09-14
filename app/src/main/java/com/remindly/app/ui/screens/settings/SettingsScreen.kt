@@ -1,6 +1,7 @@
 package com.remindly.app.ui.screens.settings
 
 import android.content.Intent
+import android.widget.Toast
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,6 +18,7 @@ import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.LocationOn
 import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material.icons.filled.PrivacyTip
+import androidx.compose.material.icons.filled.Restore
 import androidx.compose.material.icons.filled.Schedule
 import androidx.compose.material.icons.filled.Shield
 import androidx.compose.material.icons.filled.Star
@@ -27,6 +29,7 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -68,8 +71,17 @@ fun SettingsScreen(
     viewModel: SettingsViewModel = viewModel(factory = factory),
 ) {
     val uiState by viewModel.uiState.collectAsState()
+    val restoreResult by viewModel.restoreResult.collectAsState()
     var showThemeDialog by remember { mutableStateOf(false) }
     val context = LocalContext.current
+
+    LaunchedEffect(restoreResult) {
+        restoreResult?.let { restored ->
+            val messageRes = if (restored) R.string.restore_purchase_success else R.string.restore_purchase_none
+            Toast.makeText(context, messageRes, Toast.LENGTH_SHORT).show()
+            viewModel.consumeRestoreResult()
+        }
+    }
 
     Column(modifier = modifier.fillMaxSize()) {
         AppTopBar(title = stringResource(R.string.settings_title), onBack = onBack)
@@ -153,6 +165,13 @@ fun SettingsScreen(
                 icon = Icons.Filled.Star,
                 onClick = onRateUs,
             )
+            if (!uiState.isPremium) {
+                SettingsRow(
+                    title = stringResource(R.string.settings_restore_purchase),
+                    icon = Icons.Filled.Restore,
+                    onClick = { viewModel.restorePurchase() },
+                )
+            }
 
             Row(modifier = Modifier.fillMaxWidth().padding(vertical = AppSpacing.lg), horizontalArrangement = Arrangement.Center) {
                 Text(

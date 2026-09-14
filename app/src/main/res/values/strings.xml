@@ -159,6 +159,9 @@
     <string name="settings_section_others">OTHERS</string>
     <string name="settings_share">Share</string>
     <string name="settings_rate_us">Rate Us</string>
+    <string name="settings_restore_purchase">Restore Purchase</string>
+    <string name="restore_purchase_success">Purchase restored</string>
+    <string name="restore_purchase_none">No active purchase found to restore</string>
     <string name="settings_app_version">App version %1$s</string>
 
     <!-- Language -->

@@ -1,9 +1,10 @@
 package com.remindly.app.ui.screens.premium
 
+import android.app.Activity
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.remindly.app.domain.model.SubscriptionProduct
 import com.remindly.app.domain.repository.PremiumRepository
-import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
@@ -14,20 +15,15 @@ class PremiumViewModel(private val premiumRepository: PremiumRepository) : ViewM
     val isPremium: StateFlow<Boolean> = premiumRepository.isPremium
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), false)
 
-    private val _purchaseCompleted = MutableStateFlow(false)
-    val purchaseCompleted: StateFlow<Boolean> = _purchaseCompleted
+    val products: StateFlow<List<SubscriptionProduct>> = premiumRepository.products
+        .stateIn(viewModelScope, SharingStarted.WhileSubscribed(5000), emptyList())
 
-    fun continuePurchase() {
-        viewModelScope.launch {
-            premiumRepository.setPremium(true)
-            _purchaseCompleted.value = true
-        }
+    /** Launches Play's purchase sheet. On success [isPremium] flips to true and the screen closes. */
+    fun purchase(activity: Activity, productId: String) {
+        premiumRepository.launchPurchaseFlow(activity, productId)
     }
 
     fun restore() {
-        viewModelScope.launch {
-            val restored = premiumRepository.restorePurchases()
-            if (restored) _purchaseCompleted.value = true
-        }
+        viewModelScope.launch { premiumRepository.restorePurchases() }
     }
 }

@@ -3,8 +3,8 @@ package com.remindly.app
 import android.content.Context
 import com.remindly.app.data.datastore.SettingsDataStore
 import com.remindly.app.data.local.RemindlyDatabase
+import com.remindly.app.data.repository.BillingRepositoryImpl
 import com.remindly.app.data.repository.CategoryRepositoryImpl
-import com.remindly.app.data.repository.PremiumRepositoryImpl
 import com.remindly.app.data.repository.ReminderRepositoryImpl
 import com.remindly.app.domain.repository.CategoryRepository
 import com.remindly.app.domain.repository.PremiumRepository
@@ -28,5 +28,5 @@ class AppContainer(context: Context) {
     val categoryRepository: CategoryRepository =
         CategoryRepositoryImpl(database.categoryDao(), database.reminderDao())
 
-    val premiumRepository: PremiumRepository = PremiumRepositoryImpl(settingsDataStore)
+    val premiumRepository: PremiumRepository = BillingRepositoryImpl(context, settingsDataStore)
 }
